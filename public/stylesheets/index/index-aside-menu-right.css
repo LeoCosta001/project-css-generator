@@ -1,0 +1,28 @@
+.index-aside-menu-right {
+    background-color: #2C3E50;
+    color: white;
+    height: 70vh;
+    width: 300px;
+}
+
+/* ================= Estabilizando Menu lateral ================= */
+
+/* /\/\/\/\ Largura <=  1023 /\/\/\/\ */
+
+@media (max-width: 1023px) {
+    .index-aside-menu-right {
+        float: right;
+    }
+}
+
+/* /\/\/\/\ Largura <=  699 /\/\/\/\ */
+
+@media (max-width: 699px) {
+    .index-aside-menu-right {
+        height: 200px;
+        width: 100%;
+        display: block;
+    }
+}
+
+/* ================================================== */

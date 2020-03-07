@@ -1,0 +1,16 @@
+.index-container-large {
+    display: flex;
+    flex: 1;
+}
+
+/* ================= Estabilizando Menu lateral ================= */
+
+/* /\/\/\/\ Largura <=  1023 /\/\/\/\ */
+
+@media (max-width: 1023px) {
+    .index-container-large {
+        display: block;
+    }
+}
+
+/* ================================================== */
