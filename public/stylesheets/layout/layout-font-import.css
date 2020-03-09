@@ -1,0 +1,59 @@
+/* ================= Open Sans ================= */
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../fonts/OpenSans/OpenSans-Regular.ttf');
+}
+
+/* ================= Times New Roman ================= */
+
+@font-face {
+    font-family: 'Times New Roman';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../fonts/TimesNewRoman/times-new-roman.ttf');
+}
+
+/* ================= Lucida Sans ================= */
+
+@font-face {
+    font-family: 'Lucida Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../fonts/LucidaSans/LucidaSansRegular.ttf');
+}
+
+/* ================= Arial ================= */
+
+@font-face {
+    font-family: 'Arial';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../fonts/Arial/Arialn.ttf');
+}
+
+/* ================= Inria Serif ================= */
+
+@font-face {
+    font-family: 'Inria Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../fonts/InriaSerif/InriaSerif-Regular.ttf');
+}
+
+/* ================= Georgia ================= */
+
+@font-face {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../fonts/Georgia/Georgia.ttf');
+}

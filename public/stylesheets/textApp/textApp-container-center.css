@@ -1,11 +1,30 @@
-.textApp-container-center {
-    background-color: rgb(73, 152, 158);
+/* ================= Conteiner Central ================= */
+.textApp-container-background-center {
+    background-color: #ECF0F1;
     color: black;
     height: 70vh;
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.textApp-container-center {
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    box-shadow: 3px 3px 7px 0px rgb(136, 136, 136);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Reset de fonte */
+    font-family: none;
+
+}
+
+
+/* CSS que será gerado */
+.textApp-view {
 }
 
 /* ================= Estabilizando Menu lateral ================= */

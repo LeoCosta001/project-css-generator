@@ -1,0 +1,41 @@
+/* ================= Webkit ================= */
+/* Largura e altura do Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Diminuição do caminho do scrollbar */
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+/* Botão de rolagem */
+::-webkit-scrollbar-thumb {
+  background: rgb(67, 114, 145);
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(58, 125, 170);
+}
+::-webkit-scrollbar-thumb:active {
+  background: #2980B9;
+}
+
+/* Caminho para o botão de rolagem */
+::-webkit-scrollbar-track {
+  background: rgba(52, 73, 94, 0);
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: rgba(52, 73, 94, 0);
+}
+::-webkit-scrollbar-track:active {
+  background: #34495E;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

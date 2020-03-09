@@ -160,6 +160,14 @@ button[class^="textApp-aside-menu-left-aside-button-"]:hover>div[class^="textApp
     background-image: url('../../images/allApp/allApp-menu-left-buttons-reset-on.png');
 }
 
+.textApp-aside-menu-left-top-button-settings {
+    background-image: url('../../images/allApp/allApp-menu-left-buttons-settings-off.png');
+}
+
+.textApp-aside-menu-left-top-button-settings:hover {
+    background-image: url('../../images/allApp/allApp-menu-left-buttons-settings-on.png');
+}
+
 .textApp-aside-menu-left-top-button-example {
     background-image: url('../../images/allApp/allApp-menu-left-buttons-example-off.png');
 }
@@ -175,6 +183,7 @@ button[class^="textApp-aside-menu-left-aside-button-"]:hover>div[class^="textApp
     display: flex;
     flex-direction: column;
     overflow: auto;
+    border-right: solid 3px transparent;
 }
 
 .textApp-aside-menu-left-properties-title {
