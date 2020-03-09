@@ -11,7 +11,7 @@ body {
 
 button {
     border: none;
-    outline-style: none !important;
+    outline: none !important;
 }
 
 a, a:hover {
@@ -87,7 +87,6 @@ a, a:hover {
     -webkit-transition: 0.1s ease-in;
     -moz-transition: 0.1s ease-in;
     -o-transition: 0.1s ease-in;
-    transition: 0.1s ease-in;
 }
 
 /* ================================================== */

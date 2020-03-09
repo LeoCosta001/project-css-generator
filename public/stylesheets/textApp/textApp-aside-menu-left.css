@@ -1,0 +1,190 @@
+/*/\/\/\/\ Menu da Esquerda [Container] /\/\/\/\*/
+
+.textApp-aside-menu-left {
+    background-color: #2C3E50;
+    color: white;
+    height: 70vh;
+    width: 300px;
+    display: flex;
+}
+
+/* ================= Menu da Esquerda [Primario] ================= */
+
+.textApp-aside-menu-left-container-primary {
+    background-color: #34495E;
+    width: 50px;
+    height: 70vh;
+    border-right: solid 1px rgb(36, 51, 66);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*/\/\/\/\ Menu da Esquerda [Botões da esquerda] /\/\/\/\*/
+
+button[class^="textApp-aside-menu-left-aside-button-"] {
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 35px;
+    height: 45px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top: solid 1px rgba(36, 51, 66, 0);
+    border-bottom: solid 1px rgba(36, 51, 66, 0);
+    z-index: 100;
+    
+    /* Transação */
+    transition: 0.1s ease-in;
+    -webkit-transition: 0.1s ease-in;
+    -moz-transition: 0.1s ease-in;
+    -o-transition: 0.1s ease-in;
+}
+
+button[class^="textApp-aside-menu-left-aside-button-"]:hover {
+    background-size: 50px;
+    background-color: #3498DB;
+    border-top: solid 1px rgb(36, 51, 66);
+    border-bottom: solid 1px rgb(36, 51, 66);
+    
+}
+
+/* Popup dos botões */
+
+div[class^="textApp-aside-menu-left-aside-popup-button-"] {
+    background-color: rgba(52, 152, 219, 0);
+    color: rgba(255, 255, 255, 0);
+    letter-spacing: 1px;
+    height: 45px;
+    border-right: solid 2px rgba(36, 51, 66, 0);
+    border-top: solid 1px rgba(36, 51, 66, 0);
+    border-bottom: solid 1px rgba(36, 51, 66, 0);
+    border-radius: 0px 40px 40px 0px;
+    margin-top: -2px;
+    margin-left: -100px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+    display: flex;
+    float: left;
+    
+    /* Transação */
+    transition: 0.1s ease-in;
+    -webkit-transition: 0.1s ease-in;
+    -moz-transition: 0.1s ease-in;
+    -o-transition: 0.1s ease-in;
+}
+
+button[class^="textApp-aside-menu-left-aside-button-"]:hover >div[class^="textApp-aside-menu-left-aside-popup-button-"] {
+    background-color: rgb(52, 152, 219);
+    color: rgb(255, 255, 255);
+    border-right: solid 2px rgb(36, 51, 66);
+    border-top: solid 1px rgb(36, 51, 66);
+    border-bottom: solid 1px rgb(36, 51, 66);
+    margin-left: 43px;
+}
+
+.textApp-aside-menu-left-aside-button-text:hover>.textApp-aside-menu-left-aside-popup-button-text {
+    display: flex;
+}
+
+.textApp-aside-menu-left-aside-button-gradient:hover>.textApp-aside-menu-left-aside-popup-button-gradient {
+    display: flex;
+}
+
+
+/* Imagens dos botões */
+
+.textApp-aside-menu-left-aside-button-text {
+    background-image: url('../../images/allApp/menu-left/text.png');
+}
+
+.textApp-aside-menu-left-aside-button-gradient {
+    background-image: url('../../images/allApp/menu-left/gradient.png');
+}
+
+.textApp-aside-menu-left-aside-button-border {
+    background-image: url('../../images/allApp/menu-left/border.png');
+}
+
+.textApp-aside-menu-left-aside-button-shadow {
+    background-image: url('../../images/allApp/menu-left/shadow.png');
+}
+
+.textApp-aside-menu-left-aside-button-transform {
+    background-image: url('../../images/allApp/menu-left/transform.png');
+}
+
+.textApp-aside-menu-left-aside-button-column {
+    background-image: url('../../images/allApp/menu-left/column.png');
+}
+
+/* ================= Menu da Esquerda [Secundario] ================= */
+
+/*/\/\/\/\ Menu da Esquerda [Botões de cima] /\/\/\/\*/
+
+.textApp-aside-menu-left-top-button {
+    background-color: #34495E;
+    width: 250px;
+    height: 40px;
+    border-bottom: solid 1px rgb(36, 51, 66);
+    display: flex;
+}
+
+[class^="textApp-aside-menu-left-top-button-"] {
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    outline: none;
+    flex: 1;
+}
+
+.textApp-aside-menu-left-top-button-info {
+    background-image: url('../../images/allApp/allApp-menu-left-buttons-info-off.png');
+}
+
+.textApp-aside-menu-left-top-button-info:hover {
+    background-image: url('../../images/allApp/allApp-menu-left-buttons-info-on.png');
+}
+
+.textApp-aside-menu-left-top-button-reset {
+    background-image: url('../../images/allApp/allApp-menu-left-buttons-reset-off.png');
+}
+
+.textApp-aside-menu-left-top-button-reset:hover {
+    background-image: url('../../images/allApp/allApp-menu-left-buttons-reset-on.png');
+}
+
+.textApp-aside-menu-left-top-button-example {
+    background-image: url('../../images/allApp/allApp-menu-left-buttons-example-off.png');
+}
+
+.textApp-aside-menu-left-top-button-example:hover {
+    background-image: url('../../images/allApp/allApp-menu-left-buttons-example-on.png');
+}
+
+/* ================= Tornando o Menu lateral responsivo ================= */
+
+/* /\/\/\/\ Largura <=  1023 /\/\/\/\ */
+
+@media (max-width: 1023px) {
+    .textApp-aside-menu-left {
+        width: 100%;
+        height: 80px;
+        display: flex;
+    }
+    .textApp-aside-menu-left-container-primary {
+        height: 40px;
+        flex: 1;
+        border-right: none;
+        border-bottom: solid 1px rgb(36, 51, 66);
+    }
+}
+
+/* /\/\/\/\ Altura <=  767 /\/\/\/\ */
+
+@media (max-width: 767px) {}
+
+/* ================================================== */

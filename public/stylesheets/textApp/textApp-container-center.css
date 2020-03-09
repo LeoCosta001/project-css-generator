@@ -1,4 +1,4 @@
-.index-container-center {
+.textApp-container-center {
     background-color: rgb(73, 152, 158);
     color: black;
     height: 70vh;
@@ -13,7 +13,7 @@
 /* /\/\/\/\ Largura <=  1023 /\/\/\/\ */
 
 @media (max-width: 1023px) {
-    .index-container-center {
+    .textApp-container-center {
         color: yellow;
         width: calc(100% - 300px);
         display: inline-flex;
@@ -23,7 +23,7 @@
 /* /\/\/\/\ Largura <=  699 /\/\/\/\ */
 
 @media (max-width: 699px) {
-    .index-container-center {
+    .textApp-container-center {
         display: block;
         height: 150px;
         color: rgb(255, 166, 0);

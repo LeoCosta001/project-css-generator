@@ -16,7 +16,7 @@ const app = express();
     app.set('view engine', 'hbs');
 
 // Rotas
-app.use('/', require('./routes/index'))
+app.use('/', require('./routes/textApp'))
 
 // Ligar servidor
 app.listen(port, err => {
