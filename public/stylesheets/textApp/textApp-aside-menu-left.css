@@ -22,7 +22,7 @@
 
 /*/\/\/\/\ Menu da Esquerda [Botões da esquerda] /\/\/\/\*/
 
-button[class^="textApp-aside-menu-left-aside-button-"] {
+[class^="textApp-aside-menu-left-aside-button-"] {
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
@@ -33,7 +33,6 @@ button[class^="textApp-aside-menu-left-aside-button-"] {
     border-top: solid 1px rgba(36, 51, 66, 0);
     border-bottom: solid 1px rgba(36, 51, 66, 0);
     z-index: 100;
-    
     /* Transação */
     transition: 0.1s ease-in;
     -webkit-transition: 0.1s ease-in;
@@ -46,7 +45,6 @@ button[class^="textApp-aside-menu-left-aside-button-"]:hover {
     background-color: #3498DB;
     border-top: solid 1px rgb(36, 51, 66);
     border-bottom: solid 1px rgb(36, 51, 66);
-    
 }
 
 /* Popup dos botões */
@@ -68,7 +66,13 @@ div[class^="textApp-aside-menu-left-aside-popup-button-"] {
     align-items: center;
     display: flex;
     float: left;
-    
+    /* Bloquear Seleção */
+    user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
     /* Transação */
     transition: 0.1s ease-in;
     -webkit-transition: 0.1s ease-in;
@@ -76,7 +80,7 @@ div[class^="textApp-aside-menu-left-aside-popup-button-"] {
     -o-transition: 0.1s ease-in;
 }
 
-button[class^="textApp-aside-menu-left-aside-button-"]:hover >div[class^="textApp-aside-menu-left-aside-popup-button-"] {
+button[class^="textApp-aside-menu-left-aside-button-"]:hover>div[class^="textApp-aside-menu-left-aside-popup-button-"] {
     background-color: rgb(52, 152, 219);
     color: rgb(255, 255, 255);
     border-right: solid 2px rgb(36, 51, 66);
@@ -84,15 +88,6 @@ button[class^="textApp-aside-menu-left-aside-button-"]:hover >div[class^="textAp
     border-bottom: solid 1px rgb(36, 51, 66);
     margin-left: 43px;
 }
-
-.textApp-aside-menu-left-aside-button-text:hover>.textApp-aside-menu-left-aside-popup-button-text {
-    display: flex;
-}
-
-.textApp-aside-menu-left-aside-button-gradient:hover>.textApp-aside-menu-left-aside-popup-button-gradient {
-    display: flex;
-}
-
 
 /* Imagens dos botões */
 
@@ -120,6 +115,14 @@ button[class^="textApp-aside-menu-left-aside-button-"]:hover >div[class^="textAp
     background-image: url('../../images/allApp/menu-left/column.png');
 }
 
+/* Botão ativado */
+
+.textApp-aside-menu-left-aside-button-text {
+    background-color: #3498DB;
+    border-top: solid 1px rgb(36, 51, 66);
+    border-bottom: solid 1px rgb(36, 51, 66);
+}
+
 /* ================= Menu da Esquerda [Secundario] ================= */
 
 /*/\/\/\/\ Menu da Esquerda [Botões de cima] /\/\/\/\*/
@@ -128,7 +131,7 @@ button[class^="textApp-aside-menu-left-aside-button-"]:hover >div[class^="textAp
     background-color: #34495E;
     width: 250px;
     height: 40px;
-    border-bottom: solid 1px rgb(36, 51, 66);
+    border-bottom: solid 2px rgb(36, 51, 66);
     display: flex;
 }
 
@@ -163,6 +166,66 @@ button[class^="textApp-aside-menu-left-aside-button-"]:hover >div[class^="textAp
 
 .textApp-aside-menu-left-top-button-example:hover {
     background-image: url('../../images/allApp/allApp-menu-left-buttons-example-on.png');
+}
+
+/*/\/\/\/\ Menu da Esquerda [Seleção de Propriedades] /\/\/\/\*/
+
+.textApp-aside-menu-left-properties-container {
+    height: calc(70vh - 40px);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.textApp-aside-menu-left-properties-title {
+    color: #95A5A6;
+    text-align: center;
+    font-size: 10pt;
+    height: 30px;
+    width: 100%;
+    padding-top: 5px;
+    border-bottom: solid 1px rgb(36, 51, 66);
+    /* Bloquear Seleção */
+    user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+label[for^="properties-change-"] {
+    color: #BDC3C7;
+    font-size: 12pt;
+    letter-spacing: 1px;
+    width: 100%;
+    height: 50px;
+    padding-left: 50px;
+    padding-top: 4px;
+    margin-bottom: 0px;
+    border-bottom: solid 1px rgb(36, 51, 66);
+    display: flex;
+    flex-direction: column;
+    /* Bloquear Seleção */
+    user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+label[for^="properties-change-"]:hover {
+    background-color: #34495E;
+}
+
+/* Texto de Sintaxe das propriedades */
+
+.properties-change-syntax {
+    font-size: 8pt;
+    font-family: monospace;
+    align-self: flex-end;
+    padding-right: 10px;
 }
 
 /* ================= Tornando o Menu lateral responsivo ================= */

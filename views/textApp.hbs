@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-container-center.css">
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-aside-menu-right.css">
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-footer-menu.css">
+<link rel="stylesheet" href="/stylesheets/allApp/allApp-properties-chackbox.css">
 
 <div class="textApp-container-large">
     <!-- Menu da Esquerda [Container]-->
@@ -13,32 +14,88 @@
         <div class="textApp-aside-menu-left-container-primary">
             <!-- Menu da Esquerda [Botões da esquerda] -->
             <button class="textApp-aside-menu-left-aside-button-text">
-                <div class="textApp-aside-menu-left-aside-popup-button-text">Text</div>
+                <div class="textApp-aside-menu-left-aside-popup-button-text">Texto</div>
             </button>
             <button class="textApp-aside-menu-left-aside-button-gradient">
-                <div class="textApp-aside-menu-left-aside-popup-button-gradient">Gradient</div>
+                <div class="textApp-aside-menu-left-aside-popup-button-gradient">Gradiente</div>
             </button>
             <button class="textApp-aside-menu-left-aside-button-border">
-                <div class="textApp-aside-menu-left-aside-popup-button-border">Border</div>
+                <div class="textApp-aside-menu-left-aside-popup-button-border">Borda</div>
             </button>
             <button class="textApp-aside-menu-left-aside-button-shadow">
-                <div class="textApp-aside-menu-left-aside-popup-button-shadow">Shadow</div>
+                <div class="textApp-aside-menu-left-aside-popup-button-shadow">Sombra</div>
             </button>
             <button class="textApp-aside-menu-left-aside-button-transform">
-                <div class="textApp-aside-menu-left-aside-popup-button-transform">Transform</div>
+                <div class="textApp-aside-menu-left-aside-popup-button-transform">Transformação</div>
             </button>
             <button class="textApp-aside-menu-left-aside-button-column">
-                <div class="textApp-aside-menu-left-aside-popup-button-column">Column</div>
+                <div class="textApp-aside-menu-left-aside-popup-button-column">Coluna</div>
             </button>
         </div>
 
         <!-- Menu da Esquerda [Secundario] -->
         <div class="textApp-aside-menu-left-container-secundary">
+
             <!-- Menu da Esquerda [Botões de cima] -->
             <div class="textApp-aside-menu-left-top-button">
                 <button class="textApp-aside-menu-left-top-button-info"></button>
                 <button class="textApp-aside-menu-left-top-button-reset"></button>
                 <button class="textApp-aside-menu-left-top-button-example"></button>
+            </div>
+
+            <!-- Menu da Esquerda [Seleção de Propriedades] -->
+            <div class="textApp-aside-menu-left-properties-container">
+                <div class="textApp-aside-menu-left-properties-title">
+                    <p>Escolha as propriedades</p>
+                </div>
+                <label for="properties-change-color"><input type="checkbox" id="properties-change-color">Cor
+                    <p class="properties-change-syntax">color</p>
+                    <div class="properties-change-indicator"></div>
+                </label>
+                <label for="properties-change-font-size"><input type="checkbox" id="properties-change-font-size">Tamanho
+                    <p class="properties-change-syntax">font-size</p>
+                    <div class="properties-change-indicator"></div>
+                </label>
+                <label for="properties-change-font-style"><input type="checkbox"
+                        id="properties-change-font-style">Estilo
+                    <p class="properties-change-syntax">font-style</p>
+                    <div class="properties-change-indicator"></div>
+                </label>
+                <label for="properties-change-text-shadow"><input type="checkbox"
+                        id="properties-change-text-shadow">Sombra
+                    <p class="properties-change-syntax">text-shadow</p>
+                    <div class="properties-change-indicator"></div>
+                </label>
+                <label for="properties-change-font-family"><input type="checkbox"
+                        id="properties-change-font-family">Tipo de Fonte
+                    <p class="properties-change-syntax">font-family</p>
+                    <div class="properties-change-indicator"></div>
+                </label>
+                <label for="properties-change-font-variant"><input type="checkbox"
+                        id="properties-change-font-variant">Variação da Fonte
+                    <p class="properties-change-syntax">font-variant</p>
+                    <div class="properties-change-indicator"></div>
+                </label>
+                <label for="properties-change-font-weight"><input type="checkbox"
+                        id="properties-change-font-weight">Espessura
+                    <p class="properties-change-syntax">font-weight</p>
+                    <div class="properties-change-indicator"></div>
+                </label>
+                <label for="properties-change-font-stretch"><input type="checkbox"
+                        id="properties-change-font-stretch">Expanção e Retração
+                    <p class="properties-change-syntax">font-stretch</p>
+                    <div class="properties-change-indicator"></div>
+                </label>
+                <label for="properties-change-letter-spacing"><input type="checkbox"
+                        id="properties-change-letter-spacing">Espaço entre Letras
+                    <p class="properties-change-syntax">letter-spacing</p>
+                    <div class="properties-change-indicator"></div>
+                </label>
+                <label for="properties-change-word-spacing"><input type="checkbox"
+                        id="properties-change-word-spacing">Espaço entre Palavras
+                    <p class="properties-change-syntax">word-spacing</p>
+                    <div class="properties-change-indicator"></div>
+                </label>
             </div>
         </div>
     </aside>
@@ -60,4 +117,4 @@
 </footer>
 
 <!-- Meu Script -->
-<script src="/scripts/textApp/textAppContainerMiddleAlign.js"></script>
+<script src="/scripts/textApp/textAppPopup.js"></script>

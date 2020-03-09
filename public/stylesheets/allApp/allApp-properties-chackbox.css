@@ -1,0 +1,79 @@
+/* Label */
+
+[for^="properties-change-"] {
+    font-family: arial;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Botão padrão do checkbox */
+
+[for^="properties-change-"] input {
+    display: none
+}
+
+/* Bootão personalizado do chackbox */
+
+.properties-change-indicator {
+    margin-left: 15px;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background: #e6e6e683;
+    border: 0px solid #000000;
+    border-radius: 0px;
+}
+
+/* Altera a cor do checkbox quando passar o mouse em cima */
+
+[for^="properties-change-"]:hover input~.properties-change-indicator, [for^="properties-change-"] input:focus~.properties-change-indicator {
+    background: #cccccc;
+}
+
+/* Cor do botão quando ele estiver com "checked" ativado */
+
+[for^="properties-change-"] input:checked~.properties-change-indicator {
+    background: #3498DB;
+}
+
+/* Cor do checkbox com as 2 propriedades juntas: "checked" e "disabled" */
+
+[for^="properties-change-"] input:disabled~.properties-change-indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Desenhando o indicador de "OK */
+
+.properties-change-indicator:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+[for^="properties-change-"] input:checked~.properties-change-indicator:after {
+    display: block;
+}
+
+[for^="properties-change-"] .properties-change-indicator:after {
+    left: 6px;
+    top: 3px;
+    width: 3px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Cor do "OK" do chackbox que tem as 2 propriedader: "checked" e "disabled" */
+
+[for^="properties-change-"] input:disabled~.properties-change-indicator:after {
+    border-color: #7b7b7b;
+}
