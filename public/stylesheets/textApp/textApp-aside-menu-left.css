@@ -245,15 +245,32 @@ label[for^="properties-change-"]:hover {
 
 @media (max-width: 1023px) {
     .textApp-aside-menu-left {
+        background-color: rgb(187, 71, 255);
         width: 100%;
         height: 80px;
         display: flex;
     }
     .textApp-aside-menu-left-container-primary {
+        background-color: rgb(26, 153, 53);
         height: 40px;
         flex: 1;
         border-right: none;
         border-bottom: solid 1px rgb(36, 51, 66);
+        flex-direction: row;
+    }
+
+    
+    /*/\/\/\/\ Menu da Esquerda [Botões da esquerda] /\/\/\/\*/
+    
+    [class^="textApp-aside-menu-left-aside-button-"] {
+        height: 45px;
+        width: 45px;
+        margin-top: -3px;
+    }
+
+    /* Desativando popup flutuantes dos botões */
+    div[class^="textApp-aside-menu-left-aside-popup-button-"] {
+        display: none;
     }
 }
 

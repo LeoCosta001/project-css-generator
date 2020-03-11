@@ -1,4 +1,5 @@
 /* ================= Conteiner Central ================= */
+
 .textApp-container-background-center {
     background-color: #ECF0F1;
     color: black;
@@ -8,6 +9,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .textApp-container-center {
     background-color: white;
     width: calc(95vw - 600px);
@@ -23,17 +25,26 @@
 }
 
 /* CSS que será gerado */
-.textApp-view {
-}
+
+.textApp-view {}
 
 /* ================= Estabilizando Menu lateral ================= */
 
 /* /\/\/\/\ Largura <=  1023 /\/\/\/\ */
 
 @media (max-width: 1023px) {
+    .textApp-container-background-center {
+        background-color: tomato;
+        height: 70vh;
+        width: calc(100vw - 350px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .textApp-container-center {
         color: yellow;
-        width: calc(100% - 300px);
+        width: 90%;
         display: inline-flex;
     }
 }
@@ -41,8 +52,9 @@
 /* /\/\/\/\ Largura <=  699 /\/\/\/\ */
 
 @media (max-width: 699px) {
-    .textApp-container-center {
+    .textApp-container-background-center {
         display: block;
+        flex: 1;
         height: 150px;
         color: rgb(255, 166, 0);
         width: 100%;

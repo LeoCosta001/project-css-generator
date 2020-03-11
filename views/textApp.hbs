@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-aside-menu-left.css">
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-container-center.css">
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-aside-menu-right.css">
-<link rel="stylesheet" href="/stylesheets/textApp/textApp-footer-menu.css">
+<link rel="stylesheet" href="/stylesheets/textApp/textApp-footer-container.css">
 <link rel="stylesheet" href="/stylesheets/allApp/allApp-properties-chackbox.css">
 <link rel="stylesheet" href="/stylesheets/allApp/allApp-properties-input.css">
 
@@ -127,16 +127,19 @@
 
                 <!-- Menu da Direita [Tipo de valor de "font-size"] -->
                 <div class="properties-input-type-font-size">
-                    <input type="button" id="button-free-value-font-size" class="properties-input-type-free-value-font-size properties-input-button-type-active" value="Livre"></input>
-                    <input type="button" id="button-predefined-value-font-size" class="properties-input-type-predefined-value-font-size"
-                        value="Pré-definido"></input>
+                    <input type="button" id="button-free-value-font-size"
+                        class="properties-input-type-free-value-font-size properties-input-button-type-active"
+                        value="Livre"></input>
+                    <input type="button" id="button-predefined-value-font-size"
+                        class="properties-input-type-predefined-value-font-size" value="Pré-definido"></input>
                 </div>
 
                 <!-- Menu da Direita [Input de Valor "Live" de "font-size"] -->
                 <div class="properties-input-free-value-font-size">
                     <input id="property-font-size-value" class="properties-input-text-font-size" type="text" value="12">
                     <label class="properties-label-select" for="valueTypeFontSize"></label>
-                    <select id="property-font-size-value-type" class="properties-input-select-font-size" id="valueTypeFontSize">
+                    <select id="property-font-size-value-type" class="properties-input-select-font-size"
+                        id="valueTypeFontSize">
                         <option value="pt">pt</option>
                         <option value="px">px</option>
                         <option value="cm">cm</option>
@@ -169,8 +172,17 @@
 </div>
 
 <!-- Menu do Rodapé -->
-<footer class="textApp-footer-menu">
-    Eu sou o menu do RODAPÉ!!.
+<footer class="textApp-footer-container" spellcheck="false">
+
+    <!-- Rodapé [Editor de Texto]-->
+    <div class="textApp-footer-text-container">
+        <input type="text" class="textApp-footer-text-edit" value="Lorem Ipsum" placeholder="Insira um texto aqui">
+    </div>
+
+    <!-- Rodapé [Resultado do CSS]-->
+    <div class="textApp-footer-css-result-container">
+        <textarea class="textApp-footer-css-result">Olá! Sou o campo de resultado :)</textarea>
+    </div>
 </footer>
 
 <!-- Meu Script -->

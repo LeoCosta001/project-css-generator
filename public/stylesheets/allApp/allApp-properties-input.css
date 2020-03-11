@@ -19,9 +19,13 @@ input[class^="properties-input-text"] {
 }
 
 input[class^="properties-input-text"]:focus {
-    color: rgb(229, 235, 238);
     border-bottom: solid 2px #2ECC71;
     margin-bottom: 4px;
+}
+
+/* Valor invalido (Classe Extra!) */
+.invalidValue {
+    border-color: rgb(204, 46, 46) !important;
 }
 
 /* ================= Input para SELECIONAR valores <select> ================= */

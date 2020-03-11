@@ -1,0 +1,75 @@
+/* ================= Footer Container ================= */
+
+.textApp-footer-container {
+    background-color: #2C3E50;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    z-index: 200;
+}
+
+/*/\/\/\/\ Rodapé [Editor de Texto] /\/\/\/\*/
+
+.textApp-footer-text-container {
+    background-color: #3498DB;
+    height: 30px;
+    padding: 5px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.textApp-footer-text-edit {
+    outline: none;
+    border: none;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-size: 10pt;
+    width: 50vw;
+    height: 20px;
+    border-radius: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/*/\/\/\/\ Rodapé [Resultado do CSS] /\/\/\/\*/
+
+.textApp-footer-css-result-container {
+    background-color: #2C3E50;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.textApp-footer-css-result {
+    outline: none;
+    resize: none;
+    border: none;
+    background-color: #ECF0F1;
+    font-family: 'ComingoCode';
+    font-size: 11pt;
+    width: 400px;
+    height: 250px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Alterar Scrollbar dentro do textarea */
+
+.textApp-footer-css-result::-webkit-scrollbar {
+    background-color: #ECF0F1;
+    border-radius: 40px;
+}
+
+/* ================= Estabilizando Menu lateral ================= */
+
+/* /\/\/\/\ Largura <=  767 /\/\/\/\ */
+
+@media (max-width: 767px) {}
+
+/* /\/\/\/\ Altura <=  767 /\/\/\/\ */
+
+@media (max-height: 767px) {}
+
+/* ================================================== */

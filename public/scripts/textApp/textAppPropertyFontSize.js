@@ -60,7 +60,7 @@ $('#property-font-size-value-type').change(() => {
     propertiesApplyFreeValue('font-size', '#property-font-size-value', '#property-font-size-value-type');
 });
 
-// Select de tipo de valor (Pré-definido)
+// Select de inserir valor (Pré-definido)
 $('#property-font-size-value-predefined').change(() => {
     propertiesApplyPredefinedValue('font-size', '#property-font-size-value-predefined', '#property-font-size-value', '#property-font-size-value-type');
 });
@@ -79,8 +79,12 @@ function propertiesApplyFreeValue(property, value, valueType) {
     let inputValue = $(value).val();
     let inputValueType = $(valueType).val();
 
+    // Verificar se foi inserido um valor numérico válido
     if (isNaN(inputValue) === false) {
         textAppView.css(property, inputValue + inputValueType);
+        $(value).removeClass('invalidValue');
+    } else {
+        $(value).addClass('invalidValue');
     };
 }
 
