@@ -17,6 +17,8 @@
     margin-bottom: 0px;
     display: flex;
     justify-content: center;
+    border-top: solid 1px rgb(36, 51, 66);
+    border-bottom: solid 1px rgb(36, 51, 66);
 }
 
 .textApp-footer-text-edit {

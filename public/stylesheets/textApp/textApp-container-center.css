@@ -34,16 +34,14 @@
 
 @media (max-width: 1023px) {
     .textApp-container-background-center {
-        background-color: tomato;
         height: 70vh;
-        width: calc(100vw - 350px);
-        display: flex;
+        width: calc(100vw - 308px);
+        display: inline-flex;
         justify-content: center;
         align-items: center;
     }
 
     .textApp-container-center {
-        color: yellow;
         width: 90%;
         display: inline-flex;
     }

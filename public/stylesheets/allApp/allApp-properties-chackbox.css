@@ -26,7 +26,7 @@
     width: 18px;
     background: #e6e6e683;
     border: 0px solid #000000;
-    border-radius: 0px;
+    border-radius: 3px;
 }
 
 /* Altera a cor do checkbox quando passar o mouse em cima */
@@ -76,4 +76,14 @@
 
 [for^="properties-change-"] input:disabled~.properties-change-indicator:after {
     border-color: #7b7b7b;
+}
+
+/* ================= Largura <=  1023 ================= */
+
+@media (max-width: 1023px) {
+    /* Reposicionando os Checkbos */
+    .properties-change-indicator {
+        top: 10px;
+        left: 10px;
+    }
 }

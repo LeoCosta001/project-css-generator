@@ -65,8 +65,6 @@ $('#property-font-size-value-predefined').change(() => {
     propertiesApplyPredefinedValue('font-size', '#property-font-size-value-predefined', '#property-font-size-value', '#property-font-size-value-type');
 });
 
-// Select de valores Pré-definidos
-
 /* ################################################################# */
 /* ########################  F U N Ç Õ E S  ######################## */
 
