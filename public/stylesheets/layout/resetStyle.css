@@ -1,0 +1,12 @@
+* button {
+    border: none;
+    outline: none !important;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+* {
+    margin: 0px;
+}

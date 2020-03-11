@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-aside-menu-right.css">
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-footer-menu.css">
 <link rel="stylesheet" href="/stylesheets/allApp/allApp-properties-chackbox.css">
+<link rel="stylesheet" href="/stylesheets/allApp/allApp-properties-input.css">
 
 <div class="textApp-container-large">
     <!-- Menu da Esquerda [Container]-->
@@ -104,13 +105,66 @@
     <!-- Container Central -->
     <div class="textApp-container-background-center">
         <div class="textApp-container-center">
-        <p class="textApp-view">Lorem Ipsum</p>
+            <p id="textAppView" class="textApp-view">Lorem Ipsum</p>
         </div>
     </div>
 
     <!-- Menu da Direita -->
-    <aside class="textApp-aside-menu-right">
-        Eu sou o Menu da DIREITA!
+    <aside class="textApp-aside-menu-right-container" spellcheck="false">
+
+        <!-- Menu da Direita [Propriedade "font-size"] -->
+        <div class="textApp-aside-menu-right-properties-font-size">
+
+            <!-- Menu da Direita [Titulo] de "font-size"-->
+            <div class="textApp-properties-title">
+                <p>Tamanho</p>
+                <hr>
+                <div>
+                    <p>font-size</p>
+                </div>
+            </div>
+            <div class="textApp-properties-content">
+
+                <!-- Menu da Direita [Tipo de valor de "font-size"] -->
+                <div class="properties-input-type-font-size">
+                    <input type="button" id="button-free-value-font-size" class="properties-input-type-free-value-font-size properties-input-button-type-active" value="Livre"></input>
+                    <input type="button" id="button-predefined-value-font-size" class="properties-input-type-predefined-value-font-size"
+                        value="Pré-definido"></input>
+                </div>
+
+                <!-- Menu da Direita [Input de Valor "Live" de "font-size"] -->
+                <div class="properties-input-free-value-font-size">
+                    <input id="property-font-size-value" class="properties-input-text-font-size" type="text" value="12">
+                    <label class="properties-label-select" for="valueTypeFontSize"></label>
+                    <select id="property-font-size-value-type" class="properties-input-select-font-size" id="valueTypeFontSize">
+                        <option value="pt">pt</option>
+                        <option value="px">px</option>
+                        <option value="cm">cm</option>
+                        <option value="mm">mm</option>
+                        <option value="em">em</option>
+                        <option value="rem">rem</option>
+                        <option value="%">%</option>
+                    </select>
+                </div>
+
+                <!-- Menu da Direita [Input de Valor "Pré-Definido" de "font-size"] -->
+                <div class="properties-input-predefined-value-font-size">
+                    <label class="properties-label-select"></label>
+                    <select id="property-font-size-value-predefined" class="properties-input-select">
+                        <option value="nenhum">Nenhum</option>
+                        <option value="xx-small">xx-small</option>
+                        <option value="x-small">x-small</option>
+                        <option value="small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                        <option value="x-large">x-large</option>
+                        <option value="xx-large">xx-large</option>
+                        <option value="smaller">smaller</option>
+                        <option value="larger">larger</option>
+                    </select>
+                </div>
+            </div>
+        </div>
     </aside>
 </div>
 
@@ -120,4 +174,4 @@
 </footer>
 
 <!-- Meu Script -->
-<script src="/scripts/textApp/textAppPopup.js"></script>
+<script src="/scripts/textApp/textAppPropertyFontSize.js"></script>

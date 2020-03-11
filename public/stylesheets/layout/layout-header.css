@@ -1,21 +1,10 @@
 /* ================= Estilos padrão ================= */
 
-* {
-    margin: 0px;
-}
 body {
-    font-family: 'Times New Roman';
+    font-family: 'Open Sans';
+    font-size: 12pt;
     display: flex;
     flex-direction: column;
-}
-
-button {
-    border: none;
-    outline: none !important;
-}
-
-a, a:hover {
-    text-decoration: none;
 }
 
 /* ================================================== */
@@ -34,7 +23,7 @@ a, a:hover {
 
 .header-menu-logo, .header-menu-logo:hover {
     color: white;
-    font-family: 'Spartan', sans-serif;
+    font-family: 'Spartan';
     font-size: 20pt;
     /* Bloquear Seleção */
     user-select: none;

@@ -34,7 +34,7 @@
   background: rgba(52, 73, 94, 0);
 }
 ::-webkit-scrollbar-track:active {
-  background: #34495E;
+  background: rgba(52, 73, 94, 0.205);
 }
 ::-webkit-scrollbar-corner {
   background: transparent;

@@ -204,8 +204,9 @@ button[class^="textApp-aside-menu-left-aside-button-"]:hover>div[class^="textApp
 }
 
 label[for^="properties-change-"] {
+    font-family: 'Open Sans';
     color: #BDC3C7;
-    font-size: 12pt;
+    font-size: 11pt;
     letter-spacing: 1px;
     width: 100%;
     height: 50px;
@@ -232,10 +233,11 @@ label[for^="properties-change-"]:hover {
 
 .properties-change-syntax {
     font-size: 8pt;
-    font-family: monospace;
+    font-family: 'ComingoCode';
     align-self: flex-end;
     padding-right: 10px;
 }
+
 
 /* ================= Tornando o Menu lateral responsivo ================= */
 

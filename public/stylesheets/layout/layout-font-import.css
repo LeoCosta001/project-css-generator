@@ -57,3 +57,33 @@
     font-display: swap;
     src: url('../../fonts/Georgia/Georgia.ttf');
 }
+
+/* ================= ComingoCode ================= */
+
+@font-face {
+    font-family: 'ComingoCode';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../fonts/ComingoCode/CamingoCode-Regular.ttf');
+}
+
+/* ================= Monospace ================= */
+
+@font-face {
+    font-family: 'Monospace';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../fonts/Monospace/monospace.ttf');
+}
+
+/* ================= Spartan ================= */
+
+@font-face {
+    font-family: 'Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../../fonts/Spartan/Spartan-Regular.ttf');
+}

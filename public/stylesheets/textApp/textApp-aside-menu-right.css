@@ -1,8 +1,72 @@
-.textApp-aside-menu-right {
+/* ================= Menu da Direita Container ================= */
+
+.textApp-aside-menu-right-container {
     background-color: #2C3E50;
     color: white;
     height: 70vh;
     width: 300px;
+    display: flex;
+}
+
+/* Desativando o Display das propriedades */
+
+[class^="textApp-aside-menu-right-properties-"] {
+    display: none;
+}
+
+/*/\/\/\/\ Menu da Direita [Titulo] /\/\/\/\*/
+
+.textApp-properties-title {
+    background-color: #34495E;
+    color: #95A5A6;
+    /* Bloquear Seleção */
+    user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+.textApp-properties-title hr {
+    margin-top: -10px;
+    margin-bottom: 0px;
+}
+
+.textApp-properties-title>p:nth-child(1) {
+    color: #BDC3C7;
+    font-size: 18pt;
+    letter-spacing: 3px;
+    width: 300px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.textApp-properties-title>div {
+    font-family: 'ComingoCode';
+    padding-left: 7px;
+    padding-right: 7px;
+    display: flex;
+    justify-content: center;
+}
+
+.textApp-properties-title>div p {
+    margin-bottom: 0px;
+}
+
+/*/\/\/\/\ Menu da Direita [Propriedade "font-size"] /\/\/\/\*/
+
+/* Tipo de valor "Livre" */
+
+.properties-input-free-value-font-size {
+    display: flex;
+}
+
+/* Tipo de valor "Pré-Definido" */
+
+.properties-input-predefined-value-font-size {
+    display: none;
 }
 
 /* ================= Estabilizando Menu lateral ================= */
@@ -10,7 +74,7 @@
 /* /\/\/\/\ Largura <=  1023 /\/\/\/\ */
 
 @media (max-width: 1023px) {
-    .textApp-aside-menu-right {
+    .textApp-aside-menu-right-container {
         float: right;
     }
 }
@@ -18,7 +82,7 @@
 /* /\/\/\/\ Largura <=  699 /\/\/\/\ */
 
 @media (max-width: 699px) {
-    .textApp-aside-menu-right {
+    .textApp-aside-menu-right-container {
         height: 200px;
         width: 100%;
         display: block;
