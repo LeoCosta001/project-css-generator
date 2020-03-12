@@ -26,6 +26,7 @@ $('#properties-change-font-size').click(() => {
         textAppView.css('font-size', "");
         // Reset de valores
         propertiesReset('#property-font-size-value', 12, '#property-font-size-value-type', "pt", '#property-font-size-value-predefined', 'nenhum');
+        propertiesRemove('font-size');
     }
 });
 

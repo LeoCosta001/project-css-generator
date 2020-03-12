@@ -3,6 +3,7 @@ const textAppResultJS = document.querySelector('#textApp-footer-css-result');
 let currentProperties = [];
 
 //////////// Montando a estrutura de CSS para ser exibida no Textarea
+// Adicionar e Editar valores no Textarea (Esta é uma função de base para outras funções)
 function propertiesAtt(searchProperty, propertieNewValue) {
     let cssAllProperties = '';
     // Verificar se esta propriedade ja esta na array de listagem de propriedades
@@ -18,9 +19,9 @@ function propertiesAtt(searchProperty, propertieNewValue) {
                 let endPosition = fullString.indexOf(':') + 1;
                 return fullString.slice(0, endPosition);
             };
-            let teste = sliceProcess();
+
             // Fazendo a comparação de propriedades para aeditar/adicionar o novo valor
-            if (teste == `${searchProperty}:`) {
+            if (sliceProcess() == `${searchProperty}:`) {
                 currentProperties[i] = propertieNewValue;
                 searchPropertyStatus = true;
                 // Se não for encontrado nenhuma propriedade igual será adicionado um novo valor
@@ -36,6 +37,39 @@ function propertiesAtt(searchProperty, propertieNewValue) {
 
     // Etapa final: Adicionando a string no textarea
     textAppResultJS.innerHTML = cssAllProperties;
+};
+
+// Remover valores do Textarea
+function propertiesRemove(searchProperty) {
+
+    // Verificar se esta propriedade ja esta na array de listagem de propriedades
+    if (currentProperties.length != 0) {
+        let cssAllProperties = '';
+
+        for (i = 0; i < currentProperties.length; i++) {
+
+            // Recortando os valores da array para fazer a pesquisa
+            function sliceProcess() {
+                let fullString = currentProperties[i];
+                let endPosition = fullString.indexOf(':') + 1;
+                return fullString.slice(0, endPosition);
+            };
+
+            // Fazendo a comparação de propriedades para remover a propriedade encontrada
+            if (sliceProcess() == `${searchProperty}:`) {
+                currentProperties.splice(i, 1);
+            };
+        };
+
+        // Gerando a String de com as propriedades
+        for (i = 0; i < currentProperties.length; i++) {
+            cssAllProperties += `${currentProperties[i]};\n`;
+        };
+        console.log('Final')
+
+        // Etapa final: Adicionando a string no textarea
+        textAppResultJS.innerHTML = cssAllProperties;
+    };
 };
 
 //////////// Exibir as propriedades de CSS no textarea do rodapé 
