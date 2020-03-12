@@ -24,6 +24,7 @@
     overflow: auto;
     /* Reset de fonte */
     font-family: none;
+    font-size: 12;
 }
 
 /* CSS que será gerado */

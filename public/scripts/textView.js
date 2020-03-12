@@ -1,6 +1,10 @@
 // Texto de visualização
 const textAppView = $('#textAppView');
 
+$('.textApp-properties-title').click(() => {
+    $('.textApp-properties-content').slideToggle(200);
+})
+
 /* ################################################################# */
 /* ######################   MENU DA ESQUERDA   ##################### */
 /* ################################################################# */
@@ -10,7 +14,7 @@ const textAppView = $('#textAppView');
 
 $('#properties-change-font-size').click(() => {
     let propertiesChecked = $('#properties-change-font-size').prop('checked');
-    if (propertiesChecked) {
+    if (propertiesChecked == true) {
         let inputValue = $('#property-font-size-value').val();
         let inputValueType = $('#property-font-size-value-type').val();
         // Ativar o Display lateral esquerdo para inserir valores
@@ -19,7 +23,6 @@ $('#properties-change-font-size').click(() => {
         fontSizeValueFree();
         // Aplicar os valores padrões
         textAppView.css('font-size', inputValue + inputValueType);
-        propertiesInTextarea('font-size');
     } else {
         // Desativar o Display lateral direito e remover o atributo do CSS
         $('.textApp-aside-menu-right-properties-font-size').slideUp();
@@ -43,29 +46,23 @@ $('#button-predefined-value-font-size').click(() => {
 
 //////////// Ativando o botão de valores "Livre"
 $('#button-free-value-font-size').click(() => {
-    fontSizeValueFree();
+    fontSizeValueFree()
 });
 
 //////////// Aplicar os valores assim que eles forem alterados
 // Input de inserir Números
 $('#property-font-size-value').keyup(() => {
     propertiesApplyFreeValue('font-size', '#property-font-size-value', '#property-font-size-value-type');
-    propertiesInTextarea('font-size');
-
 });
 
 // Select de tipo de valor (Livre)
 $('#property-font-size-value-type').change(() => {
     propertiesApplyFreeValue('font-size', '#property-font-size-value', '#property-font-size-value-type');
-    propertiesInTextarea('font-size');
-
 });
 
 // Select de inserir valor (Pré-definido)
 $('#property-font-size-value-predefined').change(() => {
     propertiesApplyPredefinedValue('font-size', '#property-font-size-value-predefined', '#property-font-size-value', '#property-font-size-value-type');
-    propertiesInTextarea('font-size');
-
 });
 
 /* ################################################################# */
@@ -88,11 +85,6 @@ function propertiesApplyFreeValue(property, value, valueType) {
         $(value).addClass('invalidValue');
     };
 }
-
-// Esconder/Exibir Aba de valores
-$('.textApp-properties-title').click(() => {
-    $('.textApp-properties-content').slideToggle(200);
-})
 
 // Valor "pré-definido" (com "valor" e "tipo de valor")
 function propertiesApplyPredefinedValue(property, valuePredefined, value, valueType) {
@@ -117,23 +109,23 @@ $('#textApp-footer-text-edit').keyup(() => {
 
 //////////// Resetar Propriedades
 function propertiesReset(input01, newValue01, input02, newValue02, input03, newValue03, input04, newValue04, input05, newValue05) {
-    if (input01) {
+    if (input01 != false) {
         $(input01).val(newValue01);
     };
 
-    if (input02) {
+    if (input02 != false) {
         $(input02).val(newValue02);
     };
 
-    if (input03) {
+    if (input03 != false) {
         $(input03).val(newValue03);
     };
 
-    if (input04) {
+    if (input04 != false) {
         $(input04).val(newValue04);
     };
 
-    if (input05) {
+    if (input05 != false) {
         $(input05).val(newValue05);
     };
 };
@@ -141,22 +133,22 @@ function propertiesReset(input01, newValue01, input02, newValue02, input03, newV
 //////////// Alternar entre valores "livres" ou "Pré-Definidos" (Esta é uma função de base para outras funções)
 function buttonActiveValueType(buttonActive, displayActive, buttonEnable, displayEnable) {
     // Botão que será ativado
-    if (buttonActive) {
+    if (buttonActive != false) {
         $(buttonActive).addClass('properties-input-button-type-active')
     };
 
     // Display que será ativado
-    if (displayActive) {
+    if (displayActive != false) {
         $(displayActive).slideDown();
     };
 
     // Botão que será desativado
-    if (buttonEnable) {
+    if (buttonEnable != false) {
         $(buttonEnable).removeClass('properties-input-button-type-active')
     };
 
     // Display que será desativado
-    if (displayEnable) {
+    if (displayEnable != false) {
         $(displayEnable).slideUp();
     };
 };
