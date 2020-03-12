@@ -69,7 +69,7 @@ $('#property-font-size-value-predefined').change(() => {
 /* ########################  F U N Ç Õ E S  ######################## */
 
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
-/* /\/\/\/\/\/\/\/\/ Para todas as Propriedades  /\/\/\/\/\/\/\/\/ */
+/* /\/\/\/\/\/\/\/\/  Para todas as Propriedades  /\/\/\/\/\/\/\/\/\ */
 
 //////////// Aplicar valores ao serem alterados
 // Valor "livre" (com "valor" e "tipo de valor")
@@ -98,6 +98,14 @@ function propertiesApplyPredefinedValue(property, valuePredefined, value, valueT
         textAppView.css(property, inputValue + inputValueType);
     }
 }
+
+//*****////////// Editar texto do Container Central
+$('#textApp-footer-text-edit').keyup(() => {
+    console.log("teste");
+    textAppView.text(`${$('#textApp-footer-text-edit').val()}`);
+});
+
+//////////// Aplicar CSS no textarea do rodapé
 
 //////////// Resetar Propriedades
 function propertiesReset(input01, newValue01, input02, newValue02, input03, newValue03, input04, newValue04, input05, newValue05) {
