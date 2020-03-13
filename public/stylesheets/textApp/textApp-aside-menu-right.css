@@ -6,6 +6,7 @@
     height: 70vh;
     width: 300px;
     display: flex;
+    flex-direction: column;
 }
 
 /* Desativando o Display das propriedades */
@@ -16,8 +17,8 @@
 
 /*/\/\/\/\ Menu da Direita [Titulo] /\/\/\/\*/
 
-.textApp-properties-title {
-    background-color: #34495E;
+[class^="textApp-properties-title"] {
+    background-color: #34495e;
     color: #95A5A6;
     /* Bloquear Seleção */
     user-select: none;
@@ -28,12 +29,12 @@
     -webkit-user-select: none;
 }
 
-.textApp-properties-title hr {
+[class^="textApp-properties-title"] hr {
     margin-top: -10px;
     margin-bottom: 0px;
 }
 
-.textApp-properties-title>p:nth-child(1) {
+[class^="textApp-properties-title"]>p:nth-child(1) {
     color: #BDC3C7;
     font-size: 18pt;
     letter-spacing: 3px;
@@ -43,7 +44,7 @@
     justify-content: center;
 }
 
-.textApp-properties-title>div {
+[class^="textApp-properties-title"]>div {
     font-family: 'ComingoCode';
     padding-left: 7px;
     padding-right: 7px;
@@ -51,9 +52,11 @@
     justify-content: center;
 }
 
-.textApp-properties-title>div p {
+[class^="textApp-properties-title"]>div p {
     margin-bottom: 0px;
 }
+
+/* ###################  P R O P R I E D A D E S  ################### */
 
 /*/\/\/\/\ Menu da Direita [Propriedade "font-size"] /\/\/\/\*/
 
@@ -66,6 +69,34 @@
 /* Tipo de valor "Pré-Definido" */
 
 .properties-input-predefined-value-font-size {
+    display: none;
+}
+
+/*/\/\/\/\/\/\/\/\  "font-size" /\/\/\/\/\/\/\/\*/
+
+/* Tipo de valor "Livre" */
+
+.properties-input-free-value-font-size {
+    display: flex;
+}
+
+/* Tipo de valor "Pré-Definido" */
+
+.properties-input-predefined-value-font-size {
+    display: none;
+}
+
+/*/\/\/\/\/\/\/\/\  "color" /\/\/\/\/\/\/\/\*/
+
+/* Tipo de valor "Livre" */
+
+.properties-input-free-value-color {
+    display: flex;
+}
+
+/* Tipo de valor "Pré-Definido" */
+
+.properties-input-predefined-value-color {
     display: none;
 }
 

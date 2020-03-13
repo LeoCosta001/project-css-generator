@@ -109,21 +109,26 @@
         </div>
     </div>
 
+    <!-- #################################################################
+         #################### P R O P R I E D A D E S #################### -->
     <!-- Menu da Direita -->
     <aside class="textApp-aside-menu-right-container" spellcheck="false">
+
+        <!-- /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+             /\/\/\/\/\/\/\/\/\/\/\/\/  "font-size"  /\/\/\/\/\/\/\/\/\/\/\/\/ -->
 
         <!-- Menu da Direita [Propriedade "font-size"] -->
         <div class="textApp-aside-menu-right-properties-font-size">
 
             <!-- Menu da Direita [Titulo] de "font-size"-->
-            <div class="textApp-properties-title">
+            <div class="textApp-properties-title-font-size">
                 <p>Tamanho</p>
                 <hr>
                 <div>
                     <p>font-size</p>
                 </div>
             </div>
-            <div class="textApp-properties-content">
+            <div class="textApp-properties-content-font-size">
 
                 <!-- Menu da Direita [Tipo de valor de "font-size"] -->
                 <div class="properties-input-type-font-size">
@@ -168,6 +173,106 @@
                 </div>
             </div>
         </div>
+        <!-- /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+             /\/\/\/\/\/\/\/\/\/\/\/\/  "color"  /\/\/\/\/\/\/\/\/\/\/\/\/ -->
+
+        <!-- Menu da Direita [Propriedade "color"] -->
+        <div class="textApp-aside-menu-right-properties-color">
+
+            <!-- Menu da Direita [Titulo] de "color"-->
+            <div class="textApp-properties-title-color">
+                <p>Cor</p>
+                <hr>
+                <div>
+                    <p>color</p>
+                </div>
+            </div>
+            <div class="textApp-properties-content-color">
+
+                <!-- Menu da Direita [Tipo de valor de "color"] -->
+                <div class="properties-input-type-color">
+                    <input type="button" id="button-free-value-color"
+                        class="properties-input-type-free-value-color properties-input-button-type-active"
+                        value="Livre"></input>
+                    <input type="button" id="button-predefined-value-color"
+                        class="properties-input-type-predefined-value-color" value="Pré-definido"></input>
+                </div>
+
+                <!-- Menu da Direita [Input de Valor "Livre" de "color"] -->
+                <div class="properties-input-free-value-color">
+                    <input id="property-color-value"
+                        class="jscolor {onFineChange:'textAppTextColor(this)', hash:true, position:'left'} input-color-style"
+                        value="000000">
+                    <label class="properties-label-select" for="valueTypeFontSize"></label>
+                    <select id="property-color-value-type" class="properties-input-select-color" id="valueTypeFontSize">
+                        <option value="colorTypeHex">Hexadecimal</option>
+                        <option value="colorTypeRGB">RGB</option>
+                    </select>
+                </div>
+
+                <!-- Menu da Direita [Input de Valor "Pré-Definido" de "color"] -->
+                <div class="properties-input-predefined-value-color">
+                    <div id="property-color-value-example" class="input-example-color-style no-select">Exemplo</div></br>
+                    <label class="properties-label-select"></label>
+                    <select id="property-color-value-predefined" class="properties-input-select">
+                        <option value="nenhum">Nenhum</option>
+                        <optgroup label="Cores Básicas">
+                            <option value="yellow">Amarelo</option>
+                            <option value="blue">Azul</option>
+                            <option value="white">Branco</option>
+                            <option value="grey">Cinza</option>
+                            <option value="orange">Laranja</option>
+                            <option value="brown">Marrom</option>
+                            <option value="black">Preto</option>
+                            <option value="pink">Rosa</option>
+                            <option value="green">Verde</option>
+                            <option value="red">Vermelho</option>
+                        </optgroup>
+                        <optgroup label="Cores claras">
+                            <option value="lightyellow">Amarelo claro</option>
+                            <option value="lightblue">Azul claro</option>
+                            <option value="lightskyblue">Azul Céu claro</option>
+                            <option value="lightcyan">Ciano claro</option>
+                            <option value="lightslategrey">Cinza ardósia claro</option>
+                            <option value="lightgrey">Cinza claro</option>
+                            <option value="lightcoral">Coral claro</option>
+                            <option value="lightgoldenrodyellow">Dourado claro</option>
+                            <option value="lightpink">Rosa claro</option>
+                            <option value="lightsalmon">Salmão claro</option>
+                            <option value="lightgreen">Verde claro</option>
+                            <option value="lightseagreen">Verde mar claro</option>
+                        </optgroup>
+                        <optgroup label="Cores médias">
+                            <option value="mediumaquamarine">Água-marinha média</option>
+                            <option value="mediumblue">Azul médio</option>
+                            <option value="mediumspringgreen">Verde primavera médio</option>
+                            <option value="mediumslateblue">Azul ardósia médio</option>
+                            <option value="mediumorchid">Orquídea media</option>
+                            <option value="mediumturquoise">Turquesa médio</option>
+                            <option value="mediumpurple">Roxo médio</option>
+                            <option value="mediumvioletred">Vermelho violeta médio</option>
+                            <option value="mediumseagreen">Verde mar médio</option>
+                        </optgroup>
+                        <optgroup label="Cores Escuras">
+                            <option value="darkturquoise">Turquesa escuro</option>
+                            <option value="darkslateblue">Azul ardósia escuro</option>
+                            <option value="darkblue">Azul escuro</option>
+                            <option value="darkkhaki">Caqui escuro</option>
+                            <option value="darkslategrey">Cinza ardósia escuro</option>
+                            <option value="darkgrey">Cinza escuro</option>
+                            <option value="darkgoldenrod">Dourado escuro</option>
+                            <option value="darkorange">Laranja escuro</option>
+                            <option value="darkorchid">Orquídea escura</option>
+                            <option value="darksalmon">Salmão escuro</option>
+                            <option value="darkgreen">Verde escuro</option>
+                            <option value="darkseagreen">Verde mar escuro</option>
+                            <option value="darkolivegreen">Verde-Oliva escuro</option>
+                            <option value="darkviolet">Violeta escura</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+        </div>
     </aside>
 </div>
 
@@ -176,15 +281,19 @@
 
     <!-- Rodapé [Editor de Texto]-->
     <div class="textApp-footer-text-container">
-        <input type="text" id="textApp-footer-text-edit" class="textApp-footer-text-edit" value="Lorem Ipsum" placeholder="Insira um texto aqui">
+        <input type="text" id="textApp-footer-text-edit" class="textApp-footer-text-edit" value="Lorem Ipsum"
+            placeholder="Insira um texto aqui">
     </div>
 
     <!-- Rodapé [Resultado do CSS]-->
     <div class="textApp-footer-css-result-container">
-        <textarea id="textApp-footer-css-result" class="textApp-footer-css-result">Olá! Sou o campo de resultado :)</textarea>
+        <textarea id="textApp-footer-css-result" class="textApp-footer-css-result"
+            placeholder="Nenhuma propriedade foi adicionada"></textarea>
     </div>
 </footer>
 
 <!-- Meu Script -->
-<script src="/scripts/cssResult.js"></script>
+<script src="/scripts/jscolor.js"></script>
+<script src="/scripts/allProperties.js"></script>
 <script src="/scripts/textApp/textAppPropertyFontSize.js"></script>
+<script src="/scripts/textApp/textAppPropertyColor.js"></script>

@@ -24,6 +24,7 @@ input[class^="properties-input-text"]:focus {
 }
 
 /* Valor invalido (Classe Extra!) */
+
 .invalidValue {
     border-color: rgb(204, 46, 46) !important;
 }
@@ -33,7 +34,7 @@ input[class^="properties-input-text"]:focus {
 select[class^="properties-input-select"] {
     font-family: 'ComingoCode';
     border: none;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(255, 2, 2, 0);
     color: #BDC3C7;
     font-size: 11pt;
     letter-spacing: 1px;
@@ -58,10 +59,6 @@ select[class^="properties-input-select"] option {
     border: solid 1px #2ECC71;
 }
 
-select[class^="properties-input-select"] option:hover {
-    background-color: red;
-}
-
 /* Seta para baixo */
 
 .properties-label-select:after {
@@ -77,6 +74,11 @@ select[class^="properties-input-select"] option:hover {
     left: 5px;
 }
 
+/* Option Group */
+select[class^="properties-input-select"] optgroup {
+    background-color: rgb(45, 100, 136);
+    font-weight: lighter;
+}
 /* ================= Botão para selecionar o tipo de valor (Padrão ou pré-definido) ================= */
 
 /* Container */
@@ -92,7 +94,7 @@ div[class^="properties-input-type"] {
 
 /* Botão */
 
-[class^="properties-input-type-free"], [class^="properties-input-type-predefined"]{
+[class^="properties-input-type-free"], [class^="properties-input-type-predefined"] {
     border: none;
     outline: none;
     background-color: rgb(45, 100, 136);
@@ -110,7 +112,6 @@ div[class^="properties-input-type"] {
     background-color: rgb(45, 100, 136);
 }
 
-
 /* Botão Ativado (Classe Extra!) */
 
 .properties-input-button-type-active {
@@ -123,4 +124,40 @@ div[class^="properties-input-type"] {
 
 .properties-input-button-type-active:active {
     background-color: rgb(41, 122, 175);
+}
+
+/* ================= Input para seleção de Cores ================= */
+
+/* Input de palheta de cores */
+
+.input-color-style {
+    border: none;
+    text-align: center;
+    font-size: 10pt;
+    width: 140px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: solid 2px #34495E;
+    border-radius: 40px;
+    /* Reset */
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Div para demonstração de cores Pré-Definidas */
+
+.input-example-color-style {
+    font-size: 10pt;
+    width: 140px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: solid 2px #34495E;
+    border-radius: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
