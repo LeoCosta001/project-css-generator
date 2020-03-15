@@ -70,7 +70,7 @@ select[class^="properties-input-select"] option {
     border-right: 5px solid transparent;
     border-top: 5px solid #BDC3C7;
     position: relative;
-    bottom: -20px;
+    bottom: o20px;
     left: 5px;
 }
 

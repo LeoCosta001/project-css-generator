@@ -1,5 +1,5 @@
 const textAppViewJs = document.querySelector('#textAppView');
-const textAppResultJS = document.querySelector('#textApp-footer-css-result');
+const appView = document.querySelector('#textApp-footer-css-result');
 
 // Texto do container central
 const textAppView = $('#textAppView');
@@ -88,7 +88,7 @@ function buttonActiveValueType(buttonActive, displayActive, buttonEnable, displa
     };
 };
 
-//////////// Resetar Propriedades
+//////////// [1] Resetar Propriedades
 // Para usar basta colocar como primeiro parâmetro o ID do input e no segundo o novo valor (esta função reseta até 5 valores, mas depois usar array para fazer com um numero indeterminado de valores)
 function inputValueReset(input01, newValue01, input02, newValue02, input03, newValue03, input04, newValue04, input05, newValue05) {
     if (input01) {
@@ -112,7 +112,7 @@ function inputValueReset(input01, newValue01, input02, newValue02, input03, newV
     };
 };
 
-// Remover valores do Textarea
+// [2]Remover valores do Textarea
 function textareaPropertiesRemove(searchProperty) {
 
     // Verificar se esta propriedade ja esta na array de listagem de propriedades
@@ -140,12 +140,12 @@ function textareaPropertiesRemove(searchProperty) {
         };
 
         // Etapa final: Adicionando a string no textarea
-        textAppResultJS.innerHTML = cssAllProperties;
+        appView.innerHTML = cssAllProperties;
     };
 };
 
 //////////// Montando a estrutura de CSS para ser exibida no Textarea
-// Adicionar e Editar valores no Textarea (Esta é uma função de base para outras funções)
+// [3]Adicionar e Editar valores no Textarea (Esta é uma função de base para outras funções)
 function propertiesAtt(searchProperty, propertieNewValue) {
     let cssAllProperties = '';
     // Verificar se esta propriedade ja esta na array de listagem de propriedades
@@ -178,7 +178,7 @@ function propertiesAtt(searchProperty, propertieNewValue) {
     };
 
     // Etapa final: Adicionando a string no textarea
-    textAppResultJS.innerHTML = cssAllProperties;
+    appView.innerHTML = cssAllProperties;
 };
 
 //////////// Exibir as propriedades de CSS no textarea do rodapé 
