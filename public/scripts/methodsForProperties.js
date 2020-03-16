@@ -6,7 +6,7 @@ OBS: "Métodos internos" são os métodos que foram criados para serem usados po
 ========== Objeto: "allApp" ==========
 Descrição: Possui uma variedade de métodos que envolvem manipular objetos DOM e seus valores.
 Lista de Métodos:
-    - "inputValueReset(inputID, value)": Reseta valores dos input de propriedades.
+    - "inputValueReset(oddIDEvenValue)": Reseta valores dos input.
 
 ========== Objeto: "myProp" ==========
 Descrição: Os métodos aqui encontrados estão relacionados a manipulação das propriedades do "appView" e exibição destas propriedades no "cssCodeTextarea"
@@ -24,6 +24,7 @@ Lista de Métodos:
     - "inverter(value)": Caso o valor inserido seja "RGB" então será convertido para "Hexadecimal", mas caso seja um valor "Hexadecimal" então será convertido para "RGB"
     - "hexToRgb(value)": Converte um valor de cor "Hexadecimal" para "RGB".
     - "rgbToHex(value)": Converte um valor de cor "RGB" para "Hexadecimal".
+    - "valueTypeIdentify(value)": Define pelo "valueType" se o tipo de valor que deve ser retornado é RGB ou Hexadecimal.
     Métodos Internos:
     - "isHexadecimal(value)": Identifica se o valor informado é um código de cores em Hexadecimal válido (sendo string com ou sem Hashtag).
     - "isRGB(value)": Identifica se o valor informado é um código RGB válido (sendo string ou array de 3 index).
@@ -42,69 +43,42 @@ Lista de Métodos:
 /* ################################################################# */
 /* ##########################   allApp   ########################### */
 /* ################################################################# */
-
 let allApp = {
     // Selecionando o style do "appView"
-    appViewStyle: document.querySelector('#appView').style,
+    appView: document.querySelector('#textAppView'),
     /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
     /* /\/\/\/\/\/\/\/\/\/\/\/  Métodos de Reset  /\/\/\/\/\/\/\/\/\/\/\ */
 
-    //////////// [1] Resetar os valores dos inputs de Propriedades
-    // OBS: "inputId" é o ID do input que terá o valore substituido por "newValue"
-    inputValueReset(inputId01, newValue01, inputId02, newValue02, inputId03, newValue03, inputId04, newValue04, inputId05, newValue05) {
-        if (inputId01) {
-            $(inputId01).val(newValue01);
-        };
-
-        if (inputId02) {
-            $(inputId02).val(newValue02);
-        };
-
-        if (inputId03) {
-            $(inputId03).val(newValue03);
-        };
-
-        if (inputId04) {
-            $(inputId04).val(newValue04);
-        };
-
-        if (inputId05) {
-            $(inputId05).val(newValue05);
-        };
+    /* Descrição: Reseta valores dos input.
+    Valores Válidos: 
+        - Array (os valores nas posições Pares deverão ser os IDs dos Inputs e nas posições impares deverá ser os novos valore (OBS: Começa a contar do 0). */
+    inputValueReset(oddIDEvenValue) {
+        oddIDEvenValue.forEach((value, index) => {
+            if (index % 2 == 0) {
+                $(value).val(oddIDEvenValue[index + 1]);
+            }
+        });
     },
 
-    //////////// [2] Remover valores do cssCodeTextarea
-    // OBS: "propertyName" tem que ser uma string contendo apenas o nome da propriedade que será removida
-    /*cssCodeTextareaPropertiesRemove(propertyName) {
+    /* Descrição: Deixa um botão no estado de ativado e ativa também um display.
+    Valores Válidos para "buttonActiveID": 
+        - String (ID do botão que será ativado).
+    Valores Válidos para "displayActiveID": 
+        - String (ID do display que será ativado). */
+    buttonAndDisplayOn(buttonActiveID, displayActiveID) {
+        $(buttonActiveID).addClass('properties-input-button-type-active');
+        $(displayActiveID).slideDown();
+    },
 
-        // Verificar se esta propriedade ja esta na array "allApp.currentProperties"
-        if (allApp.currentProperties.length != 0) {
-            let cssAllProperties = '';
-
-            for (i = 0; i < allApp.currentProperties.length; i++) {
-
-                // Recortando os valores da array para fazer a pesquisa
-                function sliceProcess() {
-                    let fullString = allApp.currentProperties[i];
-                    let endPosition = fullString.indexOf(':') + 1;
-                    return fullString.slice(0, endPosition);
-                };
-
-                // Fazendo a comparação de propriedades para remover a propriedade encontrada
-                if (sliceProcess() == `${propertyName}:`) {
-                    allApp.currentProperties.splice(i, 1);
-                };
-            };
-
-            // Gerando a String de com as propriedades
-            for (i = 0; i < allApp.currentProperties.length; i++) {
-                cssAllProperties += `${allApp.currentProperties[i]};\n`;
-            };
-
-            // Etapa final: Adicionando a string no textarea
-            cssCodeTextarea.textEdit(cssAllProperties);
-        };
-    },*/
+    /* Descrição: Deixa um botão no estado de desativado e desativa também um display.
+    Valores Válidos para "buttonActiveID": 
+        - String (ID do botão que será ativado).
+    Valores Válidos para "displayActiveID": 
+        - String (ID do display que será ativado). */
+    buttonAndDisplayOff(buttonDisableID, displayDisableID) {
+        $(buttonDisableID).removeClass('properties-input-button-type-active')
+        $(displayDisableID).slideUp();
+    },
 };
 
 
@@ -138,7 +112,7 @@ let myProp = {
             cssCodeTextarea.propAtt(propName, concatAllProp)
         } else {
             concatAllProp = `${propName}: ${propValue}${propValueType}`;
-            concatPropValue = `${propValueType}${propValue}`;
+            concatPropValue = `${propValue}${propValueType}`;
             this.propCssAtt(propName, concatPropValue);
             cssCodeTextarea.propAtt(propName, concatAllProp)
         };
@@ -152,24 +126,20 @@ let myProp = {
         cssCodeTextarea.propRemove(propName)
 
         // Verificar se esta propriedade ja esta na array de listagem de propriedades
-        if (myProp.value.length == 0) {
-            console.log(`ERRO! Não é possivel excluir a propriedade "${propName}" porque a lista de propriedades esta vazia.`)
-        } else {
-            myProp.value.forEach((value, index) => {
+        myProp.value.forEach((value, index) => {
 
-                // Recortando os valores da array para fazer a pesquisa
-                function sliceProcess() {
-                    let fullString = value;
-                    let endPosition = fullString.indexOf(':') + 1;
-                    return fullString.slice(0, endPosition);
-                };
+            // Recortando os valores da array para fazer a pesquisa
+            function sliceProcess() {
+                let fullString = value;
+                let endPosition = fullString.indexOf(':') + 1;
+                return fullString.slice(0, endPosition);
+            };
 
-                // Fazendo a comparação de propriedades para apagar a propriedade encontrada
-                if (sliceProcess() == `${propName}:`) {
-                    myProp.value.slice(index, 1)[index];
-                };
-            });
-        };
+            // Fazendo a comparação de propriedades para apagar a propriedade encontrada
+            if (sliceProcess() == `${propName}:`) {
+                myProp.value.slice(index, 1)[index];
+            };
+        });
     },
     /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
     /* /\/\/\/\/\/\/\/\/\/\/\  Métodos Internos  /\/\/\/\/\/\/\/\/\/\/\/ */
@@ -184,37 +154,37 @@ let myProp = {
         switch (propName) {
             // Letra: C
             case 'color':
-                allApp.appViewStyle.color = propNewValue;
+                allApp.appView.style.color = propNewValue;
                 break;
             // Letra: F
             case 'font-size':
-                allApp.appViewStyle.fontSize = propNewValue;
+                allApp.appView.style.fontSize = propNewValue;
                 break;
             case 'font-style':
-                allApp.appViewStyle.fontStyle = propNewValue;
+                allApp.appView.style.fontStyle = propNewValue;
                 break;
             case 'font-shadow':
-                allApp.appViewStyle.fontShadow = propNewValue;
+                allApp.appView.style.fontShadow = propNewValue;
                 break;
             case 'font-family':
-                allApp.appViewStyle.fontFamily = propNewValue;
+                allApp.appView.style.fontFamily = propNewValue;
                 break;
             case 'font-variant':
-                allApp.appViewStyle.fontVariant = propNewValue;
+                allApp.appView.style.fontVariant = propNewValue;
                 break;
             case 'font-weight':
-                allApp.appViewStyle.fontWeight = propNewValue;
+                allApp.appView.style.fontWeight = propNewValue;
                 break;
             case 'font-stretch':
-                allApp.appViewStyle.fontStretch = propNewValue;
+                allApp.appView.style.fontStretch = propNewValue;
                 break;
             // Letra: L
             case 'letter-spacing':
-                allApp.appViewStyle.letterSpacing = propNewValue;
+                allApp.appView.style.letterSpacing = propNewValue;
                 break;
             // Letra: W
             case 'word-spacing':
-                allApp.appViewStyle.wordSpacing = propNewValue;
+                allApp.appView.style.wordSpacing = propNewValue;
                 break;
             default:
                 console.log(`ERRO! "${propName}" Não é o nome válido de propriedade.`)
@@ -290,6 +260,29 @@ let colorConverterTemp = {
         };
     },
 
+    /* Descrição: Define pelo "valueType" se o tipo de valor que deve ser retornado é RGB ou Hexadecimal.
+    Valores Válidos: 
+        - String ("colorTypeHex" para retornar Hexadecimal e "colorTypeRGB" para retornar RGB).
+    Return: String (Ex: "#F2F2F2" ou "rgb(123,231,102)") */
+    valueTypeIdentify(value, valueType) {
+        switch (valueType) {
+            case 'colorTypeHex':
+                // Converter o valor se for RGB
+                if (this.isRGB(value) == true) {
+                    value = this.rgbToHex(value);
+                };
+                break;
+            case 'colorTypeRGB':
+                // Converter o valor se for Hexadecimal
+                if (this.isHexadecimal(value) == true) {
+                    value = this.hexToRgb(value);
+                };
+                break;
+            default:
+                console.log(`ERRO! "${valueType}" Não é um tipo de valor válido para cores.`);
+        };
+        return value;
+    },
     /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
     /* /\/\/\/\/\/\/\/\/\/\/\  Métodos Internos  /\/\/\/\/\/\/\/\/\/\/\/ */
 
@@ -375,7 +368,7 @@ let cssCodeTextarea = {
         Valores Válidos: 
            - String (de preferência as propriedades CSS do "appView").*/
     textEdit(text) {
-        document.querySelector('#cssCodeTextarea').innerHTML = text;
+        $('#css-code-textarea').text(text);
     },
 
     /* Descrição: Adiciona/Altera uma das propriedades que estão na array do "myProp.value" (OBS: Este método é usado dentro dos métodos do "myProp").

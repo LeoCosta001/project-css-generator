@@ -3,6 +3,7 @@ const port = 3000;
 //Importando o Express
 const express = require('express');
 const app = express();
+const hbs = require('hbs');
 
 // Configurações
     // Diretório de Views
@@ -17,6 +18,8 @@ const app = express();
 
 // Rotas
 app.use('/', require('./routes/textApp'))
+
+hbs.registerPartials(__dirname + "/views/partials");
 
 // Ligar servidor
 app.listen(port, err => {

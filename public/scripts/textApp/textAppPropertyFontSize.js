@@ -6,30 +6,28 @@ const fontSizeStr = 'font-size';
 /* ################################################################# */
 
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
-/* /\/\/\/\/\/\/\/\/\/\  Uso de funções unicas  \/\/\/\/\/\/\/\/\/\/ */
+/* /\/\/\/\/\/\/\/\  Ativar/Desativar a propriedade  /\/\/\/\/\/\/\/ */
 
 // Seleção da Propriedade "font-size
 $('#properties-change-font-size').click(() => {
     let propertiesChecked = $('#properties-change-font-size').prop('checked');
+    let asideDisplay = $('.textApp-aside-menu-right-properties-font-size');
     if (propertiesChecked) {
-        let inputValue = $('#property-font-size-value').val();
-        let inputValueType = $('#property-font-size-value-type').val();
-        // Garantir que será exibido o conteudo das propriedades
-        $('.textApp-properties-content').slideDown(200);
         // Ativar o Display lateral esquerdo para inserir valores
-        $('.textApp-aside-menu-right-properties-font-size').slideDown();
+        asideDisplay.slideDown();
         // Ativar o tipo de valor "Livre"
-        fontSizeValueFree();
+        allApp.buttonAndDisplayOff('#button-predefined-value-font-size', '.properties-input-predefined-value-font-size');
+        allApp.buttonAndDisplayOn('#button-free-value-font-size', '.properties-input-free-value-font-size');
         // Aplicar os valores padrões
-        textAppView.css(fontSizeStr, inputValue + inputValueType);
-        propertiesInTextarea(fontSizeStr);
+        myProp.newValue(fontSizeStr, '12', 'pt');
     } else {
+        // Garantir que será exibido o conteudo das propriedades
+        $('.textApp-properties-content-font-size').slideDown();
         // Desativar o Display lateral direito e remover o atributo do CSS
-        $('.textApp-aside-menu-right-properties-font-size').slideUp();
-        textAppView.css(fontSizeStr, "");
+        asideDisplay.slideUp();
         // Reset de valores
-        inputValueReset('#property-font-size-value', 12, '#property-font-size-value-type', "pt", '#property-font-size-value-predefined', 'nenhum');
-        textareaPropertiesRemove(fontSizeStr);
+        allApp.inputValueReset(['#property-font-size-value', 12, '#property-font-size-value-type', "pt", '#property-font-size-value-predefined', 'nenhum']);
+        myProp.removeValue(fontSizeStr);
     }
 });
 
@@ -48,23 +46,30 @@ $('.textApp-properties-title-font-size').click(() => {
 //////////// Aplicar os valores assim que eles forem alterados
 // Input de inserir Números
 $('#property-font-size-value').keyup(() => {
-    propertiesApplyFreeValue(fontSizeStr, '#property-font-size-value', '#property-font-size-value-type');
-    propertiesInTextarea(fontSizeStr);
-
+    let propVal = $('#property-font-size-value').val();
+    let propValType = $('#property-font-size-value-type').val();
+    myProp.newValue(fontSizeStr, propVal, propValType);
 });
 
 // Select de tipo de valor (Livre)
 $('#property-font-size-value-type').change(() => {
-    propertiesApplyFreeValue(fontSizeStr, '#property-font-size-value', '#property-font-size-value-type');
-    propertiesInTextarea(fontSizeStr);
-
+    let propVal = $('#property-font-size-value').val();
+    let propValType = $('#property-font-size-value-type').val();
+    myProp.newValue(fontSizeStr, propVal, propValType);
 });
 
 // Select de inserir valor (Pré-definido)
 $('#property-font-size-value-predefined').change(() => {
-    propertiesApplyPredefinedValue(fontSizeStr, '#property-font-size-value-predefined', '#property-font-size-value', '#property-font-size-value-type');
-    propertiesInTextarea(fontSizeStr);
+    let propVal = $('#property-font-size-value').val();
+    let propValType = $('#property-font-size-value-type').val();
+    let propValPredefined = $('#property-font-size-value-predefined').val();
 
+    if (propValPredefined == 'nenhum') {
+        myProp.newValue(fontSizeStr, propVal, propValType);
+
+    } else {
+        myProp.newValue(fontSizeStr, propValPredefined);
+    };
 });
 
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
@@ -72,38 +77,13 @@ $('#property-font-size-value-predefined').change(() => {
 
 //////////// Ativando o botão de valores "Pré-Definidos"
 $('#button-predefined-value-font-size').click(() => {
-    fontSizeValuePredefined()
+    allApp.buttonAndDisplayOff('#button-free-value-font-size', '.properties-input-free-value-font-size');
+    allApp.buttonAndDisplayOn('#button-predefined-value-font-size', '.properties-input-predefined-value-font-size');
 });
 
 //////////// Ativando o botão de valores "Livre"
 $('#button-free-value-font-size').click(() => {
-    fontSizeValueFree();
+    allApp.buttonAndDisplayOff('#button-predefined-value-font-size', '.properties-input-predefined-value-font-size');
+    allApp.buttonAndDisplayOn('#button-free-value-font-size', '.properties-input-free-value-font-size');
 });
-
-
-/* ################################################################# */
-/* ########################  F U N Ç Õ E S  ######################## */
-
-/* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
-/* /\/\/\/\/\/\/\/\/  Propriedade "font-size"  /\/\/\/\/\/\/\/\/ */
-
-//////////// Ativando tipo de valores de font-size para "livre" 
-function fontSizeValueFree() {
-    buttonActiveValueType(
-        '#button-free-value-font-size',
-        '.properties-input-free-value-font-size',
-        '#button-predefined-value-font-size',
-        '.properties-input-predefined-value-font-size'
-    );
-};
-
-//////////// Ativando o tipo de valores de font-size para "livre" 
-function fontSizeValuePredefined() {
-    buttonActiveValueType(
-        '#button-predefined-value-font-size',
-        '.properties-input-predefined-value-font-size',
-        '#button-free-value-font-size',
-        '.properties-input-free-value-font-size'
-    );
-};
 
