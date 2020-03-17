@@ -1,6 +1,6 @@
 /* ================= Footer Container ================= */
 
-.textApp-footer-container {
+.footer__container {
     background-color: #2C3E50;
     color: red;
     display: flex;
@@ -10,7 +10,7 @@
 
 /*/\/\/\/\ Rodapé [Editor de Texto] /\/\/\/\*/
 
-.textApp-footer-text-container {
+.footer__text__edit__container {
     background-color: #3498DB;
     height: 30px;
     padding: 5px;
@@ -21,7 +21,7 @@
     border-bottom: solid 1px rgb(36, 51, 66);
 }
 
-.textApp-footer-text-edit {
+.footer__text__edit {
     outline: none;
     border: none;
     background-color: white;
@@ -37,14 +37,14 @@
 
 /*/\/\/\/\ Rodapé [Resultado do CSS] /\/\/\/\*/
 
-.textApp-footer-css-result-container {
+.css__result__container {
     background-color: #2C3E50;
     padding: 15px;
     display: flex;
     justify-content: center;
 }
 
-.textApp-footer-css-result {
+.allApp__css__result {
     outline: none;
     resize: none;
     border: none;
@@ -59,7 +59,7 @@
 
 /* Alterar Scrollbar dentro do textarea */
 
-.textApp-footer-css-result::-webkit-scrollbar {
+.allApp__css__result::-webkit-scrollbar {
     background-color: #ECF0F1;
     border-radius: 40px;
 }

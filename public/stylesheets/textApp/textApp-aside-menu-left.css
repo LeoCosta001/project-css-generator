@@ -1,6 +1,6 @@
 /*/\/\/\/\ Menu da Esquerda [Container] /\/\/\/\*/
 
-.textApp-aside-menu-left {
+.aside__propGroup__container {
     background-color: #2C3E50;
     color: white;
     height: 70vh;
@@ -8,9 +8,9 @@
     display: flex;
 }
 
-/* ================= Menu da Esquerda [Primario] ================= */
+/* ================= Menu de grupos de propriedades [Primario] ================= */
 
-.textApp-aside-menu-left-container-primary {
+.propGroup__select__container {
     background-color: #34495E;
     width: 50px;
     height: 70vh;
@@ -22,14 +22,13 @@
 
 /*/\/\/\/\ Menu da Esquerda [Botões da esquerda] /\/\/\/\*/
 
-[class^="textApp-aside-menu-left-aside-button-"] {
+.propGroup__select__container button {
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 35px;
     height: 45px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px -2px;
     border-top: solid 1px rgba(36, 51, 66, 0);
     border-bottom: solid 1px rgba(36, 51, 66, 0);
     z-index: 100;
@@ -40,39 +39,29 @@
     -o-transition: 0.1s ease-in;
 }
 
-button[class^="textApp-aside-menu-left-aside-button-"]:hover {
+.propGroup__select__container button:hover {
     background-size: 50px;
     background-color: #3498DB;
-    border-top: solid 1px rgb(36, 51, 66);
+    border-top: 1px 0px solid  rgb(36, 51, 66);
     border-bottom: solid 1px rgb(36, 51, 66);
 }
 
 /* Popup dos botões */
 
-div[class^="textApp-aside-menu-left-aside-popup-button-"] {
+ .propGroup__popup {
     background-color: rgba(52, 152, 219, 0);
     color: rgba(255, 255, 255, 0);
     letter-spacing: 1px;
-    height: 45px;
-    border-right: solid 2px rgba(36, 51, 66, 0);
-    border-top: solid 1px rgba(36, 51, 66, 0);
-    border-bottom: solid 1px rgba(36, 51, 66, 0);
+    height: 46px;
+    border: 1px 2px solid 2px rgba(36, 51, 66, 0);
     border-radius: 0px 40px 40px 0px;
-    margin-top: -2px;
-    margin-left: -100px;
+    margin: -3px 0px 0px -100px;
     padding: 5px;
     padding-left: 15px;
     padding-right: 15px;
     align-items: center;
     display: flex;
     float: left;
-    /* Bloquear Seleção */
-    user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
     /* Transação */
     transition: 0.1s ease-in;
     -webkit-transition: 0.1s ease-in;
@@ -80,7 +69,7 @@ div[class^="textApp-aside-menu-left-aside-popup-button-"] {
     -o-transition: 0.1s ease-in;
 }
 
-button[class^="textApp-aside-menu-left-aside-button-"]:hover>div[class^="textApp-aside-menu-left-aside-popup-button-"] {
+.propGroup__select__container button:hover> .propGroup__popup {
     background-color: rgb(52, 152, 219);
     color: rgb(255, 255, 255);
     border-right: solid 2px rgb(36, 51, 66);
@@ -91,43 +80,43 @@ button[class^="textApp-aside-menu-left-aside-button-"]:hover>div[class^="textApp
 
 /* Imagens dos botões */
 
-.textApp-aside-menu-left-aside-button-text {
+.propGroup__button__text {
     background-image: url('../../images/allApp/menu-left/text.png');
 }
 
-.textApp-aside-menu-left-aside-button-gradient {
+.propGroup__button__gradient {
     background-image: url('../../images/allApp/menu-left/gradient.png');
 }
 
-.textApp-aside-menu-left-aside-button-border {
+.propGroup__button__border {
     background-image: url('../../images/allApp/menu-left/border.png');
 }
 
-.textApp-aside-menu-left-aside-button-shadow {
+.propGroup__button__shadow {
     background-image: url('../../images/allApp/menu-left/shadow.png');
 }
 
-.textApp-aside-menu-left-aside-button-transform {
+.propGroup__button__transform {
     background-image: url('../../images/allApp/menu-left/transform.png');
 }
 
-.textApp-aside-menu-left-aside-button-column {
+.propGroup__button__column {
     background-image: url('../../images/allApp/menu-left/column.png');
 }
 
 /* Botão ativado */
 
-.textApp-aside-menu-left-aside-button-text {
+.propGroup__button__text {
     background-color: #3498DB;
     border-top: solid 1px rgb(36, 51, 66);
     border-bottom: solid 1px rgb(36, 51, 66);
 }
 
-/* ================= Menu da Esquerda [Secundario] ================= */
+/* ================= Menu de seleção de propriedades [Secundario] ================= */
 
-/*/\/\/\/\ Menu da Esquerda [Botões de cima] /\/\/\/\*/
+/*/\/\/\/\ Menu de configurações /\/\/\/\*/
 
-.textApp-aside-menu-left-top-button {
+.settings__buttons {
     background-color: #34495E;
     width: 250px;
     height: 40px;
@@ -135,7 +124,7 @@ button[class^="textApp-aside-menu-left-aside-button-"]:hover>div[class^="textApp
     display: flex;
 }
 
-[class^="textApp-aside-menu-left-top-button-"] {
+.settings__buttons button {
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
@@ -144,41 +133,41 @@ button[class^="textApp-aside-menu-left-aside-button-"]:hover>div[class^="textApp
     flex: 1;
 }
 
-.textApp-aside-menu-left-top-button-info {
+.settings__buttons__info {
     background-image: url('../../images/allApp/allApp-menu-left-buttons-info-off.png');
 }
 
-.textApp-aside-menu-left-top-button-info:hover {
+.settings__buttons__info:hover {
     background-image: url('../../images/allApp/allApp-menu-left-buttons-info-on.png');
 }
 
-.textApp-aside-menu-left-top-button-reset {
+.settings__buttons__reset {
     background-image: url('../../images/allApp/allApp-menu-left-buttons-reset-off.png');
 }
 
-.textApp-aside-menu-left-top-button-reset:hover {
+.settings__buttons__reset:hover {
     background-image: url('../../images/allApp/allApp-menu-left-buttons-reset-on.png');
 }
 
-.textApp-aside-menu-left-top-button-settings {
+.settings__buttons__settings {
     background-image: url('../../images/allApp/allApp-menu-left-buttons-settings-off.png');
 }
 
-.textApp-aside-menu-left-top-button-settings:hover {
+.settings__buttons__settings:hover {
     background-image: url('../../images/allApp/allApp-menu-left-buttons-settings-on.png');
 }
 
-.textApp-aside-menu-left-top-button-example {
+.settings__buttons__example {
     background-image: url('../../images/allApp/allApp-menu-left-buttons-example-off.png');
 }
 
-.textApp-aside-menu-left-top-button-example:hover {
+.settings__buttons__example:hover {
     background-image: url('../../images/allApp/allApp-menu-left-buttons-example-on.png');
 }
 
 /*/\/\/\/\ Menu da Esquerda [Seleção de Propriedades] /\/\/\/\*/
 
-.textApp-aside-menu-left-properties-container {
+.prop__checkbox__container {
     height: calc(70vh - 40px);
     display: flex;
     flex-direction: column;
@@ -186,7 +175,7 @@ button[class^="textApp-aside-menu-left-aside-button-"]:hover>div[class^="textApp
     border-right: solid 3px transparent;
 }
 
-.textApp-aside-menu-left-properties-title {
+.prop__checkbox__title {
     color: #95A5A6;
     text-align: center;
     font-size: 10pt;
@@ -194,35 +183,19 @@ button[class^="textApp-aside-menu-left-aside-button-"]:hover>div[class^="textApp
     width: 100%;
     padding-top: 5px;
     border-bottom: solid 1px rgb(36, 51, 66);
-    /* Bloquear Seleção */
-    user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
 }
 
 label[for^="properties-change-"] {
-    font-family: 'Open Sans';
+    font: 11pt 'Open Sans';
     color: #BDC3C7;
-    font-size: 11pt;
     letter-spacing: 1px;
     width: 100%;
     height: 50px;
-    padding-left: 50px;
-    padding-top: 4px;
+    padding: 4px 0px 0px 50px;
     margin-bottom: 0px;
     border-bottom: solid 1px rgb(36, 51, 66);
     display: flex;
     flex-direction: column;
-    /* Bloquear Seleção */
-    user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
 }
 
 label[for^="properties-change-"]:hover {
@@ -231,11 +204,11 @@ label[for^="properties-change-"]:hover {
 
 /* Texto de Sintaxe das propriedades */
 
-.properties-change-syntax {
-    font-size: 8pt;
-    font-family: 'ComingoCode';
+.prop__checkbox__syntax {
+    font: 8pt 'ComingoCode';
     align-self: flex-end;
     padding-right: 10px;
+    margin-top: 5px;
 }
 
 /* ================= Tornando o Menu lateral responsivo ================= */
@@ -243,7 +216,7 @@ label[for^="properties-change-"]:hover {
 /* /\/\/\/\ Largura <=  1023 /\/\/\/\ */
 
 @media (max-width: 1023px) {
-    .textApp-aside-menu-left {
+    .aside__propGroup__container {
         width: 100%;
         height: 90px;
         display: flex;
@@ -251,49 +224,47 @@ label[for^="properties-change-"]:hover {
         flex-wrap: wrap;
     }
     /*/\/\/\/\ Menu da Esquerda [Primario] /\/\/\/\*/
-    .textApp-aside-menu-left-container-primary {
+    .propGroup__select__container {
         height: 40px;
         border-bottom: solid 1px rgb(36, 51, 66);
         border-right: none;
         flex-direction: row;
         width: calc(100vw - 258px);
     }
-    [class^="textApp-aside-menu-left-aside-button-"] {
+    .propGroup__select__container button {
         height: 39px;
         width: 50px;
-        border-radius: 5px;
-        margin-left: 2px;
-        margin-right: 2px;
         margin-top: 0px;
+        border-radius: 5px;
         flex: 1;
     }
     /* Ao passar o mouse nos botões */
-    button[class^="textApp-aside-menu-left-aside-button-"]:hover {
+    .propGroup__select__container button:hover {
         background-color: #3498DB;
         border-bottom: none;
         border-top: none;
         background-size: 50px;
     }
     /* Desativando popup flutuantes dos botões */
-    div[class^="textApp-aside-menu-left-aside-popup-button-"] {
+     .propGroup__popup {
         display: none;
     }
     /* Botão ativado */
-    .textApp-aside-menu-left-aside-button-text {
+    .propGroup__button__text {
         background-color: #3498DB;
         border-top: none;
         border-bottom: none;
     }
-    /*/\/\/\/\ Menu da Esquerda [Secundario] /\/\/\/\*/
+    /*/\/\/\/\ Menu de seleção de propriedades [Secundario] /\/\/\/\*/
     /* Botões de cima */
-    .textApp-aside-menu-left-top-button {
+    .settings__buttons {
         width: 250px;
         height: 40px;
         border-bottom: solid 1px rgb(36, 51, 66);
         display: flex;
     }
     /* Seleção de Propriedades */
-    .textApp-aside-menu-left-properties-container {
+    .prop__checkbox__container {
         height: 50px;
         width: 100%;
         display: flex;
@@ -305,20 +276,21 @@ label[for^="properties-change-"]:hover {
         left: 0px;
     }
     /* Texto: "Selecione uma propriedade" */
-    .textApp-aside-menu-left-properties-title {
+    .prop__checkbox__title {
         display: none;
     }
     /* Seleção de propriedades */
     label[for^="properties-change-"] {
         white-space: nowrap;
         height: 40px;
+        margin-bottom: 0px;
         padding-top: 8px;
         padding-right: 25px;
         padding-left: 50px;
         border-bottom: solid 1px transparent;
     }
     /* Sintaxe das propriedades */
-    .properties-change-syntax {
+    .prop__checkbox__syntax {
         display: none;
     }
 }

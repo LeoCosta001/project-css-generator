@@ -1,6 +1,6 @@
 /* Label */
 
-[for^="properties-change-"] {
+.prop__checkbox__label {
     font-family: arial;
     display: block;
     position: relative;
@@ -11,13 +11,13 @@
 
 /* Botão padrão do checkbox */
 
-[for^="properties-change-"] input {
+.prop__checkbox__label input {
     display: none
 }
 
 /* Bootão personalizado do chackbox */
 
-.properties-change-indicator {
+.checkbox__icon {
     margin-left: 15px;
     position: absolute;
     top: 6px;
@@ -31,19 +31,19 @@
 
 /* Altera a cor do checkbox quando passar o mouse em cima */
 
-[for^="properties-change-"]:hover input~.properties-change-indicator, [for^="properties-change-"] input:focus~.properties-change-indicator {
+.prop__checkbox__label:hover input~.checkbox__icon, .prop__checkbox__label input:focus~.checkbox__icon {
     background: #cccccc;
 }
 
 /* Cor do botão quando ele estiver com "checked" ativado */
 
-[for^="properties-change-"] input:checked~.properties-change-indicator {
+.prop__checkbox__label input:checked~.checkbox__icon {
     background: #3498DB;
 }
 
 /* Cor do checkbox com as 2 propriedades juntas: "checked" e "disabled" */
 
-[for^="properties-change-"] input:disabled~.properties-change-indicator {
+.prop__checkbox__label input:disabled~.checkbox__icon {
     background: #e6e6e6;
     opacity: 0.6;
     pointer-events: none;
@@ -51,18 +51,18 @@
 
 /* Desenhando o indicador de "OK */
 
-.properties-change-indicator:after {
+.checkbox__icon:after {
     box-sizing: unset;
     content: '';
     position: absolute;
     display: none;
 }
 
-[for^="properties-change-"] input:checked~.properties-change-indicator:after {
+.prop__checkbox__label input:checked~.checkbox__icon:after {
     display: block;
 }
 
-[for^="properties-change-"] .properties-change-indicator:after {
+.prop__checkbox__label .checkbox__icon:after {
     left: 7px;
     top: 3px;
     width: 3px;
@@ -74,7 +74,7 @@
 
 /* Cor do "OK" do chackbox que tem as 2 propriedader: "checked" e "disabled" */
 
-[for^="properties-change-"] input:disabled~.properties-change-indicator:after {
+.prop__checkbox__label input:disabled~.checkbox__icon:after {
     border-color: #7b7b7b;
 }
 
@@ -82,7 +82,7 @@
 
 @media (max-width: 1023px) {
     /* Reposicionando os Checkbos */
-    .properties-change-indicator {
+    .checkbox__icon {
         top: 10px;
         left: 10px;
     }

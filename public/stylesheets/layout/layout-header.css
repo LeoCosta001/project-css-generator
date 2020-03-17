@@ -1,26 +1,6 @@
-/* ================= Estilos padrão ================= */
+/*  Menu superior  */
 
-body {
-    font-family: 'Open Sans';
-    font-size: 12pt;
-    display: flex;
-    flex-direction: column;
-    /* Desativar ações de touch para não bugar o jscolor (ação temporario) */
-}
-
-.no-select {
-    /* Bloquear Seleção */
-    user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-}
-
-/* ================================================== */
-
-.header-menu {
+.header__container {
     color: white;
     background-color: #3498DB;
     width: 100%;
@@ -31,63 +11,38 @@ body {
     border-bottom: solid 1px rgb(36, 51, 66);
 }
 
-/* ================= Logo do Menu ================= */
+/*  Logo do Menu  */
 
-.header-menu-logo, .header-menu-logo:hover {
+.header__logo, .header__logo:hover {
     color: white;
-    font-family: 'Spartan';
-    font-size: 20pt;
-    /* Bloquear Seleção */
-    user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
+    font: 20pt 'Spartan';
 }
 
-/* ================================================== */
-
-.header-menu-left {
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 5px;
+.header__logo__container {
+    padding: 5px 0px 0px 50px;
     flex: 1;
 }
 
-.header-menu-social {
+/* Icones Sociais */
+
+.header__social {
     text-align: right;
     padding-right: 50px;
     flex: 1;
 }
 
-/* ================= Icones Sociais ================= */
-
-.header-menu-social-image {
+.header__social img {
     height: 25px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0px 10px;
     transition: 0.1s ease-in;
-    /* Bloquear Seleção */
-    user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
 }
 
-.header-menu-social-image:hover {
+.header__social img:hover {
     height: 35px;
-    margin-top: -10px;
-    margin-bottom: -10px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: -10px 5px -10px 5px;
     /* Transação */
     transition: 0.1s ease-in;
     -webkit-transition: 0.1s ease-in;
     -moz-transition: 0.1s ease-in;
     -o-transition: 0.1s ease-in;
 }
-
-/* ================================================== */

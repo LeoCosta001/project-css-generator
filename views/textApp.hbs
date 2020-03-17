@@ -2,293 +2,155 @@
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-container.css">
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-aside-menu-left.css">
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-container-center.css">
-<link rel="stylesheet" href="/stylesheets/textApp/textApp-aside-menu-right.css">
+<link rel="stylesheet" href="/stylesheets/textApp/allApp-prop-settings.css">
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-footer-container.css">
 <link rel="stylesheet" href="/stylesheets/allApp/allApp-properties-chackbox.css">
 <link rel="stylesheet" href="/stylesheets/allApp/allApp-properties-input.css">
+<div class="app__container">
+    <!-- Menu da Esquerda/Topo [Container]-->
+    <aside class="aside__propGroup__container">
 
-<div class="textApp-container-large">
-    <!-- Menu da Esquerda [Container]-->
-    <aside class="textApp-aside-menu-left">
-
-        <!-- Menu da Esquerda [Primario] -->
-        <div class="textApp-aside-menu-left-container-primary">
+        <!-- Menu de Grupo de propriedades [Primario] -->
+        <div class="propGroup__select__container">
             <!-- Menu da Esquerda [Botões da esquerda] -->
-            <button class="textApp-aside-menu-left-aside-button-text">
-                <div class="textApp-aside-menu-left-aside-popup-button-text">Texto</div>
+            <button class="propGroup__button__text">
+                <div class="propGroup__popup no-select">Texto</div>
             </button>
-            <button class="textApp-aside-menu-left-aside-button-gradient">
-                <div class="textApp-aside-menu-left-aside-popup-button-gradient">Gradiente</div>
+            <button class="propGroup__button__gradient">
+                <div class="propGroup__popup no-select">Gradiente</div>
             </button>
-            <button class="textApp-aside-menu-left-aside-button-border">
-                <div class="textApp-aside-menu-left-aside-popup-button-border">Borda</div>
+            <button class="propGroup__button__border">
+                <div class="propGroup__popup no-select">Borda</div>
             </button>
-            <button class="textApp-aside-menu-left-aside-button-shadow">
-                <div class="textApp-aside-menu-left-aside-popup-button-shadow">Sombra</div>
+            <button class="propGroup__button__shadow">
+                <div class="propGroup__popup no-select">Sombra</div>
             </button>
-            <button class="textApp-aside-menu-left-aside-button-transform">
-                <div class="textApp-aside-menu-left-aside-popup-button-transform">Transformação</div>
+            <button class="propGroup__button__transform">
+                <div class="propGroup__popup no-select">Transformação</div>
             </button>
-            <button class="textApp-aside-menu-left-aside-button-column">
-                <div class="textApp-aside-menu-left-aside-popup-button-column">Coluna</div>
+            <button class="propGroup__button__column">
+                <div class="propGroup__popup no-select">Coluna</div>
             </button>
         </div>
 
-        <!-- Menu da Esquerda [Secundario] -->
-        <div class="textApp-aside-menu-left-container-secundary">
+        <!-- Menu de seleção de propriedades [Secundario] -->
+        <div class="prop__select__container">
 
-            <!-- Menu da Esquerda [Botões de cima] -->
-            <div class="textApp-aside-menu-left-top-button">
-                <button class="textApp-aside-menu-left-top-button-info"></button>
-                <button class="textApp-aside-menu-left-top-button-reset"></button>
-                <button class="textApp-aside-menu-left-top-button-settings"></button>
-                <button class="textApp-aside-menu-left-top-button-example"></button>
+            <!-- Menu de configurações -->
+            <div class="settings__buttons">
+                <button class="settings__buttons__info"></button>
+                <button class="settings__buttons__reset"></button>
+                <button class="settings__buttons__settings"></button>
+                <button class="settings__buttons__example"></button>
             </div>
 
             <!-- Menu da Esquerda [Seleção de Propriedades] -->
-            <div class="textApp-aside-menu-left-properties-container">
-                <div class="textApp-aside-menu-left-properties-title">
+            <div class="prop__checkbox__container">
+                <div class="prop__checkbox__title no-select">
                     <p>Escolha as propriedades</p>
                 </div>
-                <label for="properties-change-color"><input type="checkbox" id="properties-change-color">Cor
-                    <p class="properties-change-syntax">color</p>
-                    <div class="properties-change-indicator"></div>
+                <label class="prop__checkbox__label no-select" for="properties-change-color"><input type="checkbox"
+                        id="properties-change-color">Cor
+                    <p class="prop__checkbox__syntax">color</p>
+                    <div class="checkbox__icon"></div>
                 </label>
-                <label for="properties-change-font-size"><input type="checkbox" id="properties-change-font-size">Tamanho
-                    <p class="properties-change-syntax">font-size</p>
-                    <div class="properties-change-indicator"></div>
+                <label class="prop__checkbox__label no-select" for="properties-change-font-size"><input type="checkbox"
+                        id="properties-change-font-size">Tamanho
+                    <p class="prop__checkbox__syntax">font-size</p>
+                    <div class="checkbox__icon"></div>
                 </label>
-                <label for="properties-change-font-style"><input type="checkbox"
+                <label class="prop__checkbox__label no-select" for="properties-change-font-style"><input type="checkbox"
                         id="properties-change-font-style">Estilo
-                    <p class="properties-change-syntax">font-style</p>
-                    <div class="properties-change-indicator"></div>
+                    <p class="prop__checkbox__syntax">font-style</p>
+                    <div class="checkbox__icon"></div>
                 </label>
-                <label for="properties-change-text-shadow"><input type="checkbox"
-                        id="properties-change-text-shadow">Sombra
-                    <p class="properties-change-syntax">text-shadow</p>
-                    <div class="properties-change-indicator"></div>
+                <label class="prop__checkbox__label no-select" for="properties-change-text-shadow"><input
+                        type="checkbox" id="properties-change-text-shadow">Sombra
+                    <p class="prop__checkbox__syntax">text-shadow</p>
+                    <div class="checkbox__icon"></div>
                 </label>
-                <label for="properties-change-font-family"><input type="checkbox"
-                        id="properties-change-font-family">Tipo de Fonte
-                    <p class="properties-change-syntax">font-family</p>
-                    <div class="properties-change-indicator"></div>
+                <label class="prop__checkbox__label no-select" for="properties-change-font-family"><input
+                        type="checkbox" id="properties-change-font-family">Tipo de Fonte
+                    <p class="prop__checkbox__syntax">font-family</p>
+                    <div class="checkbox__icon"></div>
                 </label>
-                <label for="properties-change-font-variant"><input type="checkbox"
-                        id="properties-change-font-variant">Variação da Fonte
-                    <p class="properties-change-syntax">font-variant</p>
-                    <div class="properties-change-indicator"></div>
+                <label class="prop__checkbox__label no-select" for="properties-change-font-variant"><input
+                        type="checkbox" id="properties-change-font-variant">Variação da Fonte
+                    <p class="prop__checkbox__syntax">font-variant</p>
+                    <div class="checkbox__icon"></div>
                 </label>
-                <label for="properties-change-font-weight"><input type="checkbox"
-                        id="properties-change-font-weight">Espessura
-                    <p class="properties-change-syntax">font-weight</p>
-                    <div class="properties-change-indicator"></div>
+                <label class="prop__checkbox__label no-select" for="properties-change-font-weight"><input
+                        type="checkbox" id="properties-change-font-weight">Espessura
+                    <p class="prop__checkbox__syntax">font-weight</p>
+                    <div class="checkbox__icon"></div>
                 </label>
-                <label for="properties-change-font-stretch"><input type="checkbox"
-                        id="properties-change-font-stretch">Expanção e Retração
-                    <p class="properties-change-syntax">font-stretch</p>
-                    <div class="properties-change-indicator"></div>
+                <label class="prop__checkbox__label no-select" for="properties-change-font-stretch"><input
+                        type="checkbox" id="properties-change-font-stretch">Expanção e Retração
+                    <p class="prop__checkbox__syntax">font-stretch</p>
+                    <div class="checkbox__icon"></div>
                 </label>
-                <label for="properties-change-letter-spacing"><input type="checkbox"
-                        id="properties-change-letter-spacing">Espaço entre Letras
-                    <p class="properties-change-syntax">letter-spacing</p>
-                    <div class="properties-change-indicator"></div>
+                <label class="prop__checkbox__label no-select" for="properties-change-letter-spacing"><input
+                        type="checkbox" id="properties-change-letter-spacing">Espaço entre Letras
+                    <p class="prop__checkbox__syntax">letter-spacing</p>
+                    <div class="checkbox__icon"></div>
                 </label>
-                <label for="properties-change-word-spacing"><input type="checkbox"
-                        id="properties-change-word-spacing">Espaço entre Palavras
-                    <p class="properties-change-syntax">word-spacing</p>
-                    <div class="properties-change-indicator"></div>
+                <label class="prop__checkbox__label no-select" for="properties-change-word-spacing"><input
+                        type="checkbox" id="properties-change-word-spacing">Espaço entre Palavras
+                    <p class="prop__checkbox__syntax">word-spacing</p>
+                    <div class="checkbox__icon"></div>
                 </label>
             </div>
         </div>
     </aside>
 
-    <!-- Container Central -->
-    <div class="textApp-container-background-center">
-        <div class="textApp-container-center">
-            <p id="textAppView" class="textApp-view">Lorem Ipsum</p>
+    <!-- Container Central [viewApp]-->
+    <div class="viewApp__background__container">
+        <div class="viewApp__container">
+            <p id="textAppView" class="viewApp">Lorem Ipsum</p>
         </div>
     </div>
 
     <!-- #################################################################
          #################### P R O P R I E D A D E S #################### -->
     <!-- Menu da Direita -->
-    <aside class="textApp-aside-menu-right-container" spellcheck="false">
+    <aside class="aside__prop__container" spellcheck="false">
+
+        <!-- /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+             /\/\/\/\/\/\/\/\/\/\/\/\/  "color"  /\/\/\/\/\/\/\/\/\/\/\/\/ -->
+
+        {{> textApp/propSettings_color }}
 
         <!-- /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
              /\/\/\/\/\/\/\/\/\/\/\/\/  "font-size"  /\/\/\/\/\/\/\/\/\/\/\/\/ -->
 
-        <!-- Menu da Direita [Propriedade "font-size"] -->
-        <div class="textApp-aside-menu-right-properties-font-size">
+        {{> textApp/propSettings_font_size }}
 
-            <!-- Menu da Direita [Titulo] de "font-size"-->
-            <div class="textApp-properties-title-font-size">
-                <p>Tamanho</p>
-                <hr>
-                <div>
-                    <p>font-size</p>
-                </div>
-            </div>
-            <div class="textApp-properties-content-font-size">
-
-                <!-- Menu da Direita [Tipo de valor de "font-size"] -->
-                <div class="properties-input-type-font-size">
-                    <input type="button" id="button-free-value-font-size"
-                        class="properties-input-type-free-value-font-size properties-input-button-type-active"
-                        value="Livre"></input>
-                    <input type="button" id="button-predefined-value-font-size"
-                        class="properties-input-type-predefined-value-font-size" value="Pré-definido"></input>
-                </div>
-
-                <!-- Menu da Direita [Input de Valor "Live" de "font-size"] -->
-                <div class="properties-input-free-value-font-size">
-                    <input id="property-font-size-value" class="properties-input-text-font-size" type="text" value="12">
-                    <label class="properties-label-select" for="valueTypeFontSize"></label>
-                    <select id="property-font-size-value-type" class="properties-input-select-font-size"
-                        id="valueTypeFontSize">
-                        <option value="pt">pt</option>
-                        <option value="px">px</option>
-                        <option value="cm">cm</option>
-                        <option value="mm">mm</option>
-                        <option value="em">em</option>
-                        <option value="rem">rem</option>
-                        <option value="%">%</option>
-                    </select>
-                </div>
-
-                <!-- Menu da Direita [Input de Valor "Pré-Definido" de "font-size"] -->
-                <div class="properties-input-predefined-value-font-size">
-                    <label class="properties-label-select"></label>
-                    <select id="property-font-size-value-predefined" class="properties-input-select">
-                        <option value="nenhum">Nenhum</option>
-                        <option value="xx-small">xx-small</option>
-                        <option value="x-small">x-small</option>
-                        <option value="small">small</option>
-                        <option value="medium">medium</option>
-                        <option value="large">large</option>
-                        <option value="x-large">x-large</option>
-                        <option value="xx-large">xx-large</option>
-                        <option value="smaller">smaller</option>
-                        <option value="larger">larger</option>
-                    </select>
-                </div>
-            </div>
-        </div>
         <!-- /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-             /\/\/\/\/\/\/\/\/\/\/\/\/  "color"  /\/\/\/\/\/\/\/\/\/\/\/\/ -->
+             /\/\/\/\/\/\/\/\/\/\/\/\/  "font-stretch"  /\/\/\/\/\/\/\/\/\/\/\/\/ -->
 
-        <!-- Menu da Direita [Propriedade "color"] -->
-        <div class="textApp-aside-menu-right-properties-color">
+        {{> textApp/propSettings_font_stretch }}
 
-            <!-- Menu da Direita [Titulo] de "color"-->
-            <div class="textApp-properties-title-color">
-                <p>Cor</p>
-                <hr>
-                <div>
-                    <p>color</p>
-                </div>
-            </div>
-            <div class="textApp-properties-content-color">
+                <!-- /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+             /\/\/\/\/\/\/\/\/\/\/\/\/  "letter-spacing"  /\/\/\/\/\/\/\/\/\/\/\/\/ -->
 
-                <!-- Menu da Direita [Tipo de valor de "color"] -->
-                <div class="properties-input-type-color">
-                    <input type="button" id="button-free-value-color"
-                        class="properties-input-type-free-value-color properties-input-button-type-active"
-                        value="Livre"></input>
-                    <input type="button" id="button-predefined-value-color"
-                        class="properties-input-type-predefined-value-color" value="Pré-definido"></input>
-                </div>
+        {{> textApp/propSettings_letter_spacing }}
 
-                <!-- Menu da Direita [Input de Valor "Livre" de "color"] -->
-                <div class="properties-input-free-value-color">
-                    <input id="property-color-value"
-                        class="jscolor {onFineChange:'textAppTextColor(this)', hash:true, position:'left'} input-color-style"
-                        value="000000">
-                    <label class="properties-label-select" for="valueTypeFontSize"></label>
-                    <select id="property-color-value-type" class="properties-input-select-color" id="valueTypeFontSize">
-                        <option value="colorTypeHex">Hexadecimal</option>
-                        <option value="colorTypeRGB">RGB</option>
-                    </select>
-                </div>
-
-                <!-- Menu da Direita [Input de Valor "Pré-Definido" de "color"] -->
-                <div class="properties-input-predefined-value-color">
-                    <div id="property-color-value-example" class="input-example-color-style no-select">Exemplo</div></br>
-                    <label class="properties-label-select"></label>
-                    <select id="property-color-value-predefined" class="properties-input-select">
-                        <option value="nenhum">Nenhum</option>
-                        <optgroup label="Cores Básicas">
-                            <option value="yellow">Amarelo</option>
-                            <option value="blue">Azul</option>
-                            <option value="white">Branco</option>
-                            <option value="grey">Cinza</option>
-                            <option value="orange">Laranja</option>
-                            <option value="brown">Marrom</option>
-                            <option value="black">Preto</option>
-                            <option value="pink">Rosa</option>
-                            <option value="green">Verde</option>
-                            <option value="red">Vermelho</option>
-                        </optgroup>
-                        <optgroup label="Cores claras">
-                            <option value="lightyellow">Amarelo claro</option>
-                            <option value="lightblue">Azul claro</option>
-                            <option value="lightskyblue">Azul Céu claro</option>
-                            <option value="lightcyan">Ciano claro</option>
-                            <option value="lightslategrey">Cinza ardósia claro</option>
-                            <option value="lightgrey">Cinza claro</option>
-                            <option value="lightcoral">Coral claro</option>
-                            <option value="lightgoldenrodyellow">Dourado claro</option>
-                            <option value="lightpink">Rosa claro</option>
-                            <option value="lightsalmon">Salmão claro</option>
-                            <option value="lightgreen">Verde claro</option>
-                            <option value="lightseagreen">Verde mar claro</option>
-                        </optgroup>
-                        <optgroup label="Cores médias">
-                            <option value="mediumaquamarine">Água-marinha média</option>
-                            <option value="mediumblue">Azul médio</option>
-                            <option value="mediumspringgreen">Verde primavera médio</option>
-                            <option value="mediumslateblue">Azul ardósia médio</option>
-                            <option value="mediumorchid">Orquídea media</option>
-                            <option value="mediumturquoise">Turquesa médio</option>
-                            <option value="mediumpurple">Roxo médio</option>
-                            <option value="mediumvioletred">Vermelho violeta médio</option>
-                            <option value="mediumseagreen">Verde mar médio</option>
-                        </optgroup>
-                        <optgroup label="Cores Escuras">
-                            <option value="darkturquoise">Turquesa escuro</option>
-                            <option value="darkslateblue">Azul ardósia escuro</option>
-                            <option value="darkblue">Azul escuro</option>
-                            <option value="darkkhaki">Caqui escuro</option>
-                            <option value="darkslategrey">Cinza ardósia escuro</option>
-                            <option value="darkgrey">Cinza escuro</option>
-                            <option value="darkgoldenrod">Dourado escuro</option>
-                            <option value="darkorange">Laranja escuro</option>
-                            <option value="darkorchid">Orquídea escura</option>
-                            <option value="darksalmon">Salmão escuro</option>
-                            <option value="darkgreen">Verde escuro</option>
-                            <option value="darkseagreen">Verde mar escuro</option>
-                            <option value="darkolivegreen">Verde-Oliva escuro</option>
-                            <option value="darkviolet">Violeta escura</option>
-                        </optgroup>
-                    </select>
-                </div>
-            </div>
-        </div>
     </aside>
 </div>
 
 <!-- Menu do Rodapé -->
-<footer class="textApp-footer-container" spellcheck="false">
+<footer class="footer__container" spellcheck="false">
 
     <!-- Rodapé [Editor de Texto]-->
-    <div class="textApp-footer-text-container">
-        <input type="text" id="textApp-footer-text-edit" class="textApp-footer-text-edit" value="Lorem Ipsum"
+    <div class="footer__text__edit__container">
+        <input type="text" id="footer-text-edit" class="footer__text__edit" value="Lorem Ipsum"
             placeholder="Insira um texto aqui">
     </div>
 
     <!-- Rodapé [Resultado do CSS]-->
-    <div class="textApp-footer-css-result-container">
-        <textarea id="css-code-textarea" class="textApp-footer-css-result"
-            placeholder="Nenhuma propriedade foi adicionada"></textarea>
+    <div class="css__result__container">
+        <textarea id="css-code-textarea" class="allApp__css__result"
+            placeholder="Nenhuma propriedade foi adicionada" readonly></textarea>
     </div>
 </footer>
 
@@ -296,4 +158,7 @@
 <script src="/scripts/methodsForProperties.js"></script>
 <script src="/scripts/APIs/jscolor.js"></script>
 <script src="/scripts/textApp/textAppPropertyFontSize.js"></script>
+<script src="/scripts/textApp/textAppPropertyFontStretch.js"></script>
+<script src="/scripts/textApp/textAppPropertyLetterSpacing.js"></script>
 <script src="/scripts/textApp/textAppPropertyColor.js"></script>
+<script src="/scripts/footer/textEdit.js"></script>

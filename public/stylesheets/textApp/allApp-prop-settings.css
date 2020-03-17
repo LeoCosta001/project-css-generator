@@ -1,6 +1,8 @@
 /* ================= Menu da Direita Container ================= */
 
-.textApp-aside-menu-right-container {
+.aside__prop__container {
+    overflow-y: auto;
+    overflow-x: hidden;
     background-color: #2C3E50;
     color: white;
     height: 70vh;
@@ -11,30 +13,30 @@
 
 /* Desativando o Display das propriedades */
 
-[class^="textApp-aside-menu-right-properties-"] {
+[class^="prop__container__"] {
     display: none;
 }
 
 /*/\/\/\/\ Menu da Direita [Titulo] /\/\/\/\*/
 
-[class^="textApp-properties-title"] {
+.prop__title {
     background-color: #34495e;
     color: #95A5A6;
-    /* Bloquear Seleção */
-    user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
 }
 
-[class^="textApp-properties-title"] hr {
-    margin-top: -10px;
-    margin-bottom: 0px;
+.prop__title:hover {
+    background-color: #374f66;
 }
 
-[class^="textApp-properties-title"]>p:nth-child(1) {
+.prop__title:active {
+    background-color: #34495e;
+}
+
+.prop__title hr {
+    margin: -10px 0px 0px 0px;
+}
+
+.prop__title>p:nth-child(1) {
     color: #BDC3C7;
     font-size: 18pt;
     letter-spacing: 3px;
@@ -44,15 +46,14 @@
     justify-content: center;
 }
 
-[class^="textApp-properties-title"]>div {
+.prop__title>div {
     font-family: 'ComingoCode';
-    padding-left: 7px;
-    padding-right: 7px;
+    padding: 0px 7px;
     display: flex;
     justify-content: center;
 }
 
-[class^="textApp-properties-title"]>div p {
+.prop__title>div p {
     margin-bottom: 0px;
 }
 
@@ -62,13 +63,13 @@
 
 /* Tipo de valor "Livre" */
 
-.properties-input-free-value-font-size {
+.free__value__container__font-size {
     display: flex;
 }
 
 /* Tipo de valor "Pré-Definido" */
 
-.properties-input-predefined-value-font-size {
+.predefined__value__container__font-size {
     display: none;
 }
 
@@ -76,13 +77,13 @@
 
 /* Tipo de valor "Livre" */
 
-.properties-input-free-value-font-size {
+.free__value__container__font-size {
     display: flex;
 }
 
 /* Tipo de valor "Pré-Definido" */
 
-.properties-input-predefined-value-font-size {
+.predefined__value__container__font-size {
     display: none;
 }
 
@@ -90,13 +91,13 @@
 
 /* Tipo de valor "Livre" */
 
-.properties-input-free-value-color {
+.free__value__container__color {
     display: flex;
 }
 
 /* Tipo de valor "Pré-Definido" */
 
-.properties-input-predefined-value-color {
+.predefined__value__container__colorr {
     display: none;
 }
 
@@ -105,7 +106,7 @@
 /* /\/\/\/\ Largura <=  1023 /\/\/\/\ */
 
 @media (max-width: 1023px) {
-    .textApp-aside-menu-right-container {
+    .aside__prop__container {
         float: right;
     }
 }
@@ -113,7 +114,7 @@
 /* /\/\/\/\ Largura <=  699 /\/\/\/\ */
 
 @media (max-width: 699px) {
-    .textApp-aside-menu-right-container {
+    .aside__prop__container {
         height: 200px;
         width: 100%;
         display: block;

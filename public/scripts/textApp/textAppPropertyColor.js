@@ -11,23 +11,23 @@ const colorStr = 'color';
 // Seleção da Propriedade "color"
 $('#properties-change-color').click(() => {
     let propertiesChecked = $('#properties-change-color').prop('checked');
-    let asideDisplay = $('.textApp-aside-menu-right-properties-color');
+    let asideDisplay = $('.prop__container__color');
     if (propertiesChecked) {
         let inputValue = $('#property-color-value').val();
         // Ativar o Display lateral esquerdo para inserir valores
         asideDisplay.slideDown();
         // Ativar o tipo de valor "Livre"
-        allApp.buttonAndDisplayOff('#button-predefined-value-color', '.properties-input-predefined-value-color');
-        allApp.buttonAndDisplayOn('#button-free-value-color', '.properties-input-free-value-color');
+        allApp.buttonAndDisplayOff('#button-predefined-value-color', '.predefined__value__container__color');
+        allApp.buttonAndDisplayOn('#button-free-value-color', '.free__value__container__color');
         // Aplicar os valores padrões
         myProp.newValue(colorStr, inputValue)
     } else {
         // Garantir que será exibido o conteudo das propriedades
-        $('.textApp-properties-content-color').slideDown(200);
+        $('.content__color').slideDown(200);
         // Desativar o Display lateral direito e remover o atributo do CSS
         asideDisplay.slideUp();
         // Reset de valores
-        allApp.inputValueReset(['#property-color-value', '#000000', '#property-color-value-type', 'colorTypeHex', '#property-color-value-predefined', 'nenhum']);
+        allApp.inputValueReset(['#property-color-value', '#000000', '#property-color-value-type', 'colorTypeHex', '#predefined-value-color', 'nenhum']);
         myProp.removeValue(colorStr);
     }
 });
@@ -40,8 +40,8 @@ $('#properties-change-color').click(() => {
 /* /\/\/\/\/\/\/\/  ATT Propriedades de "color"  /\/\/\/\/\/\/\/ */
 
 //////////// Esconder/Exibir Aba de valores
-$('.textApp-properties-title-color').click(() => {
-    $('.textApp-properties-content-color').slideToggle(200);
+$('.title__color').click(() => {
+    $('.content__color').slideToggle(200);
 });
 
 //////////// Aplicar os valores assim que eles forem alterados
@@ -68,7 +68,7 @@ function textAppTextColor(picker) {
     myProp.newValue(colorStr, value);
 
     // Aplicar cor na div de Exemplo
-    $('#property-color-value-example').css('background-color', value);
+    $('#predefined-example-color').css('background-color', value);
 };
 
 // Select de tipo de valor (Livre)
@@ -87,22 +87,22 @@ $('#property-color-value-type').change(() => {
 });
 
 // Select de inserir valor (Pré-definido)
-$('#property-color-value-predefined').change(() => {
+$('#predefined-value-color').change(() => {
     let propVal = $('#property-color-value').val();
     let propValType = $('#property-color-value-type').val();
-    let propValPredefined = $('#property-color-value-predefined').val();
+    let propValPredefined = $('#predefined-value-color').val();
 
     if (propValPredefined == 'nenhum') {
         // Identificando e convertendo o valor se necessário
         let valueTypeIdentfy = colorConverterTemp.valueTypeIdentify(propVal, propValType);
         myProp.newValue(colorStr, valueTypeIdentfy);
         // Aplicar cor na div de Exemplo
-        $('#property-color-value-example').css('background-color', valueTypeIdentfy);
+        $('#predefined-example-color').css('background-color', valueTypeIdentfy);
 
     } else {
         myProp.newValue(colorStr, propValPredefined);
         // Aplicar cor na div de Exemplo
-        $('#property-color-value-example').css('background-color', propValPredefined);
+        $('#predefined-example-color').css('background-color', propValPredefined);
     };
 
 });
@@ -112,12 +112,12 @@ $('#property-color-value-predefined').change(() => {
 
 //////////// Ativando o botão de valores "Pré-Definidos"
 $('#button-predefined-value-color').click(() => {
-    allApp.buttonAndDisplayOff('#button-free-value-color', '.properties-input-free-value-color');
-    allApp.buttonAndDisplayOn('#button-predefined-value-color', '.properties-input-predefined-value-color');
+    allApp.buttonAndDisplayOff('#button-free-value-color', '.free__value__container__color');
+    allApp.buttonAndDisplayOn('#button-predefined-value-color', '.predefined__value__container__color');
 });
 
 //////////// Ativando o botão de valores "Livre"
 $('#button-free-value-color').click(() => {
-    allApp.buttonAndDisplayOff('#button-predefined-value-color', '.properties-input-predefined-value-color');
-    allApp.buttonAndDisplayOn('#button-free-value-color', '.properties-input-free-value-color');
+    allApp.buttonAndDisplayOff('#button-predefined-value-color', '.predefined__value__container__color');
+    allApp.buttonAndDisplayOn('#button-free-value-color', '.free__value__container__color');
 });

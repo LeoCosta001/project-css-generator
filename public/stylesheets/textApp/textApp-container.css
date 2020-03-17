@@ -1,4 +1,4 @@
-.textApp-container-large {
+.app__container {
     display: flex;
     flex: 1;
 }
@@ -8,7 +8,7 @@
 /* /\/\/\/\ Largura <=  1023 /\/\/\/\ */
 
 @media (max-width: 1023px) {
-    .textApp-container-large {
+    .app__container {
         display: block;
     }
 }

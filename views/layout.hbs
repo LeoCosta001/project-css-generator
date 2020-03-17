@@ -14,10 +14,11 @@
     <link rel="stylesheet" href="/stylesheets/layout/layout-font-import.css">
 
     <!-- Meu CSS -->
-    <link rel="stylesheet" href="/stylesheets/layout/resetStyle.css">
+    <link rel="stylesheet" href="/stylesheets/layout/global.css">
     <link rel="stylesheet" href="/stylesheets/layout/layout-header.css">
-    <link rel="stylesheet" href="/stylesheets/layout/layout-header-menu.css">
     <link rel="stylesheet" href="/stylesheets/layout/layout-scrollbar.css">
+    <link rel="stylesheet" href="/stylesheets/layout/modifiers.css">
+
 
     <!-- JQuery -->
     <script src="/scripts/APIs/jquery.js"></script>
@@ -26,19 +27,19 @@
 
 <body>
     <header>
-        <nav class="header-menu">
-            <div class="header-menu-left">
-                <a class="header-menu-logo" href="/">CSS Generator</a>
+        <div class="header__container">
+            <div class="header__logo__container">
+                <a class="header__logo no-select" href="/">CSS Generator</a>
             </div>
-            <div class="header-menu-social">
-                <a href="/"><img class="header-menu-social-image header-menu-social-image-github"
-                        src="https://image.flaticon.com/icons/png/512/25/25231.png" alt="Meu GitHub"></a>
-                <a href="/"><img class="header-menu-social-image header-menu-social-image-twitter"
-                        src="https://image.flaticon.com/icons/png/512/39/39552.png" alt="Meu Twitter"></a>
-                <a href="/"><img class="header-menu-social-image header-menu-social-image-linkedin"
-                        src="https://image.flaticon.com/icons/png/512/38/38669.png" alt="Meu Linkedin"></a>
+            <div class="header__social">
+                <a href="/"><img class="no-select" src="https://image.flaticon.com/icons/png/512/25/25231.png"
+                        alt="Meu GitHub"></a>
+                <a href="/"><img class="no-select" src="https://image.flaticon.com/icons/png/512/39/39552.png"
+                        alt="Meu Twitter"></a>
+                <a href="/"><img class="no-select" src="https://image.flaticon.com/icons/png/512/38/38669.png"
+                        alt="Meu Linkedin"></a>
             </div>
-        </nav>
+        </div>
     </header>
 
     {{{body}}}

@@ -1,6 +1,6 @@
 /* ================= Input para digitar valores ================= */
 
-input[class^="properties-input-text"] {
+.prop__input__text {
     outline: none;
     border: none;
     background-color: rgba(255, 255, 255, 0);
@@ -18,20 +18,14 @@ input[class^="properties-input-text"] {
     border-bottom: solid 1px #2ECC71;
 }
 
-input[class^="properties-input-text"]:focus {
+.prop__input__text:focus {
     border-bottom: solid 2px #2ECC71;
     margin-bottom: 4px;
 }
 
-/* Valor invalido (Classe Extra!) */
-
-.invalidValue {
-    border-color: rgb(204, 46, 46) !important;
-}
-
 /* ================= Input para SELECIONAR valores <select> ================= */
 
-select[class^="properties-input-select"] {
+.prop__select__color {
     font-family: 'ComingoCode';
     border: none;
     background-color: rgba(255, 2, 2, 0);
@@ -50,18 +44,18 @@ select[class^="properties-input-select"] {
     appearance: none;
 }
 
-select[class^="properties-input-select"]:focus {
+.prop__select__color:focus {
     color: rgb(229, 235, 238);
 }
 
-select[class^="properties-input-select"] option {
+.prop__select__color option {
     background-color: #34495E;
     border: solid 1px #2ECC71;
 }
 
 /* Seta para baixo */
 
-.properties-label-select:after {
+.mini__arrow:after {
     content: "";
     width: 0px;
     height: 0px;
@@ -70,12 +64,12 @@ select[class^="properties-input-select"] option {
     border-right: 5px solid transparent;
     border-top: 5px solid #BDC3C7;
     position: relative;
-    bottom: o20px;
+    bottom: -18px;
     left: 5px;
 }
 
 /* Option Group */
-select[class^="properties-input-select"] optgroup {
+.prop__select__color optgroup {
     background-color: rgb(45, 100, 136);
     font-weight: lighter;
 }
@@ -83,7 +77,7 @@ select[class^="properties-input-select"] optgroup {
 
 /* Container */
 
-div[class^="properties-input-type"] {
+.input__type__select {
     color: #BDC3C7;
     font-size: 11pt;
     margin-top: 10px;
@@ -94,7 +88,7 @@ div[class^="properties-input-type"] {
 
 /* Botão */
 
-[class^="properties-input-type-free"], [class^="properties-input-type-predefined"] {
+.prop__input__type__button {
     border: none;
     outline: none;
     background-color: rgb(45, 100, 136);
@@ -104,25 +98,25 @@ div[class^="properties-input-type"] {
     border-radius: 10px;
 }
 
-[class^="properties-input-type"] [type="button"]:hover {
+.input__type__select [type="button"]:hover {
     background-color: #2980B9;
 }
 
-[class^="properties-input-type"] [type="button"]:active {
+.input__type__select [type="button"]:active {
     background-color: rgb(45, 100, 136);
 }
 
 /* Botão Ativado (Classe Extra!) */
 
-.properties-input-button-type-active {
+.input--type--button--active {
     background-color: rgb(39, 133, 196);
 }
 
-.properties-input-button-type-active:hover {
+.input--type--button--active:hover {
     background-color: #3498DB;
 }
 
-.properties-input-button-type-active:active {
+.input--type--button--active:active {
     background-color: rgb(41, 122, 175);
 }
 
@@ -136,8 +130,7 @@ div[class^="properties-input-type"] {
     font-size: 10pt;
     width: 140px;
     height: 30px;
-    margin-top: 10px;
-    margin-left: 10px;
+    margin: 10px 5px 3px 10px;
     border: solid 2px #34495E;
     border-radius: 40px;
     /* Reset */
@@ -149,12 +142,11 @@ div[class^="properties-input-type"] {
 
 /* Div para demonstração de cores Pré-Definidas */
 
-.input-example-color-style {
+.color__demonstration {
     font-size: 10pt;
     width: 140px;
     height: 30px;
-    margin-top: 10px;
-    margin-left: 10px;
+    margin: 10px 0px 0px 10px;
     border: solid 2px #34495E;
     border-radius: 40px;
     display: inline-flex;

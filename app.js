@@ -16,10 +16,12 @@ const hbs = require('hbs');
     // Engine de renderização do HTML
     app.set('view engine', 'hbs');
 
+    // Diretório de "Partials"
+    hbs.registerPartials(__dirname + '/views/partials');
+
 // Rotas
 app.use('/', require('./routes/textApp'))
 
-hbs.registerPartials(__dirname + "/views/partials");
 
 // Ligar servidor
 app.listen(port, err => {

@@ -66,7 +66,7 @@ let allApp = {
     Valores Válidos para "displayActiveID": 
         - String (ID do display que será ativado). */
     buttonAndDisplayOn(buttonActiveID, displayActiveID) {
-        $(buttonActiveID).addClass('properties-input-button-type-active');
+        $(buttonActiveID).addClass('input--type--button--active');
         $(displayActiveID).slideDown();
     },
 
@@ -76,7 +76,7 @@ let allApp = {
     Valores Válidos para "displayActiveID": 
         - String (ID do display que será ativado). */
     buttonAndDisplayOff(buttonDisableID, displayDisableID) {
-        $(buttonDisableID).removeClass('properties-input-button-type-active')
+        $(buttonDisableID).removeClass('input--type--button--active')
         $(displayDisableID).slideUp();
     },
 };

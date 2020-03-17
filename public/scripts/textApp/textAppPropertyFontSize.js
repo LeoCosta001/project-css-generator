@@ -11,18 +11,18 @@ const fontSizeStr = 'font-size';
 // Seleção da Propriedade "font-size
 $('#properties-change-font-size').click(() => {
     let propertiesChecked = $('#properties-change-font-size').prop('checked');
-    let asideDisplay = $('.textApp-aside-menu-right-properties-font-size');
+    let asideDisplay = $('.prop__container__font-size');
     if (propertiesChecked) {
         // Ativar o Display lateral esquerdo para inserir valores
         asideDisplay.slideDown();
         // Ativar o tipo de valor "Livre"
-        allApp.buttonAndDisplayOff('#button-predefined-value-font-size', '.properties-input-predefined-value-font-size');
-        allApp.buttonAndDisplayOn('#button-free-value-font-size', '.properties-input-free-value-font-size');
+        allApp.buttonAndDisplayOff('#button-predefined-value-font-size', '.predefined__value__container__font-size');
+        allApp.buttonAndDisplayOn('#button-free-value-font-size', '.free__value__container__font-size');
         // Aplicar os valores padrões
         myProp.newValue(fontSizeStr, '12', 'pt');
     } else {
         // Garantir que será exibido o conteudo das propriedades
-        $('.textApp-properties-content-font-size').slideDown();
+        $('.content__font-size').slideDown();
         // Desativar o Display lateral direito e remover o atributo do CSS
         asideDisplay.slideUp();
         // Reset de valores
@@ -39,8 +39,8 @@ $('#properties-change-font-size').click(() => {
 /* /\/\/\/\/\/\/\/  ATT Propriedades de "font-size"  /\/\/\/\/\/\/\/ */
 
 //////////// Esconder/Exibir Aba de valores
-$('.textApp-properties-title-font-size').click(() => {
-    $('.textApp-properties-content-font-size').slideToggle(200);
+$('.title__font-size').click(() => {
+    $('.content__font-size').slideToggle(200);
 });
 
 //////////// Aplicar os valores assim que eles forem alterados
@@ -48,7 +48,14 @@ $('.textApp-properties-title-font-size').click(() => {
 $('#property-font-size-value').keyup(() => {
     let propVal = $('#property-font-size-value').val();
     let propValType = $('#property-font-size-value-type').val();
-    myProp.newValue(fontSizeStr, propVal, propValType);
+    
+    // Verificar se é um valor numérico válido
+    if (isNaN(propVal) == true) {
+        $('#property-font-size-value').addClass('invalid--value');
+    } else {
+        $('#property-font-size-value').removeClass('invalid--value');
+        myProp.newValue(fontSizeStr, propVal, propValType);
+    };
 });
 
 // Select de tipo de valor (Livre)
@@ -77,13 +84,13 @@ $('#property-font-size-value-predefined').change(() => {
 
 //////////// Ativando o botão de valores "Pré-Definidos"
 $('#button-predefined-value-font-size').click(() => {
-    allApp.buttonAndDisplayOff('#button-free-value-font-size', '.properties-input-free-value-font-size');
-    allApp.buttonAndDisplayOn('#button-predefined-value-font-size', '.properties-input-predefined-value-font-size');
+    allApp.buttonAndDisplayOff('#button-free-value-font-size', '.free__value__container__font-size');
+    allApp.buttonAndDisplayOn('#button-predefined-value-font-size', '.predefined__value__container__font-size');
 });
 
 //////////// Ativando o botão de valores "Livre"
 $('#button-free-value-font-size').click(() => {
-    allApp.buttonAndDisplayOff('#button-predefined-value-font-size', '.properties-input-predefined-value-font-size');
-    allApp.buttonAndDisplayOn('#button-free-value-font-size', '.properties-input-free-value-font-size');
+    allApp.buttonAndDisplayOff('#button-predefined-value-font-size', '.predefined__value__container__font-size');
+    allApp.buttonAndDisplayOn('#button-free-value-font-size', '.free__value__container__font-size');
 });
 
