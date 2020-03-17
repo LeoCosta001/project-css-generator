@@ -48,13 +48,15 @@ $('.title__font-size').click(() => {
 $('#property-font-size-value').keyup(() => {
     let propVal = $('#property-font-size-value').val();
     let propValType = $('#property-font-size-value-type').val();
-    
+
     // Verificar se é um valor numérico válido
     if (isNaN(propVal) == true) {
         $('#property-font-size-value').addClass('invalid--value');
     } else {
         $('#property-font-size-value').removeClass('invalid--value');
         myProp.newValue(fontSizeStr, propVal, propValType);
+        // Reseta o valor pré-definido
+        $('#property-font-size-value-predefined').val('nenhum');
     };
 });
 
@@ -63,6 +65,8 @@ $('#property-font-size-value-type').change(() => {
     let propVal = $('#property-font-size-value').val();
     let propValType = $('#property-font-size-value-type').val();
     myProp.newValue(fontSizeStr, propVal, propValType);
+    // Reseta o valor pré-definido
+    $('#property-font-size-value-predefined').val('nenhum');
 });
 
 // Select de inserir valor (Pré-definido)

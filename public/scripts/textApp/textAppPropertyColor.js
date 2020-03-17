@@ -27,7 +27,7 @@ $('#properties-change-color').click(() => {
         // Desativar o Display lateral direito e remover o atributo do CSS
         asideDisplay.slideUp();
         // Reset de valores
-        allApp.inputValueReset(['#property-color-value', '#000000', '#property-color-value-type', 'colorTypeHex', '#predefined-value-color', 'nenhum']);
+        allApp.inputValueReset(['#property-color-value', '#000000', '#property-color-value-type', 'colorTypeHex', '#property-color-value-predefined', 'nenhum']);
         myProp.removeValue(colorStr);
     }
 });
@@ -69,6 +69,9 @@ function textAppTextColor(picker) {
 
     // Aplicar cor na div de Exemplo
     $('#predefined-example-color').css('background-color', value);
+
+    // Reseta o valor pré-definido
+    $('#property-color-value-predefined').val('nenhum');
 };
 
 // Select de tipo de valor (Livre)
@@ -84,13 +87,16 @@ $('#property-color-value-type').change(() => {
     // Alterar o valor do input
     inputvalue.val(valueTypeIdentfy);
 
+    // Reseta o valor pré-definido
+    $('#property-color-value-predefined').val('nenhum');
+
 });
 
 // Select de inserir valor (Pré-definido)
-$('#predefined-value-color').change(() => {
+$('#property-color-value-predefined').change(() => {
     let propVal = $('#property-color-value').val();
     let propValType = $('#property-color-value-type').val();
-    let propValPredefined = $('#predefined-value-color').val();
+    let propValPredefined = $('#property-color-value-predefined').val();
 
     if (propValPredefined == 'nenhum') {
         // Identificando e convertendo o valor se necessário

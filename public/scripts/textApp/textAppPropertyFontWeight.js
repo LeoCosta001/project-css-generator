@@ -1,5 +1,5 @@
 // Propriedade em uso
-const fontStretchStr = 'font-stretch';
+const fontWeightStr = 'font-weight';
 
 /* ################################################################# */
 /* ######################   MENU DA ESQUERDA   ##################### */
@@ -8,23 +8,23 @@ const fontStretchStr = 'font-stretch';
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
 /* /\/\/\/\/\/\/\/\  Ativar/Desativar a propriedade  /\/\/\/\/\/\/\/ */
 
-// Seleção da Propriedade "font-stretch"
-$('#properties-change-font-stretch').click(() => {
-    let propertiesChecked = $('#properties-change-font-stretch').prop('checked');
-    let asideDisplay = $('.prop__container__font-stretch');
+// Seleção da Propriedade "font-weight"
+$('#properties-change-font-weight').click(() => {
+    let propertiesChecked = $('#properties-change-font-weight').prop('checked');
+    let asideDisplay = $('.prop__container__font-weight');
     if (propertiesChecked) {
         // Ativar o Display lateral esquerdo para inserir valores
         asideDisplay.slideDown();
         // Aplicar os valores padrões
-        myProp.newValue(fontStretchStr, 'normal');
+        myProp.newValue(fontWeightStr, 'normal');
     } else {
         // Garantir que será exibido o conteudo das propriedades
-        $('.content__font-stretch').slideDown();
+        $('.content__font-weight').slideDown();
         // Desativar o Display lateral direito e remover o atributo do CSS
         asideDisplay.slideUp();
         // Reset de valores
-        allApp.inputValueReset(['#property-font-stretch-value-predefined', 'normal']);
-        myProp.removeValue(fontStretchStr);
+        allApp.inputValueReset(['#property-font-weight-value-predefined', 'normal']);
+        myProp.removeValue(fontWeightStr);
     }
 });
 
@@ -33,25 +33,25 @@ $('#properties-change-font-stretch').click(() => {
 /* ################################################################# */
 
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
-/* /\/\/\/\/\/\/\/  ATT Propriedades de "font-stretch"  /\/\/\/\/\/\/\/ */
+/* /\/\/\/\/\/\/\/  ATT Propriedades de "font-weight"  /\/\/\/\/\/\/\/ */
 
 //////////// Esconder/Exibir Aba de valores
-$('.title__font-stretch').click(() => {
-    $('.content__font-stretch').slideToggle(200);
+$('.title__font-weight').click(() => {
+    $('.content__font-weight').slideToggle(200);
 });
 
 //////////// Aplicar os valores assim que eles forem alterados
 
 // Select de inserir valor (Pré-definido)
-$('#property-font-stretch-value-predefined').change(() => {
-    let propVal = $('#property-font-stretch-value').val();
-    let propValType = $('#property-font-stretch-value-type').val();
-    let propValPredefined = $('#property-font-stretch-value-predefined').val();
+$('#property-font-weight-value-predefined').change(() => {
+    let propVal = $('#property-font-weight-value').val();
+    let propValType = $('#property-font-weight-value-type').val();
+    let propValPredefined = $('#property-font-weight-value-predefined').val();
 
     if (propValPredefined == 'nenhum') {
-        myProp.newValue(fontStretchStr, propVal, propValType);
+        myProp.newValue(fontWeightStr, propVal, propValType);
 
     } else {
-        myProp.newValue(fontStretchStr, propValPredefined);
+        myProp.newValue(fontWeightStr, propValPredefined);
     };
 });

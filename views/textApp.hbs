@@ -128,12 +128,22 @@
         <!-- /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
              /\/\/\/\/\/\/\/\/\/\/\/\/  "font-stretch"  /\/\/\/\/\/\/\/\/\/\/\/\/ -->
 
+        {{> textApp/propSettings_font_weight }}
+
+        <!-- /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+             /\/\/\/\/\/\/\/\/\/\/\/\/  "font-stretch"  /\/\/\/\/\/\/\/\/\/\/\/\/ -->
+
         {{> textApp/propSettings_font_stretch }}
 
-                <!-- /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+        <!-- /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
              /\/\/\/\/\/\/\/\/\/\/\/\/  "letter-spacing"  /\/\/\/\/\/\/\/\/\/\/\/\/ -->
 
         {{> textApp/propSettings_letter_spacing }}
+
+        <!-- /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+             /\/\/\/\/\/\/\/\/\/\/\/\/  "word-spacing"  /\/\/\/\/\/\/\/\/\/\/\/\/ -->
+
+        {{> textApp/propSettings_word_spacing }}
 
     </aside>
 </div>
@@ -149,16 +159,18 @@
 
     <!-- Rodapé [Resultado do CSS]-->
     <div class="css__result__container">
-        <textarea id="css-code-textarea" class="allApp__css__result"
-            placeholder="Nenhuma propriedade foi adicionada" readonly></textarea>
+        <textarea id="css-code-textarea" class="allApp__css__result" placeholder="Nenhuma propriedade foi adicionada"
+            readonly></textarea>
     </div>
 </footer>
 
 <!-- Meu Script -->
 <script src="/scripts/methodsForProperties.js"></script>
 <script src="/scripts/APIs/jscolor.js"></script>
+<script src="/scripts/textApp/textAppPropertyColor.js"></script>
 <script src="/scripts/textApp/textAppPropertyFontSize.js"></script>
+<script src="/scripts/textApp/textAppPropertyFontWeight.js"></script>
 <script src="/scripts/textApp/textAppPropertyFontStretch.js"></script>
 <script src="/scripts/textApp/textAppPropertyLetterSpacing.js"></script>
-<script src="/scripts/textApp/textAppPropertyColor.js"></script>
+<script src="/scripts/textApp/textAppPropertyWordSpacing.js"></script>
 <script src="/scripts/footer/textEdit.js"></script>

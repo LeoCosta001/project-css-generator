@@ -48,13 +48,15 @@ $('.title__letter-spacing').click(() => {
 $('#property-letter-spacing-value').keyup(() => {
     let propVal = $('#property-letter-spacing-value').val();
     let propValType = $('#property-letter-spacing-value-type').val();
-    
+
     // Verificar se é um valor numérico válido
     if (isNaN(propVal) == true) {
         $('#property-letter-spacing-value').addClass('invalid--value');
     } else {
         $('#property-letter-spacing-value').removeClass('invalid--value');
         myProp.newValue(letterSpacingStr, propVal, propValType);
+        // Reseta o valor pré-definido
+        $('#property-letter-spacing-value-predefined').val('nenhum');
     };
 });
 
@@ -63,6 +65,8 @@ $('#property-letter-spacing-value-type').change(() => {
     let propVal = $('#property-letter-spacing-value').val();
     let propValType = $('#property-letter-spacing-value-type').val();
     myProp.newValue(letterSpacingStr, propVal, propValType);
+    // Reseta o valor pré-definido
+    $('#property-letter-spacing-value-predefined').val('nenhum');
 });
 
 // Select de inserir valor (Pré-definido)
