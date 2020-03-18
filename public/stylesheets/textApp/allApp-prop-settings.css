@@ -33,10 +33,6 @@
     background-color: #34495e;
 }
 
-.title__color {
-    margin-top: 0px;
-}
-
 .prop__title hr {
     margin: -10px 0px 0px 0px;
 }
@@ -68,43 +64,13 @@
 
 /* Tipo de valor "Livre" */
 
-.free__value__container__font-size {
-    display: flex;
+.input__title {
+    color: #95A5A6;
+    text-align: center;
+    font-size: 9pt;
+    margin: 5px 0px -5px 0px;
 }
 
-/* Tipo de valor "Pré-Definido" */
-
-.predefined__value__container__font-size {
-    display: none;
-}
-
-/*/\/\/\/\/\/\/\/\  "font-size" /\/\/\/\/\/\/\/\*/
-
-/* Tipo de valor "Livre" */
-
-.free__value__container__font-size {
-    display: flex;
-}
-
-/* Tipo de valor "Pré-Definido" */
-
-.predefined__value__container__font-size {
-    display: none;
-}
-
-/*/\/\/\/\/\/\/\/\  "color" /\/\/\/\/\/\/\/\*/
-
-/* Tipo de valor "Livre" */
-
-.free__value__container__color {
-    display: flex;
-}
-
-/* Tipo de valor "Pré-Definido" */
-
-.predefined__value__container__colorr {
-    display: none;
-}
 
 /* ================= Estabilizando Menu lateral ================= */
 
@@ -120,9 +86,11 @@
 
 @media (max-width: 699px) {
     .aside__prop__container {
+        overflow-x: auto;
         height: 200px;
         width: 100%;
-        display: block;
+        display: flex;
+        flex-direction: row;
     }
 }
 

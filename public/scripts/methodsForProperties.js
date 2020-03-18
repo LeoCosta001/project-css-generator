@@ -163,8 +163,8 @@ let myProp = {
             case 'font-style':
                 allApp.appView.style.fontStyle = propNewValue;
                 break;
-            case 'font-shadow':
-                allApp.appView.style.fontShadow = propNewValue;
+            case 'text-shadow':
+                allApp.appView.style.textShadow = propNewValue;
                 break;
             case 'font-family':
                 allApp.appView.style.fontFamily = propNewValue;

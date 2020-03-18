@@ -56,11 +56,14 @@
 
 @media (max-width: 699px) {
     .viewApp__background__container {
-        display: block;
         flex: 1;
         height: 150px;
-        color: rgb(255, 166, 0);
         width: 100%;
+    }
+
+    .viewApp__container {
+        width: 90%;
+        display: inline-flex;
     }
 }
 
