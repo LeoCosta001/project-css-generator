@@ -22,6 +22,7 @@
 .prop__title {
     background-color: #34495e;
     color: #95A5A6;
+    margin-top: 3px;
 }
 
 .prop__title:hover {
@@ -32,14 +33,18 @@
     background-color: #34495e;
 }
 
+.title__color {
+    margin-top: 0px;
+}
+
 .prop__title hr {
     margin: -10px 0px 0px 0px;
 }
 
 .prop__title>p:nth-child(1) {
     color: #BDC3C7;
-    font-size: 18pt;
-    letter-spacing: 3px;
+    font-size: 16pt;
+    letter-spacing: 1px;
     width: 300px;
     margin-bottom: 10px;
     display: flex;

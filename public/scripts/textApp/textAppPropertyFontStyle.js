@@ -1,5 +1,5 @@
 // Propriedade em uso
-const fontFamilyStr = 'font-family';
+const fontStyleStr = 'font-style';
 
 /* ################################################################# */
 /* ######################   MENU DA ESQUERDA   ##################### */
@@ -8,23 +8,23 @@ const fontFamilyStr = 'font-family';
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
 /* /\/\/\/\/\/\/\/\  Ativar/Desativar a propriedade  /\/\/\/\/\/\/\/ */
 
-// Seleção da Propriedade "font-family"
-$('#properties-change-font-family').click(() => {
-    let propertiesChecked = $('#properties-change-font-family').prop('checked');
-    let asideDisplay = $('.prop__container__font-family');
+// Seleção da Propriedade "font-style"
+$('#properties-change-font-style').click(() => {
+    let propertiesChecked = $('#properties-change-font-style').prop('checked');
+    let asideDisplay = $('.prop__container__font-style');
     if (propertiesChecked) {
         // Ativar o Display lateral esquerdo para inserir valores
         asideDisplay.slideDown();
         // Aplicar os valores padrões
-        myProp.newValue(fontFamilyStr, 'none');
+        myProp.newValue(fontStyleStr, 'normal');
     } else {
         // Garantir que será exibido o conteudo das propriedades
-        $('.content__font-family').slideDown();
+        $('.content__font-style').slideDown();
         // Desativar o Display lateral direito e remover o atributo do CSS
         asideDisplay.slideUp();
         // Reset de valores
-        allApp.inputValueReset(['#property-font-family-value-predefined', 'none']);
-        myProp.removeValue(fontFamilyStr);
+        allApp.inputValueReset(['#property-font-style-value-predefined', 'normal']);
+        myProp.removeValue(fontStyleStr);
     }
 });
 
@@ -33,25 +33,25 @@ $('#properties-change-font-family').click(() => {
 /* ################################################################# */
 
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
-/* /\/\/\/\/\/\/\/  ATT Propriedades de "font-family"  /\/\/\/\/\/\/\/ */
+/* /\/\/\/\/\/\/\/  ATT Propriedades de "font-style"  /\/\/\/\/\/\/\/ */
 
 //////////// Esconder/Exibir Aba de valores
-$('.title__font-family').click(() => {
-    $('.content__font-family').slideToggle(200);
+$('.title__font-style').click(() => {
+    $('.content__font-style').slideToggle(200);
 });
 
 //////////// Aplicar os valores assim que eles forem alterados
 
 // Select de inserir valor (Pré-definido)
-$('#property-font-family-value-predefined').change(() => {
-    let propVal = $('#property-font-family-value').val();
-    let propValType = $('#property-font-family-value-type').val();
-    let propValPredefined = $('#property-font-family-value-predefined').val();
+$('#property-font-style-value-predefined').change(() => {
+    let propVal = $('#property-font-style-value').val();
+    let propValType = $('#property-font-style-value-type').val();
+    let propValPredefined = $('#property-font-style-value-predefined').val();
 
     if (propValPredefined == 'nenhum') {
-        myProp.newValue(fontFamilyStr, propVal, propValType);
+        myProp.newValue(fontStyleStr, propVal, propValType);
 
     } else {
-        myProp.newValue(fontFamilyStr, propValPredefined);
+        myProp.newValue(fontStyleStr, propValPredefined);
     };
 });
