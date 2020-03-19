@@ -1,12 +1,17 @@
 /* ################################################################################
-########### Descrição dos Métodos ##########
+########### Descrição dos Métodos Globais ##########
 OBS: "prop" é abreviação de "property" (propriedade).
 OBS: "Métodos internos" são os métodos que foram criados para serem usados por outros métodos.
 
 ========== Objeto: "allApp" ==========
 Descrição: Possui uma variedade de métodos que envolvem manipular objetos DOM e seus valores.
+Lista de Valores:
+    - "multipleTextShadowContainer": DContainer com todos os "shadowNumber".
 Lista de Métodos:
     - "inputValueReset(oddIDEvenValue)": Reseta valores dos input.
+    - "buttonAndDisplayOn(buttonID, ElementID)": Coloca o botão em estado de ativado e liga um display.
+    - "buttonAndDisplayOff(buttonID, ElementID)": Coloca o botão em estado de desativado e desliga um display.
+    - "attMultiplyTextShadow(object)": Este método é responsavel pelas configurações das sombras adicionais.
 
 ========== Objeto: "myProp" ==========
 Descrição: Os métodos aqui encontrados estão relacionados a manipulação das propriedades do "appView" e exibição destas propriedades no "cssCodeTextarea"
@@ -15,6 +20,7 @@ Lista de Valores:
 Lista de Métodos:
     - "newValue(prop, value, valueType)": Edita uma propriedade no "appView" (Caso não tenha então esta propriedade será adicionada ao fim da lista).
     - "removeValue(prop)": Remove uma propriedade do "appView".
+    - "invalidInputNumberValue(inputID)": Acrecenta a classe "invalid--value" quando alguen insere um valor numérico invalido no input e retorna um boolean "true" idicando que o valor é invalido.
 Métodos Internos:
     - "propCssAtt(prop, value)": Adiciona um novo valor de propriedade CSS no "appView".
 
@@ -25,6 +31,7 @@ Lista de Métodos:
     - "hexToRgb(value)": Converte um valor de cor "Hexadecimal" para "RGB".
     - "rgbToHex(value)": Converte um valor de cor "RGB" para "Hexadecimal".
     - "valueTypeIdentify(value)": Define pelo "valueType" se o tipo de valor que deve ser retornado é RGB ou Hexadecimal.
+    - "inputAtt(string, string): Atualiza os valores do input com 'jscolor' de acordo com o tipo de valor de cor.
     Métodos Internos:
     - "isHexadecimal(value)": Identifica se o valor informado é um código de cores em Hexadecimal válido (sendo string com ou sem Hashtag).
     - "isRGB(value)": Identifica se o valor informado é um código RGB válido (sendo string ou array de 3 index).
@@ -35,8 +42,9 @@ OBS: Estes métodos serão usados dentro dos métodos do objeto "myProp"
 Descrição: Os métodos aqui encontrados estão relácionados a manipulação das propriedades do "appView" e exibição destas propriedades no "cssCodeTextarea"
 Lista de Métodos:
     - "textEdit(string)": Adiiciona uma String no conteúdo do cssCodeTextarea.
-    - [3]"propAtt(prop, value)": Edita uma propriedade no "cssCodeTextarea" (Caso não tenha então esta propriedade será adicionada ao fim da lista).
-    - [2]"propRemove(prop)": Remove uma propriedade do "cssCodeTextarea".
+    - "propAtt(prop, value)": Edita uma propriedade no "cssCodeTextarea" (Caso não tenha então esta propriedade será adicionada ao fim da lista).
+    - "propRemove(prop)": Remove uma propriedade do "cssCodeTextarea".
+
 ################################################################################ */
 
 
@@ -46,6 +54,28 @@ Lista de Métodos:
 let allApp = {
     // Selecionando o style do "appView"
     appView: document.querySelector('#textAppView'),
+
+    // Container com todos os "shadowNumber"
+    multipleTextShadowContainer: [{
+        status: true,
+        color: '#000000',
+        horizontalValue: '0',
+        horizontalType: 'px',
+        verticalValue: '0',
+        verticalType: 'px',
+        blurValue: '00',
+        blurType: 'px'
+    },
+    {
+        status: true,
+        color: '#000000',
+        horizontalValue: '0',
+        horizontalType: 'px',
+        verticalValue: '0',
+        verticalType: 'px',
+        blurValue: '00',
+        blurType: 'px'
+    }],
     /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
     /* /\/\/\/\/\/\/\/\/\/\/\/  Métodos de Reset  /\/\/\/\/\/\/\/\/\/\/\ */
 
@@ -79,6 +109,40 @@ let allApp = {
         $(buttonDisableID).removeClass('input--type--button--active')
         $(displayDisableID).slideUp();
     },
+
+    /* Descrição: Este método é responsavel pelas configurações das sombras adicionais.
+    Valores Válidos: 
+        - Object (Veja abaixo quais são as propriedades aceitas neste parâmetro).
+    Parâmetros e valores validos: 
+        - "shadowNumber" Number (Número do index que será alterado).
+        - "shadowConfig" Object (Objeto com todos os valores que substituiram o index escolhido). */
+    attMultipleTextShadow(shadowNumber, shadowConfig) {
+        // Verificar se é para acrescentar um novo valor ou apenas para ativar o "shadowNumber"
+        if (typeof shadowConfig == 'boolean') {
+            // Aplicando o valor do boolean "shadowConfig" na propriedade "status" do "shadowNumber"
+            this.multipleTextShadowContainer[shadowNumber].status = shadowConfig;
+        } else if (typeof shadowConfig == 'object') {
+            // String que conterá a concatenação final
+            let fullConcat = 'text-shadow: ';
+            // Container com o os valores concatenados de cada "shadowNumber"
+            let shadowNumberConcatContainer = [];
+
+            // ###### Aplicando as modificações nos valores das propriedades da array "multipleTextShadowContainer" com base no "shadowNumber" passado (o "shadowNumber" representa o index da array)
+            this.multipleTextShadowContainer[shadowNumber] = shadowConfig;
+
+            // ###### Separando os valores concatenados de cada "shadowNumber" e colocando na array "shadowNumberConcatContainer"
+            this.multipleTextShadowContainer.forEach((value) => {
+                if (value.status == true) {
+                    shadowNumberConcatContainer.push(`${value.horizontalValue}${value.horizontalType} ${value.verticalValue}${value.verticalType} ${value.blurValue}${value.blurType} ${value.color}`)
+                };
+            });
+
+            // ###### Pegando os valores concatenados da array"shadowNumberConcatContainer" e criando uma string final na variavel "fullConcat"
+            fullConcat += shadowNumberConcatContainer.join(', ');
+
+            return fullConcat;
+        };
+    }
 };
 
 
@@ -141,6 +205,47 @@ let myProp = {
             };
         });
     },
+
+    /* Descrição: Edita uma propriedade do "appView" e no "cssCodeTextarea" (Caso não tenha então esta propriedade será adicionada ao fim da lista).
+    Valores Válidos para "propName": 
+        - String (nome da propriedade, ex: "font-size").
+    Valores Válidos para "propValue": 
+        - String (nome da propriedade, ex: "20").
+    Valores Válidos para "propValueType": 
+        - String (nome da propriedade, ex: "pt").
+    Return: Altera as propriedades  CSS do "appView" e o innerHTML do "cssCodeTextarea" */
+    newValue(propName, propValue, propValueType) {
+        let concatAllProp = '';
+        let concatPropValue = '';
+
+        // Verificar a existencia do "propValueType"
+        if (!propValueType) {
+            concatAllProp = `${propName}: ${propValue}`;
+            this.propCssAtt(propName, propValue);
+            cssCodeTextarea.propAtt(propName, concatAllProp)
+        } else {
+            concatAllProp = `${propName}: ${propValue}${propValueType}`;
+            concatPropValue = `${propValue}${propValueType}`;
+            this.propCssAtt(propName, concatPropValue);
+            cssCodeTextarea.propAtt(propName, concatAllProp)
+        };
+    },
+
+    /* Descrição: Acrecenta a classe "invalid--value" quando alguen insere um valor numérico invalido no input e retorna um boolean "true" idicando que o valor é invalido.
+    Valores Válidos: 
+      - String (ID do Input).
+    Return: Boolean ("true" em caso de valor INVALIDO e "false" em caso de valor VALIDO)*/
+    invalidInputNumberValue(inputID) {
+        // Verificar se é um valor numérico válido
+        let propVal = $(inputID).val();
+        if (isNaN(propVal) == true) {
+            $(inputID).addClass('invalid--value');
+            return true
+        } else {
+            $(inputID).removeClass('invalid--value');
+            return false
+        };
+    },
     /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
     /* /\/\/\/\/\/\/\/\/\/\/\  Métodos Internos  /\/\/\/\/\/\/\/\/\/\/\/ */
 
@@ -194,10 +299,10 @@ let myProp = {
 };
 
 /* ################################################################# */
-/* ####################   colorConverterTemp   ##################### */
+/* ######################   colorConverter   ####################### */
 /* ################################################################# */
 
-let colorConverterTemp = {
+let colorConverter = {
     /* Descrição: Caso o valor inserido seja "RGB" então será convertido para "Hexadecimal", mas caso seja um valor "Hexadecimal" então será convertido para "RGB".
     Valores Válidos para Hexadecimal: 
         - String (hashtag + 6 digitos) (OBS: A Hashtag é opcional).
@@ -282,6 +387,19 @@ let colorConverterTemp = {
                 console.log(`ERRO! "${valueType}" Não é um tipo de valor válido para cores.`);
         };
         return value;
+    },
+
+    /* Descrição: Atualiza os valores do input com 'jscolor' de acordo com o tipo de valor de cor.
+    Valores Válidos: 
+        - String ("inputColorID" é o ID do input de palheta de cores e "valueTypeID" é o ID do tipo de valor de cor).*/
+    inputAtt(inputColorID, valueTypeID) {
+        // Selecionando o Input de cor e o Select
+        let valueType = $(valueTypeID).val();
+        let inputvalue = $(inputColorID);
+        // Identificando e convertendo o valor se necessário
+        let valueTypeIdentfy = colorConverter.valueTypeIdentify(inputvalue.val(), valueType);
+        // Alterar o valor do input para o tipo de cor identificada
+        inputvalue.val(valueTypeIdentfy);
     },
     /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
     /* /\/\/\/\/\/\/\/\/\/\/\  Métodos Internos  /\/\/\/\/\/\/\/\/\/\/\/ */

@@ -23,14 +23,55 @@
 
         <!-- [Input de Valor "Livre" de "text-shadow"] -->
         <div class="free__value__container__text-shadow">
+            <!-- Cor da sombra -->
             <p class="input__title no-select">Cor da sombra</p>
-            <input id="property-text-shadow-value"
-                class="jscolor {onFineChange:'textAppTextColor(this)', hash:true, position:'left'} input-color-style"
+            <input id="property-text-shadow-color-value"
+                class="jscolor {onFineChange:'textAppTextShadow(this)', hash:true, position:'left'} input-color-style"
                 value="000000">
-            <label class="mini__arrow no-select" for="valueTypeFontSize"></label>
-            <select id="property-text-shadow-value-type" class="prop__select__color" id="valueTypeFontSize">
+            <!-- Tipo de cor da sombra -->
+            <label class="mini__arrow no-select" for="valueTypeTextShadowColor"></label>
+            <select id="property-text-shadow-color-value-type" class="prop__select__color"
+                id="valueTypeTextShadowColor">
                 <option value="colorTypeHex">Hexadecimal</option>
                 <option value="colorTypeRGB">RGB</option>
+            </select>
+            <!-- Movimento horizontal -->
+            <p class="input__title no-select">Mover na horizontal</p>
+            <input id="property-text-shadow-horizontal-value" class="prop__input__text" type="text" value="0">
+            <label class="mini__arrow" for="valueTypeTextShadowHorizontal"></label>
+            <select id="property-text-shadow-horizontal-value-type" class="prop__select__color"
+                id="valueTypeTextShadowHorizontal">
+                <option value="px">px</option>
+                <option value="pt">pt</option>
+                <option value="cm">cm</option>
+                <option value="mm">mm</option>
+                <option value="em">em</option>
+                <option value="rem">rem</option>
+            </select>
+            <!-- Movimento Vertical -->
+            <p class="input__title no-select">Mover na vertical</p>
+            <input id="property-text-shadow-vertical-value" class="prop__input__text" type="text" value="0">
+            <label class="mini__arrow" for="valueTypeTextShadowVertical"></label>
+            <select id="property-text-shadow-vertical-value-type" class="prop__select__color"
+                id="valueTypeTextShadowVertical">
+                <option value="px">px</option>
+                <option value="pt">pt</option>
+                <option value="cm">cm</option>
+                <option value="mm">mm</option>
+                <option value="em">em</option>
+                <option value="rem">rem</option>
+            </select>
+            <!-- Nível de Desfoque -->
+            <p class="input__title no-select">Nível de desfoque</p>
+            <input id="property-text-shadow-blur-value" class="prop__input__text" type="text" value="0">
+            <label class="mini__arrow" for="valueTypeTextShadowBlur"></label>
+            <select id="property-text-shadow-blur-value-type" class="prop__select__color" id="valueTypeTextShadowBlur">
+                <option value="px">px</option>
+                <option value="pt">pt</option>
+                <option value="cm">cm</option>
+                <option value="mm">mm</option>
+                <option value="em">em</option>
+                <option value="rem">rem</option>
             </select>
         </div>
 
@@ -39,7 +80,7 @@
             <p class="input__title no-select">Cor da sombra</p>
             <div id="predefined-example-text-shadow" class="color__demonstration no-select">Exemplo</div></br>
             <label class="mini__arrow no-select"></label>
-            <select id="property-text-shadow-value-predefined" class="prop__select__color">
+            <select id="property-text-shadow-color-value-predefined" class="prop__select__color">
                 <option value="nenhum">Nenhum</option>
                 <optgroup label="Cores Básicas">
                     <option value="yellow">Amarelo</option>

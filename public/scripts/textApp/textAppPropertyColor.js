@@ -81,7 +81,7 @@ $('#property-color-value-type').change(() => {
     const inputvalue = $('#property-color-value');
 
     // Identificando e convertendo o valor se necessário
-    let valueTypeIdentfy = colorConverterTemp.valueTypeIdentify(inputvalue.val(), valueType);
+    let valueTypeIdentfy = colorConverter.valueTypeIdentify(inputvalue.val(), valueType);
     myProp.newValue(colorStr, valueTypeIdentfy);
 
     // Alterar o valor do input
@@ -100,7 +100,7 @@ $('#property-color-value-predefined').change(() => {
 
     if (propValPredefined == 'nenhum') {
         // Identificando e convertendo o valor se necessário
-        let valueTypeIdentfy = colorConverterTemp.valueTypeIdentify(propVal, propValType);
+        let valueTypeIdentfy = colorConverter.valueTypeIdentify(propVal, propValType);
         myProp.newValue(colorStr, valueTypeIdentfy);
         // Aplicar cor na div de Exemplo
         $('#predefined-example-color').css('background-color', valueTypeIdentfy);

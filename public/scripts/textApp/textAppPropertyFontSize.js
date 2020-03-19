@@ -26,7 +26,11 @@ $('#properties-change-font-size').click(() => {
         // Desativar o Display lateral direito e remover o atributo do CSS
         asideDisplay.slideUp();
         // Reset de valores
-        allApp.inputValueReset(['#property-font-size-value', 12, '#property-font-size-value-type', "pt", '#property-font-size-value-predefined', 'nenhum']);
+        allApp.inputValueReset([
+            '#property-font-size-value', 12,
+            '#property-font-size-value-type', "pt",
+            '#property-font-size-value-predefined', 'nenhum'
+        ]);
         myProp.removeValue(fontSizeStr);
     }
 });
