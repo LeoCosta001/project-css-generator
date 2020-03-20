@@ -1,19 +1,25 @@
-    /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-    /\/\/\/\/\/\/\/\/\/\/\/\/   Modificadores  /\/\/\/\/\/\/\/\/\/\/\/\/ */
+/* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+/\/\/\/\/\/\/\/\/\/\/\/\/   Modificadores  /\/\/\/\/\/\/\/\/\/\/\/\/ */
 
-    /* Bloquear Seleção */
+/* Bloquear Seleção */
 
-    .no-select {
-        user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-    }
+.no-select {
+    user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
 
-    /* Valor invalido (Faz com que a borda inferior fique vermelha) */
+/* Valor invalido (Faz com que a borda inferior fique vermelha) */
 
-    .invalid--value {
-        border-color: rgb(204, 46, 46) !important;
-    }
+.invalid--value {
+    border-color: rgb(204, 46, 46) !important;
+}
+
+/* Input desabilitado */
+
+.input--disabled {
+    border-color: grey !important;
+}

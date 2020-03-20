@@ -5,13 +5,10 @@ OBS: "Métodos internos" são os métodos que foram criados para serem usados po
 
 ========== Objeto: "allApp" ==========
 Descrição: Possui uma variedade de métodos que envolvem manipular objetos DOM e seus valores.
-Lista de Valores:
-    - "multipleTextShadowContainer": DContainer com todos os "shadowNumber".
 Lista de Métodos:
     - "inputValueReset(oddIDEvenValue)": Reseta valores dos input.
     - "buttonAndDisplayOn(buttonID, ElementID)": Coloca o botão em estado de ativado e liga um display.
     - "buttonAndDisplayOff(buttonID, ElementID)": Coloca o botão em estado de desativado e desliga um display.
-    - "attMultiplyTextShadow(object)": Este método é responsavel pelas configurações das sombras adicionais.
 
 ========== Objeto: "myProp" ==========
 Descrição: Os métodos aqui encontrados estão relacionados a manipulação das propriedades do "appView" e exibição destas propriedades no "cssCodeTextarea"
@@ -45,6 +42,22 @@ Lista de Métodos:
     - "propAtt(prop, value)": Edita uma propriedade no "cssCodeTextarea" (Caso não tenha então esta propriedade será adicionada ao fim da lista).
     - "propRemove(prop)": Remove uma propriedade do "cssCodeTextarea".
 
+========== Objeto: "textApp" ==========
+OBS: O termo "shadowNumber" se refere ao número da "sombra" que está selecionada.
+Descrição: São métodos especificos para uso de propriedades do "textApp".
+Lista de Valores:
+    - "values.currentShadowNumber":Contém o valor atual do "shadowNumber" selecionado.
+    - "values.totalShadowNumber": Contém o valor total de "shadowNumber" ativado .
+    - "values.shadowPropertiesContainer": Container com todos os "shadowNumber" seus valores de propriedades.
+Lista de Métodos:
+    - "shadowValuesReset(): Reseta todos os valores do "textApp.values".
+    - "attMultiplyTextShadow(shadowNumber, object): Este método é responsavel pelas configurações das sombras adicionais.
+    - "attAllInputTextShadow(shadowNumber)": Este método é responsavel pelas configurações das sombras adicionais.
+    - "newMultipleTextShadow(shadowNumber)": Ativa uma nova sombra.
+    - "removeMultipleTextShadow(shadowNumber)": Desativa uma sombra.
+    - "disableTextShadow()": Coloca todos os input da propriedade "textShadow" em "desativado" e acrescenta a classe "input--disable".
+    - "enableTextShadow()": Coloca todos os input da propriedade "textShadow" em "ativado" e remove a classe "input--disable".
+
 ################################################################################ */
 
 
@@ -55,27 +68,6 @@ let allApp = {
     // Selecionando o style do "appView"
     appView: document.querySelector('#textAppView'),
 
-    // Container com todos os "shadowNumber"
-    multipleTextShadowContainer: [{
-        status: true,
-        color: '#000000',
-        horizontalValue: '0',
-        horizontalType: 'px',
-        verticalValue: '0',
-        verticalType: 'px',
-        blurValue: '00',
-        blurType: 'px'
-    },
-    {
-        status: true,
-        color: '#000000',
-        horizontalValue: '0',
-        horizontalType: 'px',
-        verticalValue: '0',
-        verticalType: 'px',
-        blurValue: '00',
-        blurType: 'px'
-    }],
     /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
     /* /\/\/\/\/\/\/\/\/\/\/\/  Métodos de Reset  /\/\/\/\/\/\/\/\/\/\/\ */
 
@@ -110,41 +102,9 @@ let allApp = {
         $(displayDisableID).slideUp();
     },
 
-    /* Descrição: Este método é responsavel pelas configurações das sombras adicionais.
-    Valores Válidos: 
-        - Object (Veja abaixo quais são as propriedades aceitas neste parâmetro).
-    Parâmetros e valores validos: 
-        - "shadowNumber" Number (Número do index que será alterado).
-        - "shadowConfig" Object (Objeto com todos os valores que substituiram o index escolhido). */
-    attMultipleTextShadow(shadowNumber, shadowConfig) {
-        // Verificar se é para acrescentar um novo valor ou apenas para ativar o "shadowNumber"
-        if (typeof shadowConfig == 'boolean') {
-            // Aplicando o valor do boolean "shadowConfig" na propriedade "status" do "shadowNumber"
-            this.multipleTextShadowContainer[shadowNumber].status = shadowConfig;
-        } else if (typeof shadowConfig == 'object') {
-            // String que conterá a concatenação final
-            let fullConcat = 'text-shadow: ';
-            // Container com o os valores concatenados de cada "shadowNumber"
-            let shadowNumberConcatContainer = [];
 
-            // ###### Aplicando as modificações nos valores das propriedades da array "multipleTextShadowContainer" com base no "shadowNumber" passado (o "shadowNumber" representa o index da array)
-            this.multipleTextShadowContainer[shadowNumber] = shadowConfig;
 
-            // ###### Separando os valores concatenados de cada "shadowNumber" e colocando na array "shadowNumberConcatContainer"
-            this.multipleTextShadowContainer.forEach((value) => {
-                if (value.status == true) {
-                    shadowNumberConcatContainer.push(`${value.horizontalValue}${value.horizontalType} ${value.verticalValue}${value.verticalType} ${value.blurValue}${value.blurType} ${value.color}`)
-                };
-            });
-
-            // ###### Pegando os valores concatenados da array"shadowNumberConcatContainer" e criando uma string final na variavel "fullConcat"
-            fullConcat += shadowNumberConcatContainer.join(', ');
-
-            return fullConcat;
-        };
-    }
 };
-
 
 /* ################################################################# */
 /* ##########################   myProp   ########################### */
@@ -397,7 +357,7 @@ let colorConverter = {
         let valueType = $(valueTypeID).val();
         let inputvalue = $(inputColorID);
         // Identificando e convertendo o valor se necessário
-        let valueTypeIdentfy = colorConverter.valueTypeIdentify(inputvalue.val(), valueType);
+        let valueTypeIdentfy = this.valueTypeIdentify(inputvalue.val(), valueType);
         // Alterar o valor do input para o tipo de cor identificada
         inputvalue.val(valueTypeIdentfy);
     },
@@ -564,4 +524,653 @@ let cssCodeTextarea = {
         };
     }
 
+};
+
+
+let textApp = {
+
+    /* Descrição: Reseta todos os valores do textApp.Values */
+    values: {
+        currentShadowNumber: 1,
+        totalShadowNumber: 1,
+        shadowPropertiesContainer: [{
+            status: true,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        },
+        {
+            status: false,
+            color: '#000000',
+            colorType: 'colorTypeHex',
+            horizontalValue: '0',
+            horizontalType: 'px',
+            verticalValue: '0',
+            verticalType: 'px',
+            blurValue: '0',
+            blurType: 'px',
+            colorPredefined: 'nenhum'
+        }]
+    },
+
+    /* Descrição: Reseta todos os valores do textApp.Values */
+    shadowValuesReset() {
+        this.values = {
+            currentShadowNumber: 1,
+            totalShadowNumber: 1,
+            shadowPropertiesContainer: [{
+                status: true,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            },
+            {
+                status: false,
+                color: '#000000',
+                colorType: 'colorTypeHex',
+                horizontalValue: '0',
+                horizontalType: 'px',
+                verticalValue: '0',
+                verticalType: 'px',
+                blurValue: '0',
+                blurType: 'px',
+                colorPredefined: 'nenhum'
+            }]
+        };
+    },
+
+    /* Descrição: Este método é responsavel pelas configurações das sombras adicionais.
+    Valores Válidos para "shadowNumber": 
+        - Number (Número do "shadowNumber" atual).
+    Valores Válidos para "shadowConfig": 
+        - Object ((Opcional) Um objeto igual a um "shadowNumber" mas com os novos valores alterados).
+        (OBS: Se não for passado este parâmetro então sera concatenado os valores sem nenhuma modificação nova).
+    Return: String (Concatena todos os valores para o text-shadow (Ex: "10px 10px 5px #000000, 12px 12px 10px #F0F0F0"))*/
+    attMultipleTextShadow(shadowNumber, shadowConfig) {
+        // Verificar se é para acrescentar um novo valor ou apenas para ativar o "shadowNumber"
+        if (typeof shadowConfig == 'boolean') {
+            // Aplicando o valor do boolean "shadowConfig" na propriedade "status" do "shadowNumber"
+            this.values.shadowPropertiesContainer[shadowNumber].status = shadowConfig;
+        } else {
+            if (typeof shadowConfig == 'object') {
+                // ###### Aplicando as modificações nos valores das propriedades da array "values.shadowPropertiesContainer" com base no "shadowNumber" passado (o "shadowNumber" representa o index da array)
+                this.values.shadowPropertiesContainer[shadowNumber] = shadowConfig;
+            };
+
+            // String que conterá a concatenação final
+            let fullConcat = '';
+            // Container com o os valores concatenados de cada "shadowNumber"
+            let shadowNumberConcatContainer = [];
+
+            // ###### Separando os valores concatenados de cada "shadowNumber" e colocando na array "shadowNumberConcatContainer"
+            this.values.shadowPropertiesContainer.forEach((value) => {
+                if (value.status == true) {
+                    // Verificando se o "colorPrdefined" está sendo usado
+                    if (value.colorPredefined == 'nenhum') {
+                        shadowNumberConcatContainer.push(`${value.horizontalValue}${value.horizontalType} ${value.verticalValue}${value.verticalType} ${value.blurValue}${value.blurType} ${value.color}`);
+                    } else {
+                        shadowNumberConcatContainer.push(`${value.horizontalValue}${value.horizontalType} ${value.verticalValue}${value.verticalType} ${value.blurValue}${value.blurType} ${value.colorPredefined}`);
+                    };
+                };
+            });
+
+            // ###### Pegando os valores concatenados da array"shadowNumberConcatContainer" e criando uma string final na variavel "fullConcat"
+            fullConcat += shadowNumberConcatContainer.join(', ');
+
+            return fullConcat;
+
+            // Concatenando todos os valores sem atualiza-los
+        };
+    },
+
+    /* Descrição: Atualiza todos os valores dos inputs da propriedade "text-shadow" com base no "shadowNumber".
+    Valores Válidos: 
+        - Number (Number que representará o "shadowNumber" selecionado). */
+    attAllInputTextShadow(shadowNumber) {
+        // Selecionando as propriedades do "shadowNumber" escolhido
+        let shadowSelect = this.values.shadowPropertiesContainer[shadowNumber];
+
+        $('#property-text-shadow-color-value').val(shadowSelect.color)
+        $('#property-text-shadow-color-value-type').val(shadowSelect.colorType)
+        $('#property-text-shadow-horizontal-value').val(shadowSelect.horizontalValue)
+        $('#property-text-shadow-horizontal-value-type').val(shadowSelect.horizontalType)
+        $('#property-text-shadow-vertical-value').val(shadowSelect.verticalValue)
+        $('#property-text-shadow-vertical-value-type').val(shadowSelect.verticalType)
+        $('#property-text-shadow-blur-value').val(shadowSelect.blurValue)
+        $('#property-text-shadow-blur-value-type').val(shadowSelect.blurType)
+        $('#property-text-shadow-color-value-predefined').val(shadowSelect.colorPredefined)
+    },
+
+    /* Descrição: Ativa uma nova sombra.
+    Valores Válidos: 
+        - Number (Number que representará o "shadowNumber" selecionado). */
+    newMultipleTextShadow(shadowNumber) {
+        // Ativando um valor do container de multiplas "text-shadow"
+        this.values.shadowPropertiesContainer[shadowNumber].status = true;
+        // Reconcatenando todos os valores do container de multiplas "text-shadow"
+        let reconcat = this.attMultipleTextShadow(this.values.shadowPropertiesContainer.length - 1);
+        // Aplicando novos valores
+        myProp.newValue('text-shadow', reconcat);
+    },
+
+    /* Descrição: Desativa uma sombra.
+    Valores Válidos: 
+        - Number (Number que representará o "shadowNumber" selecionado). */
+    removeMultipleTextShadow(shadowNumber) {
+        // Desativando um valor do container de multiplas "text-shadow"
+        this.values.shadowPropertiesContainer[shadowNumber].status = false
+        // Reconcatenando todos os valores do container de multiplas "text-shadow"
+        let reconcat = this.attMultipleTextShadow(this.values.shadowPropertiesContainer.length - 1);
+        // Aplicando novos valores
+        myProp.newValue('text-shadow', reconcat);
+    },
+
+    /* Descrição: Coloca todos os input da propriedade "textShadow" em "desativado" e acrescenta a classe "input--disable".  */
+    disableTextShadow() {
+        // Desativando  o "toggle button"
+        $('#toggle-button-text-shadow').prop('checked', false);
+        // Desativando os input até que o "toggle button" seja ativado
+        $('#property-text-shadow-color-value').attr('disabled', true);
+        $('#property-text-shadow-color-value-type').attr('disabled', true);
+        $('#property-text-shadow-horizontal-value').attr('disabled', true);
+        $('#property-text-shadow-horizontal-value-type').attr('disabled', true);
+        $('#property-text-shadow-vertical-value').attr('disabled', true);
+        $('#property-text-shadow-vertical-value-type').attr('disabled', true);
+        $('#property-text-shadow-blur-value').attr('disabled', true);
+        $('#property-text-shadow-blur-value-type').attr('disabled', true);
+        $('#property-text-shadow-color-value-predefined').attr('disabled', true);
+        // Colocando a aparência de desabilitado
+        $('#property-text-shadow-color-value').addClass('input--disabled');
+        $('#property-text-shadow-color-value-type').addClass('input--disabled');
+        $('#property-text-shadow-horizontal-value').addClass('input--disabled');
+        $('#property-text-shadow-horizontal-value-type').addClass('input--disabled');
+        $('#property-text-shadow-vertical-value').addClass('input--disabled');
+        $('#property-text-shadow-vertical-value-type').addClass('input--disabled');
+        $('#property-text-shadow-blur-value').addClass('input--disabled');
+        $('#property-text-shadow-blur-value-type').addClass('input--disabled');
+        $('#property-text-shadow-color-value-predefined').addClass('input--disabled');
+
+        // Atualizar o valor dos Input conforme o valor do "shadowNumber"
+        let shadowValue = this.values.shadowPropertiesContainer[this.values.currentShadowNumber - 1];
+        $('#property-text-shadow-color-value').val(shadowValue.color);
+        $('#property-text-shadow-color-value-type').val(shadowValue.colorType);
+        $('#property-text-shadow-horizontal-value').val(shadowValue.horizontalValue);
+        $('#property-text-shadow-horizontal-value-type').val(shadowValue.horizontalType);
+        $('#property-text-shadow-vertical-value').val(shadowValue.verticalValue);
+        $('#property-text-shadow-vertical-value-type').val(shadowValue.verticalType);
+        $('#property-text-shadow-blur-value').val(shadowValue.blurValue);
+        $('#property-text-shadow-blur-value-type').val(shadowValue.blurType);
+        $('#property-text-shadow-color-value-predefined').val(shadowValue.colorPredefined);
+
+    },
+
+    /* Descrição: Coloca todos os input da propriedade "textShadow" em "ativado" e remove a classe "input--disable". */
+    enableTextShadow() {
+        // Ativando  o "toggle button"
+        $('#toggle-button-text-shadow').prop('checked', true);
+        // Ativando os input do "text-shadow" até que o "toggle button" seja ativado
+        $('#property-text-shadow-color-value').attr('disabled', false);
+        $('#property-text-shadow-color-value-type').attr('disabled', false);
+        $('#property-text-shadow-horizontal-value').attr('disabled', false);
+        $('#property-text-shadow-horizontal-value-type').attr('disabled', false);
+        $('#property-text-shadow-vertical-value').attr('disabled', false);
+        $('#property-text-shadow-vertical-value-type').attr('disabled', false);
+        $('#property-text-shadow-blur-value').attr('disabled', false);
+        $('#property-text-shadow-blur-value-type').attr('disabled', false);
+        $('#property-text-shadow-color-value-predefined').attr('disabled', false);
+        // Tirando a aparência de desabilitado
+        $('#property-text-shadow-color-value').removeClass('input--disabled');
+        $('#property-text-shadow-color-value-type').removeClass('input--disabled');
+        $('#property-text-shadow-horizontal-value').removeClass('input--disabled');
+        $('#property-text-shadow-horizontal-value-type').removeClass('input--disabled');
+        $('#property-text-shadow-vertical-value').removeClass('input--disabled');
+        $('#property-text-shadow-vertical-value-type').removeClass('input--disabled');
+        $('#property-text-shadow-blur-value').removeClass('input--disabled');
+        $('#property-text-shadow-blur-value-type').removeClass('input--disabled');
+        $('#property-text-shadow-color-value-predefined').removeClass('input--disabled');
+    }
 };

@@ -12,7 +12,26 @@
         </div>
     </div>
     <div class="content__text-shadow">
+        <!-- Selecionar a Sombra -->
+        <p class="input__title no-select">Selecionar a sombra</p>
 
+        <div class="toggle__button__container">
+            <div>
+                <p class="toggle__button__status">Status: </p>
+                <input id="toggle-button-text-shadow" class="toggle__button toggle--button--shadow" type="checkbox" checked>
+                <label for="toggle-button-text-shadow"></label>
+            </div>
+            <div>
+                <p class="toggle__button__status">Sombras ativas: <span id="text-shadow-total-shadow">1</span></p>
+            </div>
+        </div>
+
+        <div class="select__numbers__container">
+            <button id="text-shadow-select-previous" class="arrow__select__button arrow__previous"></button>
+            <input id="property-text-shadow-multiply-value" class="prop__input__number__select" type="text" value="1"
+                readonly>
+            <button id="text-shadow-select-next" class="arrow__select__button arrow__next"></button>
+        </div>
         <!-- [Tipo de valor de "text-shadow"] -->
         <div class="input__type__select">
             <input type="button" id="button-free-value-text-shadow"
