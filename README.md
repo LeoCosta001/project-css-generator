@@ -7,13 +7,13 @@
 
 ## Índice
 
-- **Informações**
+ **Informações**
 
 - Sobre
 
 - Progresso
 
-- **Como rodar a Aplicação**
+ **Como rodar a Aplicação**
 
 - Requisitos
 
@@ -21,19 +21,19 @@
 
 - Como iniciar o Servidor
 
-- **Propriedades editáveis**
+ **Propriedades editáveis**
 
 - Menu de propriedades
 
 - Botões extras
 
-- **Tecnologias utilizadas**
+ **Tecnologias utilizadas**
 
 - Front-end
 
 - Back-end
 
-- **Métodos da aplicação**
+ **Métodos da aplicação**
 
 - Sobre
 
@@ -41,7 +41,7 @@
 
 - Lista de Métodos
 
-- **Planos a longo prazo**
+ **Planos a longo prazo**
 
 
 ## Informações
@@ -247,7 +247,7 @@ Aqui está listado apenas os métodos que serão usados para modificar diretamen
 > - **allApp.inputValueReset(inputID, value)**
 > 
 > **Descrição:** Altera o valor dos input ao mesmo tempo que atualiza as propriedades do "appView" e "cssCodeTextarea".
-> **Observações:**  Pode ser definido múltiplos parâmetros. Os parâmetros de posições *pares* devem corresponder ao ID ou Class do elemento < input > e os parâmetros de posição *impares* devem corresponder ao novo valor do input.
+> **Observações:**  Pode ser definido múltiplos parâmetros. Os parâmetros de posições *impares* devem corresponder ao ID ou Class do elemento < input > e os parâmetros de posição *pares* devem corresponder ao novo valor do input.
 > **Exemplo:**
 >
 >     allApp.inputValueReset(
