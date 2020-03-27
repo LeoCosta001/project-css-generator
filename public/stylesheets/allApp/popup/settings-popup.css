@@ -1,0 +1,120 @@
+/* Background */
+
+.settings__background {
+    background-color: rgba(0, 0, 0, 0.600);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* ##### Container ##### */
+
+.settings__container {
+    background-color: white;
+    width: 80vw;
+    height: 90vh;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.300);
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1001;
+}
+
+/* ##### Cabeçalho ##### */
+
+.settings__header {
+    background-color: #3498DB;
+    width: 100%;
+    height: 50px;
+    padding: 0px 20px 0px 20px;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.settings__title {
+    color: white;
+    font: 20pt 'Spartan';
+}
+
+.settings__title img {
+    height: 50px;
+}
+
+.settings__close {
+    background: url('/images/allApp/popup/close-button.png') transparent no-repeat center;
+    background-size: 25px;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border: solid 2px white;
+    border-radius: 40px;
+    /* Transação */
+    transition: 0.1s ease-in;
+    -webkit-transition: 0.1s ease-in;
+    -moz-transition: 0.1s ease-in;
+    -o-transition: 0.1s ease-in;
+}
+
+.settings__close:hover {
+    background-size: 45px;
+}
+
+.settings__close:active {
+    background-size: 25px;
+}
+
+/* ##### Sub-container ##### */
+
+.settings__sub-container {
+    display: flex;
+}
+
+/* ##### Menu ##### */
+
+.settings__menu {
+    background-color: rgba(52, 152, 219, 0.100);
+    background-image: linear-gradient(to top, white, rgba(52, 152, 219, 0.200));
+    border-right: solid 1px rgb(52, 152, 219);
+    padding-top: 1px;
+    border-radius: 0px 0px 0px 10px;
+    height: calc(90vh - 50px);
+    width: 220px;
+    margin: 0px 0px 0px 15px;
+}
+
+.settings__menu p:nth-child(1) {
+    letter-spacing: 2px;
+    color: #3498DB;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18pt;
+    padding-top: 10px;
+    margin: -1px 0px 0px 0px;
+    width: 220px;
+}
+
+.settings__menu .nav-link {
+    border-radius: 0px;
+    width: 220px;
+    margin-left: -15px;
+}
+
+.settings__menu hr {
+    border-color: rgba(52, 152, 219, 0.600);
+    margin: -1px 0px -1px -15px;
+}
+
+/* ##### Conteúdo ##### */
+
+.settings__content {
+    overflow: auto;
+    display: flex;
+    padding: 0px 10px 5px 10px;
+    width: calc(80vw - 220px);
+}

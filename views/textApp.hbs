@@ -1,4 +1,6 @@
-<!-- CSS -->
+<!-- #################################################################
+     ############################## CSS ############################## -->
+
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-container.css">
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-aside-menu-left.css">
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-container-center.css">
@@ -6,6 +8,18 @@
 <link rel="stylesheet" href="/stylesheets/textApp/textApp-footer-container.css">
 <link rel="stylesheet" href="/stylesheets/allApp/allApp-properties-chackbox.css">
 <link rel="stylesheet" href="/stylesheets/allApp/allApp-properties-input.css">
+<link rel="stylesheet" href="/stylesheets/allApp/popup/settings-popup.css">
+
+<!-- /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+/\/\/\/\/\/\/\/\/\/\/\/\/  Configurações do "textApp"  /\/\/\/\/\/\/\/\/\/\/\/\/ -->
+
+<!-- #################################################################
+     ########################### P O P U P ########################### -->
+{{> textApp/popup/textApp_settings }}
+
+<!-- #################################################################
+     ######################### MENU PRINCIPAL ######################## -->
+
 <div class="app__container">
     <!-- Menu da Esquerda/Topo [Container]-->
     <aside class="aside__propGroup__container">
@@ -36,13 +50,19 @@
         <!-- Menu de seleção de propriedades [Secundario] -->
         <div class="prop__select__container">
 
+            <!-- #################################################################
+                 ######################## MENU DE POPUPs ######################### -->
+
             <!-- Menu de configurações -->
             <div class="settings__buttons">
-                <button class="settings__buttons__info"></button>
-                <button class="settings__buttons__reset"></button>
-                <button class="settings__buttons__settings"></button>
-                <button class="settings__buttons__example"></button>
+                <button id="setButInfo" class="settings__buttons__info"></button>
+                <button id="setButReset" class="settings__buttons__reset"></button>
+                <button id="setButSettings" class="settings__buttons__settings"></button>
+                <button id="setButExample" class="settings__buttons__example"></button>
             </div>
+
+            <!-- #################################################################
+                 #################### SELEÇÃO DE PROPRIEDADES #################### -->
 
             <!-- Menu da Esquerda [Seleção de Propriedades] -->
             <div class="prop__checkbox__container">
@@ -111,7 +131,8 @@
     </div>
 
     <!-- #################################################################
-         #################### P R O P R I E D A D E S #################### -->
+         ################# CONFIGURAÇÃO DE PROPRIEDADES ################## -->
+
     <!-- Menu da Direita -->
     <aside class="aside__prop__container" spellcheck="false">
 
@@ -168,6 +189,9 @@
     </aside>
 </div>
 
+<!-- #################################################################
+     ############################ RODAPÉ ############################# -->
+
 <!-- Menu do Rodapé -->
 <footer class="footer__container" spellcheck="false">
 
@@ -184,17 +208,29 @@
     </div>
 </footer>
 
-<!-- Meu Script -->
+<!-- #################################################################
+     ########################## JAVASCRIPT ########################### -->
+
+<!-- Métodos usados nas "Configurações de propriedades" -->
 <script src="/scripts/methodsForProperties.js"></script>
+
+<!-- API de Palheta de Cores -->
 <script src="/scripts/APIs/jscolor.js"></script>
-<script src="/scripts/textApp/textAppPropertyColor.js"></script>
-<script src="/scripts/textApp/textAppPropertyFontSize.js"></script>
-<script src="/scripts/textApp/textAppPropertyFontStyle.js"></script>
-<script src="/scripts/textApp/textAppPropertyTextShadow.js"></script>
-<script src="/scripts/textApp/textAppPropertyFontFamily.js"></script>
-<script src="/scripts/textApp/textAppPropertyFontVariant.js"></script>
-<script src="/scripts/textApp/textAppPropertyFontWeight.js"></script>
-<script src="/scripts/textApp/textAppPropertyFontStretch.js"></script>
-<script src="/scripts/textApp/textAppPropertyLetterSpacing.js"></script>
-<script src="/scripts/textApp/textAppPropertyWordSpacing.js"></script>
+
+<!-- Pop up -->
+<script src="/scripts/textApp/popup/settings.js"></script>
+
+<!-- Configuração de propriedades -->
+<script src="/scripts/textApp/properties/textAppPropertyColor.js"></script>
+<script src="/scripts/textApp/properties/textAppPropertyFontSize.js"></script>
+<script src="/scripts/textApp/properties/textAppPropertyFontStyle.js"></script>
+<script src="/scripts/textApp/properties/textAppPropertyTextShadow.js"></script>
+<script src="/scripts/textApp/properties/textAppPropertyFontFamily.js"></script>
+<script src="/scripts/textApp/properties/textAppPropertyFontVariant.js"></script>
+<script src="/scripts/textApp/properties/textAppPropertyFontWeight.js"></script>
+<script src="/scripts/textApp/properties/textAppPropertyFontStretch.js"></script>
+<script src="/scripts/textApp/properties/textAppPropertyLetterSpacing.js"></script>
+<script src="/scripts/textApp/properties/textAppPropertyWordSpacing.js"></script>
+
+<!-- Rodapé -->
 <script src="/scripts/footer/textEdit.js"></script>

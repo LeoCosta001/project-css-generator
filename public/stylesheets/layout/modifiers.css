@@ -23,3 +23,39 @@
 .input--disabled {
     border-color: grey !important;
 }
+
+/* ##### Conteúdo de Popup ##### */
+
+/* Titulo */
+
+.popup--title {
+    color: #3498DB;
+    text-align: center;
+    font-weight: bold;
+    font-size: 26pt;
+    margin: 15px 0px -5px 0px;
+}
+
+/* Sub-titulo */
+
+.popup--sub--title {
+    color: #3498DB;
+    font-weight: bold;
+    font-size: 18pt;
+    margin: 30px 0px -5px 0px;
+}
+
+/* Separador de linha (Tag "<hr>")*/
+
+.popup--hr {
+    border: solid 0.5px #3498DB;
+    width: calc(80vw - 243px);
+    margin: 5px 0px 20px 0px;
+}
+
+/* Textos de Obserações */
+
+.popup--obs {
+    font-style: italic;
+    color: #95A5A6;
+}
