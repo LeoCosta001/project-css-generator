@@ -1,5 +1,5 @@
 // Define a porta de acesso ao servidor
-const port = 3001;
+const port = 3002;
 //Importando o Express
 const express = require('express');
 const app = express();

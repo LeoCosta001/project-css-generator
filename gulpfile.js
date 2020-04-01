@@ -5,8 +5,6 @@
 - Compilação automática junto com o Nodemon. */
 
 "use strict";
-
-const browserSync = require('browser-sync');
 const del = require('del');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
@@ -19,28 +17,34 @@ gulp.task('compilation', gulp.series(compilation));
 // ##### Compilação automática
 // Observa alterações de arquivos do diretório 'src/scss' e recompila
 gulp.task('watch', () => {
-    gulp.watch('./src/scss/**/*.scss', compilation);
+    gulp.watch('./src/scss/**/*.scss', gulp.series(compilation));
 });
 
 // ##### Apagando diretório de origem
-gulp.task('clean', gulp.series(async () => {
+gulp.task('clean', gulp.series(clean));
+
+async function clean() {
     await del(['./public/css/**']);
-}));
+};
 
 // ##### Compilação automática junto com o Nodemon
 gulp.task('dev', () => {
     nodemon({
         script: 'app.js',
+        tasks: ['compilation']
     })
-        .on('start', ['clean', 'compilation'])
-        .on('change', ['watch'])
+        .on('start', ['compilation'])
         .on('restart', () => {
             console.log('Restarting server')
         });
 });
 
 // ##### Configurações de compilação
-function compilation() {
+async function compilation() {
+    // Deletar arquivos do diretório antes de compilar
+    await del(['./public/css/**']);
+
+    // Criar a compilação
     return gulp
 
         // "src/scss" = Diretório de busca
@@ -53,7 +57,4 @@ function compilation() {
 
         // Diretório para onde será enviado o arquivo compilado
         .pipe(gulp.dest('public/css'))
-
-        // Atualizar navegador automaticamente ao realizar a compilação
-        .pipe(browserSync.stream());
 };

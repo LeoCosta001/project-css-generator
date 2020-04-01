@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+    /\/\/\/\/\/\/\/\/\/\/\/\/\   Style Reset  \/\/\/\/\/\/\/\/\/\/\/\/\/ */
+* {
+  margin: 10px; }
+
+body {
+  font-family: 'Open Sans';
+  font-size: 12pt;
+  display: flex;
+  flex-direction: column;
+  /* Desativar ações de touch para não bugar o jscolor (ação temporario) */ }
+
+button, input {
+  border: none;
+  outline: none; }
+
+a, a:hover {
+  text-decoration: none; }
