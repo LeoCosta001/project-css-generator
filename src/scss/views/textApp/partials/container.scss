@@ -1,0 +1,16 @@
+.app__container {
+    display: flex;
+    flex: 1;
+}
+
+/* ================= Estabilizando Menu lateral ================= */
+
+/* /\/\/\/\ Largura <=  1023 /\/\/\/\ */
+
+@media (max-width: 1023px) {
+    .app__container {
+        display: block;
+    }
+}
+
+/* ================================================== */

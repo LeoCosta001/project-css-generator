@@ -1,0 +1,64 @@
+/* ================= Conteiner Central ================= */
+
+.viewApp__background__container {
+    background-color: #ECF0F1;
+    color: black;
+    height: 70vh;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewApp__container {
+    background-color: white;
+    width: calc(95vw - 600px);
+    height: 90%;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 3px 3px 7px 0px rgb(136, 136, 136);
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    /* Reset de fonte */
+    font-family: none;
+    font-size: 12;
+}
+
+/* ================= Estabilizando Menu lateral ================= */
+
+/* /\/\/\/\ Largura <=  1023 /\/\/\/\ */
+
+@media (max-width: 1023px) {
+    .viewApp__background__container {
+        height: 70vh;
+        width: calc(100vw - 308px);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .viewApp__container {
+        width: 90%;
+        display: inline-flex;
+    }
+}
+
+/* /\/\/\/\ Largura <=  699 /\/\/\/\ */
+
+@media (max-width: 699px) {
+    .viewApp__background__container {
+        flex: 1;
+        height: 150px;
+        width: 100%;
+    }
+
+    .viewApp__container {
+        width: 90%;
+        display: inline-flex;
+    }
+}
+
+/* ================================================== */

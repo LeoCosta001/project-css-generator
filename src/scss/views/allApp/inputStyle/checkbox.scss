@@ -1,0 +1,89 @@
+/* Label */
+
+.prop__checkbox__label {
+    font-family: arial;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Botão padrão do checkbox */
+
+.prop__checkbox__label input {
+    display: none
+}
+
+/* Bootão personalizado do chackbox */
+
+.checkbox__icon {
+    margin-left: 15px;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background: #e6e6e683;
+    border: 0px solid #000000;
+    border-radius: 3px;
+}
+
+/* Altera a cor do checkbox quando passar o mouse em cima */
+
+.prop__checkbox__label:hover input~.checkbox__icon, .prop__checkbox__label input:focus~.checkbox__icon {
+    background: #cccccc;
+}
+
+/* Cor do botão quando ele estiver com "checked" ativado */
+
+.prop__checkbox__label input:checked~.checkbox__icon {
+    background: #3498DB;
+}
+
+/* Cor do checkbox com as 2 propriedades juntas: "checked" e "disabled" */
+
+.prop__checkbox__label input:disabled~.checkbox__icon {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Desenhando o indicador de "OK */
+
+.checkbox__icon:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.prop__checkbox__label input:checked~.checkbox__icon:after {
+    display: block;
+}
+
+.prop__checkbox__label .checkbox__icon:after {
+    left: 7px;
+    top: 3px;
+    width: 3px;
+    height: 8px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Cor do "OK" do chackbox que tem as 2 propriedader: "checked" e "disabled" */
+
+.prop__checkbox__label input:disabled~.checkbox__icon:after {
+    border-color: #7b7b7b;
+}
+
+/* ================= Largura <=  1023 ================= */
+
+@media (max-width: 1023px) {
+    /* Reposicionando os Checkbos */
+    .checkbox__icon {
+        top: 10px;
+        left: 10px;
+    }
+}

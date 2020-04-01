@@ -4,6 +4,7 @@
 
 ::-webkit-scrollbar {
   background-color: #2C3E50;
+  border-radius: 40px;
   width: 8px;
   height: 8px;
 }
@@ -49,11 +50,4 @@
 
 ::-webkit-scrollbar-corner {
   background: transparent;
-}
-
-/* Alterar Scrollbar dentro do viewApp */
-
-.viewApp__container::-webkit-scrollbar {
-  background-color: #ECF0F1;
-  border-radius: 40px;
 }

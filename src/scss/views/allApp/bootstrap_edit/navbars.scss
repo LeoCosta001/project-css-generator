@@ -1,0 +1,19 @@
+/* ###### Navbars usando "pills" ######
+Link: https://getbootstrap.com.br/docs/4.1/components/navs/ */
+
+/* Navbar */
+.nav-link {
+    flex-wrap: nowrap;
+    width: 200px;
+}
+
+/* Cor do navbar ao passar o mouse */
+.nav-link:hover {
+    background-color: rgba(52, 152, 219, 0.500);
+    color: white;
+}
+
+/* Cor do navbar ao ser ativado */
+.nav-pills .active {
+    background-color: #3498DB !important;
+}
